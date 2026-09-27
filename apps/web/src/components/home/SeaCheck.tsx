@@ -3,9 +3,11 @@
 // advice to them. It asks the same multi-agent pipeline as the console (role = fisherman, forced
 // output language) and shows only the verified decision, reasons and advice in plain words.
 import Link from "next/link";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type ReactNode, type SVGProps } from "react";
+import * as I from "@/components/shell/icons";
 import harboursData from "@/data/harbours.json";
 import { API, ask, follow } from "@/lib/api";
+import { DECISION } from "@/lib/format";
 import { useStoredState } from "@/lib/hooks";
 import { LANGS, UI, type Lang, type UIKey } from "@/lib/i18n";
 import type { Blackboard, Decision } from "@/lib/types";
@@ -15,23 +17,18 @@ const HARBOURS = (harboursData.harbours as Harbour[]).slice().sort((a, b) => (a.
 const BY_STATE = HARBOURS.reduce<Record<string, Harbour[]>>((m, h) => { (m[h.state ?? "Other"] ??= []).push(h); return m; }, {});
 
 const WHEN = [
-  { id: "today", key: "today", icon: "☀️", en: "today" },
-  { id: "morning", key: "tmrMorning", icon: "🌅", en: "tomorrow morning" },
-  { id: "evening", key: "tmrEvening", icon: "🌇", en: "tomorrow evening" },
+  { id: "today", key: "today", Icon: I.IcSun, en: "today" },
+  { id: "morning", key: "tmrMorning", Icon: I.IcSunrise, en: "tomorrow morning" },
+  { id: "evening", key: "tmrEvening", Icon: I.IcSunset, en: "tomorrow evening" },
 ] as const;
 const BOATS = [
-  { id: "small_craft", key: "small", icon: "🛶" },
-  { id: "mechanized", key: "mech", icon: "🚤" },
-  { id: "large_vessel", key: "large", icon: "🚢" },
+  { id: "small_craft", key: "small", Icon: I.IcBoatSmall },
+  { id: "mechanized", key: "mech", Icon: I.IcTrawler },
+  { id: "large_vessel", key: "large", Icon: I.IcShip },
 ] as const;
 
-const LOOK: Record<Decision, { key: UIKey; bg: string; fg: string; glyph: string }> = {
-  GO: { key: "GO", bg: "#dcf5e3", fg: "#0b6b2c", glyph: "●" },
-  CAUTION: { key: "CAUTION", bg: "#fff1cc", fg: "#8a5a00", glyph: "▲" },
-  DONT_GO: { key: "DONT_GO", bg: "#fde0e0", fg: "#a61b1b", glyph: "■" },
-  INSUFFICIENT_DATA: { key: "NA", bg: "#e8ecf1", fg: "#3d4a5c", glyph: "◇" },
-  NOT_APPLICABLE: { key: "NA", bg: "#e8ecf1", fg: "#3d4a5c", glyph: "◇" },
-};
+// decision colours and glyphs are the console's (lib/format DECISION); only the words are localised
+const WORD: Record<Decision, UIKey> = { GO: "GO", CAUTION: "CAUTION", DONT_GO: "DONT_GO", INSUFFICIENT_DATA: "NA", NOT_APPLICABLE: "NA" };
 const COMPASS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
 
 type Kind = "safety" | "zones";
@@ -41,10 +38,14 @@ type ZoneRow = { id: string; score: number; distance_km: number; bearing: number
 function Chip({ on, onClick, children, big = false }: { on: boolean; onClick: () => void; children: ReactNode; big?: boolean }) {
   return (
     <button type="button" onClick={onClick} aria-pressed={on}
-      className={`min-w-0 rounded-xl border-2 px-2.5 text-left leading-snug transition-colors break-words ${big ? "min-h-[64px] py-2 text-[16px]" : "min-h-[44px] py-1.5 text-[15px]"} ${on ? "border-sky-600 bg-sky-50 font-semibold text-sky-900" : "border-slate-200 bg-white text-slate-700 hover:border-slate-300"}`}>
+      className={`min-w-0 break-words rounded-md border px-3 text-left leading-snug transition-colors ${big ? "min-h-[60px] py-2 text-[16px]" : "min-h-[44px] py-1.5 text-[15px]"} ${on ? "border-accent bg-panel-3 font-medium text-accent" : "border-line-2 bg-panel-2 text-ink-2 hover:border-accent/50 hover:text-ink"}`}>
       {children}
     </button>
   );
+}
+
+function Legend({ icon: Icon, children }: { icon: (p: SVGProps<SVGSVGElement>) => ReactNode; children: ReactNode }) {
+  return <legend className="mb-2 flex items-center gap-2 font-cond text-[13px] uppercase tracking-[0.12em] text-ink-3"><Icon width={16} height={16} />{children}</legend>;
 }
 
 export default function SeaCheck({ variant = "fisherman" }: { variant?: "fisherman" | "community" }) {
@@ -95,7 +96,7 @@ export default function SeaCheck({ variant = "fisherman" }: { variant?: "fisherm
   };
 
   const decision: Decision = result?.bb.final_assessment?.decision ?? "INSUFFICIENT_DATA";
-  const look = LOOK[decision];
+  const look = { ...DECISION[decision], key: WORD[decision] };
   const sec = (id: string) => result?.bb.response?.sections.find((s) => s.id === id);
   const why = sec("why")?.items ?? [];
   const advice = sec("recommendations")?.items ?? [];
@@ -126,48 +127,48 @@ export default function SeaCheck({ variant = "fisherman" }: { variant?: "fisherm
   return (
     <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)]">
       {/* ---------------- choices */}
-      <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+      <div className="rounded-lg border border-line-2 bg-panel p-5 sm:p-6">
         <fieldset>
-          <legend className="mb-2 text-[14px] font-semibold uppercase tracking-wide text-slate-500">🗣 {t.chooseLang}</legend>
+          <Legend icon={I.IcLanguage}>{t.chooseLang}</Legend>
           <div className="flex flex-wrap gap-2">
             {LANGS.map((l) => <Chip key={l.id} on={lang === l.id} onClick={() => setLang(l.id)}><span lang={l.id} className="block whitespace-nowrap px-1 text-center">{l.name}</span></Chip>)}
           </div>
         </fieldset>
 
-        <label className="mt-6 block">
-          <span className="mb-2 block text-[14px] font-semibold uppercase tracking-wide text-slate-500">⚓ {t.harbour}</span>
-          <select value={harbour.id} onChange={(e) => setHarbourId(e.target.value)}
-            className="min-h-[56px] w-full rounded-xl border-2 border-slate-200 bg-white px-3 text-[18px] text-slate-900 focus:border-sky-600 focus:outline-none">
+        <fieldset className="mt-6">
+          <Legend icon={I.IcAnchor}>{t.harbour}</Legend>
+          <select value={harbour.id} onChange={(e) => setHarbourId(e.target.value)} aria-label={t.harbour}
+            className="min-h-[54px] w-full rounded-md border border-line-2 bg-panel-2 px-3 text-[18px] text-ink focus:border-accent focus:outline-none">
             {Object.entries(BY_STATE).map(([state, hs]) => (
               <optgroup key={state} label={state}>
                 {hs.map((h) => <option key={h.id} value={h.id}>{local(h)}{lang !== "en" && h.names[lang] ? ` (${h.name})` : ""}</option>)}
               </optgroup>
             ))}
           </select>
-        </label>
+        </fieldset>
 
         <fieldset className="mt-6">
-          <legend className="mb-2 text-[14px] font-semibold uppercase tracking-wide text-slate-500">🕒 {t.when}</legend>
+          <Legend icon={I.IcClock}>{t.when}</Legend>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-            {WHEN.map((w) => <Chip key={w.id} big on={when === w.id} onClick={() => setWhen(w.id)}><span className="flex items-center gap-2.5"><span className="text-[24px]" aria-hidden>{w.icon}</span>{t[w.key]}</span></Chip>)}
+            {WHEN.map((w) => <Chip key={w.id} big on={when === w.id} onClick={() => setWhen(w.id)}><span className="flex items-center gap-2.5"><w.Icon width={22} height={22} className="shrink-0" />{t[w.key]}</span></Chip>)}
           </div>
         </fieldset>
 
         <fieldset className="mt-6">
-          <legend className="mb-2 text-[14px] font-semibold uppercase tracking-wide text-slate-500">⛵ {t.boat}</legend>
+          <Legend icon={I.IcBoatSmall}>{t.boat}</Legend>
           <div className="grid grid-cols-1 gap-2 sm:grid-cols-3">
-            {BOATS.map((b) => <Chip key={b.id} big on={boat === b.id} onClick={() => setBoat(b.id)}><span className="flex items-center gap-2.5"><span className="text-[24px]" aria-hidden>{b.icon}</span>{t[b.key]}</span></Chip>)}
+            {BOATS.map((b) => <Chip key={b.id} big on={boat === b.id} onClick={() => setBoat(b.id)}><span className="flex items-center gap-2.5"><b.Icon width={22} height={22} className="shrink-0" />{t[b.key]}</span></Chip>)}
           </div>
         </fieldset>
 
         <div className="mt-7 grid gap-3">
           <button type="button" disabled={!!running} onClick={() => run("safety")}
-            className="min-h-[64px] rounded-2xl bg-sky-700 px-4 py-2 text-[19px] font-semibold leading-snug text-white shadow hover:bg-sky-800 disabled:opacity-60">🌊 {t.checkSafe}</button>
+            className="flex min-h-[60px] items-center justify-center gap-2.5 rounded-md bg-accent px-4 py-2 text-[19px] font-medium leading-snug text-abyss hover:brightness-110 disabled:opacity-50"><I.IcOcean width={22} height={22} />{t.checkSafe}</button>
           <button type="button" disabled={!!running} onClick={() => run("zones")}
-            className="min-h-[64px] rounded-2xl border-2 border-sky-700 bg-white px-4 py-2 text-[19px] font-semibold leading-snug text-sky-800 hover:bg-sky-50 disabled:opacity-60">🐟 {t.findFish}</button>
+            className="flex min-h-[60px] items-center justify-center gap-2.5 rounded-md border border-accent/70 bg-panel-2 px-4 py-2 text-[19px] font-medium leading-snug text-accent hover:bg-panel-3 disabled:opacity-50"><I.IcFish width={22} height={22} />{t.findFish}</button>
         </div>
-        <label className="mt-4 flex cursor-pointer items-center gap-2 text-[14px] text-slate-600">
-          <input type="checkbox" checked={practice} onChange={(e) => setPractice(e.target.checked)} className="h-5 w-5 accent-violet-600" />
+        <label className="mt-4 flex cursor-pointer items-center gap-2.5 text-[14.5px] text-ink-2">
+          <input type="checkbox" checked={practice} onChange={(e) => setPractice(e.target.checked)} className="h-5 w-5 accent-[var(--demo)]" />
           {t.practice}
         </label>
       </div>
@@ -175,100 +176,101 @@ export default function SeaCheck({ variant = "fisherman" }: { variant?: "fisherm
       {/* ---------------- answer */}
       <div aria-live="polite" className="min-h-[200px]">
         {!running && !result && !error && (
-          <div className="flex h-full min-h-[240px] flex-col items-center justify-center rounded-2xl border-2 border-dashed border-slate-300 bg-white/60 p-8 text-center">
-            <div className="text-[44px]" aria-hidden>🌊</div>
-            <p className="mt-2 text-[22px] font-semibold text-slate-800">{t.appTitle}</p>
-            <p className="mt-1 text-[15px] text-slate-500">{local(harbour)} · {t[WHEN.find((w) => w.id === when)?.key ?? "tmrMorning"]} · {t[BOATS.find((b) => b.id === boat)?.key ?? "small"]}</p>
+          <div className="grid-bg flex h-full min-h-[240px] flex-col items-center justify-center rounded-lg border border-dashed border-line-2 bg-panel/60 p-8 text-center">
+            <I.IcOcean width={44} height={44} className="text-accent" />
+            <p className="mt-3 text-[22px] font-light text-ink">{t.appTitle}</p>
+            <p className="mt-1 text-[15px] text-ink-3">{local(harbour)} · {t[WHEN.find((w) => w.id === when)?.key ?? "tmrMorning"]} · {t[BOATS.find((b) => b.id === boat)?.key ?? "small"]}</p>
           </div>
         )}
 
         {running && (
-          <div className="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
-            <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-sky-200 border-t-sky-700" aria-hidden />
-            <p className="mt-4 text-[20px] font-semibold text-slate-800">{t.checking}</p>
+          <div className="rounded-lg border border-line-2 bg-panel p-8 text-center">
+            <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-line-2 border-t-accent" aria-hidden />
+            <p className="mt-4 text-[19px] text-ink">{t.checking}</p>
             {running.total > 0 && (
-              <div className="mx-auto mt-4 h-3 max-w-[320px] overflow-hidden rounded-full bg-slate-100">
-                <div className="h-full rounded-full bg-sky-600 transition-all" style={{ width: `${Math.min(100, (running.done / running.total) * 100)}%` }} />
+              <div className="mx-auto mt-4 h-2 max-w-[320px] overflow-hidden rounded-full bg-panel-3">
+                <div className="h-full rounded-full bg-accent transition-all" style={{ width: `${Math.min(100, (running.done / running.total) * 100)}%` }} />
               </div>
             )}
-            {waited > 8 && running.total === 0 && <p className="mt-3 text-[15px] text-slate-500">{t.waking}</p>}
+            {waited > 8 && running.total === 0 && <p className="mt-3 text-[15px] text-ink-3">{t.waking}</p>}
           </div>
         )}
 
         {error && (
-          <div className="rounded-2xl border-2 border-rose-200 bg-rose-50 p-6 text-center">
-            <p className="text-[18px] font-semibold text-rose-900">{t.error}</p>
-            <button type="button" onClick={() => run(result?.kind ?? "safety")} className="mt-3 min-h-[48px] rounded-xl bg-rose-700 px-5 text-[16px] font-semibold text-white">{t.tryAgain}</button>
+          <div className="rounded-lg border border-danger/60 bg-panel p-6 text-center">
+            <p className="text-[18px] text-danger">{t.error}</p>
+            <button type="button" onClick={() => run(result?.kind ?? "safety")} className="mt-3 min-h-[48px] rounded-md border border-danger/70 px-5 text-[16px] text-ink hover:bg-panel-3">{t.tryAgain}</button>
           </div>
         )}
 
         {result && (
-          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-            {result.practice && <div className="bg-[repeating-linear-gradient(135deg,#ede9fe_0_10px,#f5f3ff_10px_20px)] px-5 py-2 text-center text-[14px] font-semibold text-violet-800">{t.practiceOn}</div>}
-            <div className="px-5 py-6 sm:px-6" style={{ background: look.bg, color: look.fg }}>
+          <div className="overflow-hidden rounded-lg border border-line-2 bg-panel">
+            {result.practice && <div className="demo-tape px-5 py-2 text-center font-cond text-[13.5px] uppercase tracking-[0.1em] text-demo">{t.practiceOn}</div>}
+            <div className="border-l-4 px-5 py-6 sm:px-6" style={{ borderColor: look.color, background: `color-mix(in oklab, ${look.color} 14%, var(--panel))` }}>
               <div className="flex items-center gap-4">
-                <span className="text-[44px] leading-none" aria-hidden>{look.glyph}</span>
+                <span className="text-[40px] leading-none" style={{ color: look.color }} aria-hidden>{look.glyph}</span>
                 <div>
-                  <div className="text-[30px] font-bold leading-tight sm:text-[34px]">{t[look.key]}</div>
-                  {result.kind === "safety" && result.bb.response?.headline && <p className="mt-1 text-[17px] leading-snug">{result.bb.response.headline}</p>}
+                  <div className="text-[30px] font-semibold leading-tight sm:text-[34px]" style={{ color: look.color }}>{t[look.key]}</div>
+                  {result.kind === "safety" && result.bb.response?.headline && <p className="mt-1 text-[17px] leading-snug text-ink">{result.bb.response.headline}</p>}
                 </div>
               </div>
-              <p className="mt-3 text-[15px] opacity-90">
-                ⚓ {local(result.harbour)}{result.kind === "safety" ? ` · 🕒 ${result.when}` : ""}
-                {result.bb.final_assessment && decision !== "INSUFFICIENT_DATA" ? ` · ${t.confidence} ${Math.round(result.bb.final_assessment.confidence * 100)}%` : ""}
+              <p className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[15px] text-ink-2">
+                <span className="flex items-center gap-1.5"><I.IcAnchor width={15} height={15} />{local(result.harbour)}</span>
+                {result.kind === "safety" && <span className="flex items-center gap-1.5"><I.IcClock width={15} height={15} />{result.when}</span>}
+                {result.bb.final_assessment && decision !== "INSUFFICIENT_DATA" && <span>{t.confidence} <span className="num">{Math.round(result.bb.final_assessment.confidence * 100)}%</span></span>}
               </p>
             </div>
 
             <div className="space-y-5 px-5 py-5 sm:px-6">
               {decision === "INSUFFICIENT_DATA" && !result.practice && (
-                <div className="rounded-xl bg-slate-50 p-4 text-[16px] text-slate-700">
+                <div className="rounded-md border border-line-2 bg-panel-2 p-4 text-[16px] text-ink-2">
                   {t.noDataTip}
-                  <button type="button" onClick={() => { setPractice(true); run(result.kind, true); }} className="mt-3 block min-h-[44px] rounded-lg border-2 border-violet-600 px-4 text-[15px] font-semibold text-violet-700">{t.practice}</button>
+                  <button type="button" onClick={() => { setPractice(true); run(result.kind, true); }} className="mt-3 block min-h-[44px] rounded-md border border-demo/70 px-4 text-[15px] text-demo hover:bg-panel-3">{t.practice}</button>
                 </div>
               )}
 
               {result.kind === "zones" && (
                 <div>
-                  <h3 className="text-[18px] font-bold text-slate-900">🐟 {t.zones}</h3>
-                  {zones.length === 0 ? <p className="mt-1 text-[16px] text-slate-600">{t.noZones}</p> : (
+                  <h3 className="flex items-center gap-2 text-[18px] font-medium text-ink"><I.IcFish width={20} height={20} className="text-accent" />{t.zones}</h3>
+                  {zones.length === 0 ? <p className="mt-1 text-[16px] text-ink-2">{t.noZones}</p> : (
                     <ul className="mt-2 space-y-2">
                       {zones.slice(0, 5).map((z, i) => (
-                        <li key={z.id} className="flex items-center gap-4 rounded-xl border border-slate-200 p-3">
-                          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-sky-100 text-[24px] text-sky-800" aria-hidden>
-                            <span style={{ transform: `rotate(${z.bearing}deg)`, display: "inline-block" }}>↑</span>
+                        <li key={z.id} className="flex items-center gap-4 rounded-md border border-line-2 bg-panel-2 p-3">
+                          <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full border border-line-2 bg-panel-3 text-accent" aria-hidden>
+                            <I.IcArrowUp width={24} height={24} style={{ transform: `rotate(${z.bearing}deg)` }} />
                           </span>
-                          <div className="text-[16px] text-slate-800">
-                            <div className="font-semibold">{t.area} {i + 1} · <span className={z.score >= 0.7 ? "text-emerald-700" : "text-amber-700"}>{z.score >= 0.7 ? t.good : t.possible}</span></div>
-                            <div className="text-slate-600">{Math.round(z.distance_km)} km {COMPASS[Math.round(z.bearing / 45) % 8]} {t.fromHarbour}{z.depth ? ` · ${t.depth} ${Math.round(Math.abs(z.depth))} m` : ""}</div>
+                          <div className="text-[16px] text-ink">
+                            <div className="font-medium">{t.area} {i + 1} · <span style={{ color: z.score >= 0.7 ? "var(--go)" : "var(--caution)" }}>{z.score >= 0.7 ? t.good : t.possible}</span></div>
+                            <div className="text-[14.5px] text-ink-2"><span className="num">{Math.round(z.distance_km)} km {COMPASS[Math.round(z.bearing / 45) % 8]}</span> {t.fromHarbour}{z.depth ? <> · {t.depth} <span className="num">{Math.round(Math.abs(z.depth))} m</span></> : null}</div>
                           </div>
                         </li>
                       ))}
                     </ul>
                   )}
-                  <p className="mt-2 text-[14px] text-slate-500">{t.zonesNote}</p>
+                  <p className="mt-2 text-[14px] text-ink-3">{t.zonesNote}</p>
                 </div>
               )}
 
               {why.length > 0 && (
                 <div>
-                  <h3 className="text-[18px] font-bold text-slate-900">{t.why}</h3>
-                  <ul className="mt-1 space-y-1.5 text-[16px] leading-snug text-slate-700">{why.map((x, i) => <li key={i} className="flex gap-2"><span aria-hidden>•</span><span>{x}</span></li>)}</ul>
+                  <h3 className="font-cond text-[15px] font-medium uppercase tracking-[0.1em] text-ink-2">{t.why}</h3>
+                  <ul className="mt-1.5 space-y-1.5 text-[16px] leading-snug text-ink">{why.map((x, i) => <li key={i} className="flex gap-2"><span className="text-ink-3" aria-hidden>•</span><span>{x}</span></li>)}</ul>
                 </div>
               )}
               {advice.length > 0 && (
                 <div>
-                  <h3 className="text-[18px] font-bold text-slate-900">{t.advice}</h3>
-                  <ul className="mt-1 space-y-1.5 text-[16px] leading-snug text-slate-700">{advice.map((x, i) => <li key={i} className="flex gap-2"><span aria-hidden>✓</span><span>{x}</span></li>)}</ul>
+                  <h3 className="font-cond text-[15px] font-medium uppercase tracking-[0.1em] text-ink-2">{t.advice}</h3>
+                  <ul className="mt-1.5 space-y-1.5 text-[16px] leading-snug text-ink">{advice.map((x, i) => <li key={i} className="flex gap-2"><span className="text-accent" aria-hidden>✓</span><span>{x}</span></li>)}</ul>
                 </div>
               )}
 
-              <p className="rounded-xl bg-amber-50 px-4 py-3 text-[15px] font-medium text-amber-900">⚠ {t.official}</p>
+              <p className="flex items-start gap-2 rounded-md border border-caution/40 bg-panel-2 px-4 py-3 text-[15px] text-caution"><I.IcAlert width={18} height={18} className="mt-0.5 shrink-0" />{t.official}</p>
 
               {variant === "community" && (
-                <div className="flex flex-wrap items-center gap-2 border-t border-slate-100 pt-4">
-                  <button type="button" onClick={share} className="min-h-[44px] rounded-lg bg-emerald-600 px-4 text-[15px] font-semibold text-white">📤 {t.share}</button>
-                  <button type="button" onClick={copy} className="min-h-[44px] rounded-lg border-2 border-slate-300 px-4 text-[15px] font-semibold text-slate-700">{copied ? `✓ ${t.copied}` : `📋 ${t.copy}`}</button>
-                  <span className="ml-auto text-[13px] text-slate-500">{t.ref}: <Link href={`/evidence?trace=${result.bb.trace_id}`} className="font-mono text-sky-700 underline">{result.bb.trace_id}</Link></span>
+                <div className="flex flex-wrap items-center gap-2 border-t border-line pt-4">
+                  <button type="button" onClick={share} className="flex min-h-[44px] items-center gap-2 rounded-md bg-accent px-4 text-[15px] font-medium text-abyss hover:brightness-110"><I.IcShare width={17} height={17} />{t.share}</button>
+                  <button type="button" onClick={copy} className="flex min-h-[44px] items-center gap-2 rounded-md border border-line-2 px-4 text-[15px] text-ink-2 hover:border-accent/60 hover:text-ink"><I.IcCopy width={17} height={17} />{copied ? `✓ ${t.copied}` : t.copy}</button>
+                  <span className="ml-auto text-[13px] text-ink-3">{t.ref}: <Link href={`/evidence?trace=${result.bb.trace_id}`} className="num text-accent underline-offset-2 hover:underline">{result.bb.trace_id}</Link></span>
                 </div>
               )}
             </div>
