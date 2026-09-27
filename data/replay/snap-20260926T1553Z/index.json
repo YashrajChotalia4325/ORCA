@@ -1,0 +1,512 @@
+{
+ "https://api.opentopodata.org/v1/gebco2020?locations=9.934%2C76.062%7C9.955%2C76.183%7C9.944%2C76.123%7C10.006%2C76.062%7C9.934%2C76.135%7C9.861%2C76.062%7C9.934%2C75.989": {
+  "file": "gebco_35c7d52a6aeda156308b726a.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=9.934%2C76.062%7C9.955%2C76.183%7C9.944%2C76.123%7C10.006%2C76.062%7C9.934%2C76.135%7C9.861%2C76.062%7C9.934%2C75.989",
+  "retrieved_at": "2026-09-26T15:53:31.384501+00:00"
+ },
+ "https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=TC": {
+  "file": "gdacs_3ba7722f8c869df21c98a3e1.json",
+  "source_id": "gdacs",
+  "url": "https://www.gdacs.org/gdacsapi/api/events/geteventlist/SEARCH?eventlist=TC",
+  "retrieved_at": "2026-09-26T15:53:51.806022+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5B(last)%5D%5B(9.784):1:(10.084)%5D%5B(75.912):1:(76.212)%5D": {
+  "file": "noaa_coastwatch_a7346af08f9c81a92da01b86.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5B(last)%5D%5B(9.784):1:(10.084)%5D%5B(75.912):1:(76.212)%5D",
+  "retrieved_at": "2026-09-26T15:53:32.404916+00:00"
+ },
+ "https://marine-api.open-meteo.com/data/ncep_gfswave025/static/meta.json": {
+  "file": "om_gfs_wave_dc127f0cfb5e15a6a2b12a3c.json",
+  "source_id": "om_gfs_wave",
+  "url": "https://marine-api.open-meteo.com/data/ncep_gfswave025/static/meta.json",
+  "retrieved_at": "2026-09-26T15:53:51.859818+00:00"
+ },
+ "https://marine-api.open-meteo.com/data/ecmwf_wam025/static/meta.json": {
+  "file": "om_ecmwf_wam_9bf7d2772669ddf0678039cf.json",
+  "source_id": "om_ecmwf_wam",
+  "url": "https://marine-api.open-meteo.com/data/ecmwf_wam025/static/meta.json",
+  "retrieved_at": "2026-09-26T15:53:51.859818+00:00"
+ },
+ "https://api.open-meteo.com/data/ncep_gfs025/static/meta.json": {
+  "file": "om_gfs_6be66c3bffc57b32b6e4b8a0.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/data/ncep_gfs025/static/meta.json",
+  "retrieved_at": "2026-09-26T15:54:12.078922+00:00"
+ },
+ "https://api.open-meteo.com/data/dwd_icon/static/meta.json": {
+  "file": "om_icon_d7c8c53ab68c00382e0aabd4.json",
+  "source_id": "om_icon",
+  "url": "https://api.open-meteo.com/data/dwd_icon/static/meta.json",
+  "retrieved_at": "2026-09-26T15:53:51.790167+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=ncep_gfswave025&past_days=1&timezone=GMT": {
+  "file": "om_gfs_wave_d5c37371f08cbb582b661f7b.json",
+  "source_id": "om_gfs_wave",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=ncep_gfswave025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:32.563924+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=ecmwf_wam025&past_days=1&timezone=GMT": {
+  "file": "om_ecmwf_wam_aadadf038adf8dad4e0780bc.json",
+  "source_id": "om_ecmwf_wam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=ecmwf_wam025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:32.577601+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_icon_5804880123f8626a5705d1fd.json",
+  "source_id": "om_icon",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:32.597552+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_44e657f2acdc0540647368a2.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:32.731655+00:00"
+ },
+ "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=6&eventid=1001326&eventtype=TC": {
+  "file": "gdacs_ecbecc13b0daedcb811b4f13.json",
+  "source_id": "gdacs",
+  "url": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=6&eventid=1001326&eventtype=TC",
+  "retrieved_at": "2026-09-26T15:53:52.387262+00:00"
+ },
+ "https://api.open-meteo.com/data/ecmwf_ifs025/static/meta.json": {
+  "file": "om_ecmwf_ifs_716ccbe49074019be38fdbae.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/data/ecmwf_ifs025/static/meta.json",
+  "retrieved_at": "2026-09-26T15:53:55.692697+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ecmwf_ifs_0b8a150803ba9ab4168817f8.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:33.216318+00:00"
+ },
+ "https://marine-api.open-meteo.com/data/meteofrance_wave/static/meta.json": {
+  "file": "om_mfwam_c6bec1be268084c2b46761ea.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/data/meteofrance_wave/static/meta.json",
+  "retrieved_at": "2026-09-26T15:54:10.300957+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=meteofrance_wave&past_days=1&timezone=GMT": {
+  "file": "om_mfwam_a775cfb04e568956470ed5a0.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=meteofrance_wave&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:33.396702+00:00"
+ },
+ "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=12&eventid=1001238&eventtype=TC": {
+  "file": "gdacs_0155860f264063fae64a7dcd.json",
+  "source_id": "gdacs",
+  "url": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=12&eventid=1001238&eventtype=TC",
+  "retrieved_at": "2026-09-26T15:53:52.915155+00:00"
+ },
+ "https://marine-api.open-meteo.com/data/meteofrance_currents/static/meta.json": {
+  "file": "om_smoc_c667813bc7b0d63449629dd1.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/data/meteofrance_currents/static/meta.json",
+  "retrieved_at": "2026-09-26T15:54:13.286672+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(9.784):1:(10.084)%5D%5B(75.912):1:(76.212)%5D": {
+  "file": "noaa_coastwatch_4fa620820e43fd6e39eb76a2.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(9.784):1:(10.084)%5D%5B(75.912):1:(76.212)%5D",
+  "retrieved_at": "2026-09-26T15:53:33.702190+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=meteofrance_currents&past_days=1&timezone=GMT": {
+  "file": "om_smoc_94dd56576410cc33bf1339cf.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=9.93%2C9.95%2C9.94%2C10.01%2C9.93%2C9.86%2C9.93&longitude=76.06%2C76.18%2C76.12%2C76.06%2C76.14%2C76.06%2C75.99&models=meteofrance_currents&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:33.723423+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(9.784):1:(10.084)%5D%5B(75.912):1:(76.212)%5D": {
+  "file": "noaa_coastwatch_61b2f2f81cf80574819df89e.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(9.784):1:(10.084)%5D%5B(75.912):1:(76.212)%5D",
+  "retrieved_at": "2026-09-26T15:53:33.827808+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(9.334):1:(10.534)%5D%5B(75.462):1:(76.662)%5D": {
+  "file": "noaa_coastwatch_e27cda13c58adf382987027d.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(9.334):1:(10.534)%5D%5B(75.462):1:(76.662)%5D",
+  "retrieved_at": "2026-09-26T15:53:33.827808+00:00"
+ },
+ "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=11&eventid=1001232&eventtype=TC": {
+  "file": "gdacs_556cad68e99f0b34102ed864.json",
+  "source_id": "gdacs",
+  "url": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=11&eventid=1001232&eventtype=TC",
+  "retrieved_at": "2026-09-26T15:53:53.234358+00:00"
+ },
+ "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=6&eventid=1001218&eventtype=TC": {
+  "file": "gdacs_4c008f2eb50de1660ddb3145.json",
+  "source_id": "gdacs",
+  "url": "https://www.gdacs.org/gdacsapi/api/polygons/getgeometry?episodeid=6&eventid=1001218&eventtype=TC",
+  "retrieved_at": "2026-09-26T15:53:53.567833+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(9.334):2:(10.534)%5D%5B(75.462):2:(76.662)%5D": {
+  "file": "noaa_coastwatch_38552397397179487a85ab56.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(9.334):2:(10.534)%5D%5B(75.462):2:(76.662)%5D",
+  "retrieved_at": "2026-09-26T15:53:34.465956+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=10.106%2C75.879": {
+  "file": "gebco_01ecfe7052fc1ee2f29c6ec6.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=10.106%2C75.879",
+  "retrieved_at": "2026-09-26T15:53:34.619200+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=12.987%2C80.500%7C13.060%2C80.371%7C13.024%2C80.434%7C13.059%2C80.500%7C12.987%2C80.573%7C12.915%2C80.500%7C12.987%2C80.426": {
+  "file": "gebco_5adda2ceebfd65a2927f8822.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=12.987%2C80.500%7C13.060%2C80.371%7C13.024%2C80.434%7C13.059%2C80.500%7C12.987%2C80.573%7C12.915%2C80.500%7C12.987%2C80.426",
+  "retrieved_at": "2026-09-26T15:53:36.105049+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(12.837):1:(13.137)%5D%5B(80.350):1:(80.650)%5D": {
+  "file": "noaa_coastwatch_e0636a70cef7752b2e7ba414.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(12.837):1:(13.137)%5D%5B(80.350):1:(80.650)%5D",
+  "retrieved_at": "2026-09-26T15:53:37.021144+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(12.387):2:(13.587)%5D%5B(79.900):2:(81.100)%5D": {
+  "file": "noaa_coastwatch_0411adb26a63cd87b8a65cf2.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(12.387):2:(13.587)%5D%5B(79.900):2:(81.100)%5D",
+  "retrieved_at": "2026-09-26T15:53:37.035045+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ecmwf_ifs_91e14fed2dab6c08da9f01b2.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:37.050077+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_a93bd490084d99276882fd25.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:37.095293+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_icon_e890d452ec9129c9b4a6efa6.json",
+  "source_id": "om_icon",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:37.132135+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=ecmwf_wam025&past_days=1&timezone=GMT": {
+  "file": "om_ecmwf_wam_c880f3d634f7ae2844fabd37.json",
+  "source_id": "om_ecmwf_wam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=ecmwf_wam025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:37.147379+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=meteofrance_wave&past_days=1&timezone=GMT": {
+  "file": "om_mfwam_dfe450dcf07f0b9e408f2b40.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=meteofrance_wave&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:37.147379+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=ncep_gfswave025&past_days=1&timezone=GMT": {
+  "file": "om_gfs_wave_660192a86697f4f695b65195.json",
+  "source_id": "om_gfs_wave",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=ncep_gfswave025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:37.175209+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5B(last)%5D%5B(12.837):1:(13.137)%5D%5B(80.350):1:(80.650)%5D": {
+  "file": "noaa_coastwatch_ea89f60cd1b8b3bb7eed0230.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5B(last)%5D%5B(12.837):1:(13.137)%5D%5B(80.350):1:(80.650)%5D",
+  "retrieved_at": "2026-09-26T15:53:37.243731+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(12.837):1:(13.137)%5D%5B(80.350):1:(80.650)%5D": {
+  "file": "noaa_coastwatch_735ec602159882c141a78406.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(12.837):1:(13.137)%5D%5B(80.350):1:(80.650)%5D",
+  "retrieved_at": "2026-09-26T15:53:37.243731+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(12.387):1:(13.587)%5D%5B(79.900):1:(81.100)%5D": {
+  "file": "noaa_coastwatch_f42536a3c1c924204a26f1d5.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(12.387):1:(13.587)%5D%5B(79.900):1:(81.100)%5D",
+  "retrieved_at": "2026-09-26T15:53:37.461136+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=meteofrance_currents&past_days=1&timezone=GMT": {
+  "file": "om_smoc_4766a5e5fe39d8ce2a5c9779.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=12.99%2C13.06%2C13.02%2C13.06%2C12.99%2C12.91%2C12.99&longitude=80.50%2C80.37%2C80.43%2C80.50%2C80.57%2C80.50%2C80.43&models=meteofrance_currents&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:37.495886+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=18.930%2C72.830%7C15.410%2C73.800": {
+  "file": "gebco_7dcd05ffff08252ab80c69e7.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=18.930%2C72.830%7C15.410%2C73.800",
+  "retrieved_at": "2026-09-26T15:53:41.208340+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=ncep_gfswave025&past_days=0&timezone=GMT": {
+  "file": "om_gfs_wave_aa1aef61f07d0e292607f943.json",
+  "source_id": "om_gfs_wave",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=ncep_gfswave025&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:42.319264+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_154757e05dcde97a94d760f7.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:42.416234+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=ecmwf_wam025&past_days=0&timezone=GMT": {
+  "file": "om_ecmwf_wam_1de296ad401cf68c82d95ad4.json",
+  "source_id": "om_ecmwf_wam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=ecmwf_wam025&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:42.459637+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=meteofrance_wave&past_days=0&timezone=GMT": {
+  "file": "om_mfwam_fc33769ccf5c53c78de7ec99.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=meteofrance_wave&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:42.471945+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=ecmwf_ifs025&past_days=0&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ecmwf_ifs_cce201ad24bcc27099f3fd67.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=ecmwf_ifs025&past_days=0&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:42.666371+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=icon_global&past_days=0&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_icon_9e9fbbaeaa5be4f379449ae0.json",
+  "source_id": "om_icon",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=icon_global&past_days=0&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:42.680384+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=meteofrance_currents&past_days=0&timezone=GMT": {
+  "file": "om_smoc_0a2b583ebb70dd51a7521666.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C14.53%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.03%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C15.53%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.03%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C16.53%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.03%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C17.53%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.03%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C18.53%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.03%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53%2C19.53&longitude=71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45%2C71.95%2C72.45%2C72.95%2C73.45%2C73.95%2C74.45&models=meteofrance_currents&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:42.916579+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=12.776%2C74.484": {
+  "file": "gebco_b36d550df49cba565153c777.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=12.776%2C74.484",
+  "retrieved_at": "2026-09-26T15:53:46.316049+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(12.626):1:(12.926)%5D%5B(74.334):1:(74.634)%5D": {
+  "file": "noaa_coastwatch_0bf63660abcfc00197d3a3f8.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(12.626):1:(12.926)%5D%5B(74.334):1:(74.634)%5D",
+  "retrieved_at": "2026-09-26T15:53:47.165879+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(12.626):1:(12.926)%5D%5B(74.334):1:(74.634)%5D": {
+  "file": "noaa_coastwatch_9663b4c454f115abf21abcce.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(12.626):1:(12.926)%5D%5B(74.334):1:(74.634)%5D",
+  "retrieved_at": "2026-09-26T15:53:47.193635+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.78&longitude=74.48&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ecmwf_ifs_8f98ee230db006f0f3c0ccab.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.78&longitude=74.48&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:47.235329+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.78&longitude=74.48&models=ncep_gfswave025&past_days=1&timezone=GMT": {
+  "file": "om_gfs_wave_2d7e9705450d4691840f1a09.json",
+  "source_id": "om_gfs_wave",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.78&longitude=74.48&models=ncep_gfswave025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:47.249008+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=12.78&longitude=74.48&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_810abaaa14f96f64483f284d.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=12.78&longitude=74.48&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:47.249008+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.78&longitude=74.48&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_icon_698df79a4bab6764e8ba8ac0.json",
+  "source_id": "om_icon",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=12.78&longitude=74.48&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:47.265895+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.78&longitude=74.48&models=meteofrance_wave&past_days=1&timezone=GMT": {
+  "file": "om_mfwam_97b71669c536490f3cd5d3e6.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.78&longitude=74.48&models=meteofrance_wave&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:47.304535+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.78&longitude=74.48&models=ecmwf_wam025&past_days=1&timezone=GMT": {
+  "file": "om_ecmwf_wam_d85194218126c3f21660bec9.json",
+  "source_id": "om_ecmwf_wam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=12.78&longitude=74.48&models=ecmwf_wam025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:47.318436+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(11.576):1:(13.976)%5D%5B(73.284):1:(75.684)%5D": {
+  "file": "noaa_coastwatch_7546100b5b158b231364cfdc.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5B(last)%5D%5B(0.0)%5D%5B(11.576):1:(13.976)%5D%5B(73.284):1:(75.684)%5D",
+  "retrieved_at": "2026-09-26T15:53:47.388008+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(11.576):2:(13.976)%5D%5B(73.284):2:(75.684)%5D": {
+  "file": "noaa_coastwatch_c47acec43fcb1ce9e168f408.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5B(last)%5D%5B(11.576):2:(13.976)%5D%5B(73.284):2:(75.684)%5D",
+  "retrieved_at": "2026-09-26T15:53:47.407865+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5B(last)%5D%5B(12.626):1:(12.926)%5D%5B(74.334):1:(74.634)%5D": {
+  "file": "noaa_coastwatch_70106ace41448fb5e65c0f45.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5B(last)%5D%5B(12.626):1:(12.926)%5D%5B(74.334):1:(74.634)%5D",
+  "retrieved_at": "2026-09-26T15:53:47.617433+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=12.78&longitude=74.48&models=meteofrance_currents&past_days=1&timezone=GMT": {
+  "file": "om_smoc_1c4dfc398e40c591b0987cc6.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=12.78&longitude=74.48&models=meteofrance_currents&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:47.637997+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=12.992%2C74.375": {
+  "file": "gebco_92d35ca5d4d52a0724e92637.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=12.992%2C74.375",
+  "retrieved_at": "2026-09-26T15:53:47.832248+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=19.087%2C85.063%7C19.595%2C85.931%7C20.075%2C86.807%7C20.867%2C87.186%7C21.305%2C87.205": {
+  "file": "gebco_9b9d17f00f2231d2f4096d67.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=19.087%2C85.063%7C19.595%2C85.931%7C20.075%2C86.807%7C20.867%2C87.186%7C21.305%2C87.205",
+  "retrieved_at": "2026-09-26T15:53:51.068230+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ecmwf_ifs_075202ab2005ab69a009cb53.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ecmwf_ifs025&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:51.949270+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_icon_1ab94204a905f2a633943c7a.json",
+  "source_id": "om_icon",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=icon_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:51.954236+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_a1b66b9e87666bfe0b48ffe0.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=gfs_global&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:51.970469+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ncep_gfswave025&past_days=1&timezone=GMT": {
+  "file": "om_gfs_wave_a86fdcc8d3dfb1ebd640e1c9.json",
+  "source_id": "om_gfs_wave",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ncep_gfswave025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:52.026096+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ecmwf_wam025&past_days=1&timezone=GMT": {
+  "file": "om_ecmwf_wam_1d204b7588353c567933fb38.json",
+  "source_id": "om_ecmwf_wam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ecmwf_wam025&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:52.026096+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=meteofrance_wave&past_days=1&timezone=GMT": {
+  "file": "om_mfwam_11e96bd52d835db8f58e39e7.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=meteofrance_wave&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:52.039938+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=meteofrance_currents&past_days=1&timezone=GMT": {
+  "file": "om_smoc_8c2ac639ee724c2103de8d8b.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=3&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=meteofrance_currents&past_days=1&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:53:52.373556+00:00"
+ },
+ "https://api.open-meteo.com/data/ukmo_global_deterministic_10km/static/meta.json": {
+  "file": "om_ukmo_a4eb84c07f5951c54e6c6f94.json",
+  "source_id": "om_ukmo",
+  "url": "https://api.open-meteo.com/data/ukmo_global_deterministic_10km/static/meta.json",
+  "retrieved_at": "2026-09-26T15:53:53.763104+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ukmo_global_deterministic_10km&past_days=1&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ukmo_c570679bed767e692e2f4070.json",
+  "source_id": "om_ukmo",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=3&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl&latitude=19.09%2C19.60%2C20.07%2C20.87%2C21.30&longitude=85.06%2C85.93%2C86.81%2C87.19%2C87.20&models=ukmo_global_deterministic_10km&past_days=1&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:53.914814+00:00"
+ },
+ "https://api.opentopodata.org/v1/gebco2020?locations=9.871%2C75.890": {
+  "file": "gebco_23903d6f489dfeeed09e0c72.json",
+  "source_id": "gebco",
+  "url": "https://api.opentopodata.org/v1/gebco2020?locations=9.871%2C75.890",
+  "retrieved_at": "2026-09-26T15:53:54.969923+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=1&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=9.87&longitude=75.89&models=ecmwf_ifs025&past_days=28&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_ecmwf_ifs_24eb9d52f77e1d289491007d.json",
+  "source_id": "om_ecmwf_ifs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=1&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cweather_code&latitude=9.87&longitude=75.89&models=ecmwf_ifs025&past_days=28&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:53:55.858647+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5Blast-30:1:last%5D%5B(9.121):4:(10.621)%5D%5B(75.140):4:(76.640)%5D": {
+  "file": "noaa_coastwatch_a70c22d2079e7eec2e468636.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacrwsstanomalyDaily.json?sea_surface_temperature_anomaly%5Blast-30:1:last%5D%5B(9.121):4:(10.621)%5D%5B(75.140):4:(76.640)%5D",
+  "retrieved_at": "2026-09-26T15:54:00.372268+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5Blast-30:1:last%5D%5B(9.121):4:(10.621)%5D%5B(75.140):4:(76.640)%5D": {
+  "file": "noaa_coastwatch_275ab4ed2b7274e97e94e08a.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwBLENDEDsstDNDaily.json?analysed_sst%5Blast-30:1:last%5D%5B(9.121):4:(10.621)%5D%5B(75.140):4:(76.640)%5D",
+  "retrieved_at": "2026-09-26T15:54:08.690545+00:00"
+ },
+ "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5Blast-30:1:last%5D%5B(0.0)%5D%5B(9.121):2:(10.621)%5D%5B(75.140):2:(76.640)%5D": {
+  "file": "noaa_coastwatch_6b1b9c520b1b4478278c77cf.json",
+  "source_id": "noaa_coastwatch",
+  "url": "https://coastwatch.noaa.gov/erddap/griddap/noaacwNPPN20VIIRSDINEOFDaily.json?chlor_a%5Blast-30:1:last%5D%5B(0.0)%5D%5B(9.121):2:(10.621)%5D%5B(75.140):2:(76.640)%5D",
+  "retrieved_at": "2026-09-26T15:54:09.293604+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00&models=meteofrance_wave&past_days=0&timezone=GMT": {
+  "file": "om_mfwam_41ac01f21617fd3c1466ad84.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00&models=meteofrance_wave&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:54:10.788470+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C20.50%2C20.50&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50&models=meteofrance_wave&past_days=0&timezone=GMT": {
+  "file": "om_mfwam_67d2f70539570d4a74a3f09b.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C20.50%2C20.50&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50&models=meteofrance_wave&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:54:11.134710+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C22.00%2C22.00%2C22.00%2C22.00%2C22.00%2C23.50%2C23.50%2C23.50&longitude=67.00%2C68.50%2C70.00%2C71.50%2C88.00%2C89.50%2C91.00%2C92.50%2C64.00%2C65.50%2C67.00%2C68.50%2C91.00%2C64.00%2C65.50%2C67.00&models=meteofrance_wave&past_days=0&timezone=GMT": {
+  "file": "om_mfwam_a5ec4745b8d42bb82e54d05b.json",
+  "source_id": "om_mfwam",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=wave_height%2Cwave_direction%2Cwave_period%2Cwind_wave_height%2Cswell_wave_height%2Cswell_wave_period%2Cswell_wave_direction&latitude=20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C22.00%2C22.00%2C22.00%2C22.00%2C22.00%2C23.50%2C23.50%2C23.50&longitude=67.00%2C68.50%2C70.00%2C71.50%2C88.00%2C89.50%2C91.00%2C92.50%2C64.00%2C65.50%2C67.00%2C68.50%2C91.00%2C64.00%2C65.50%2C67.00&models=meteofrance_wave&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:54:11.328916+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=2&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_8603891d0f18415163d319ba.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=2&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:54:12.592308+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=2&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C20.50%2C20.50&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_56e08cfa3c586da347b6e257.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=2&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C20.50%2C20.50&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:54:12.912401+00:00"
+ },
+ "https://api.open-meteo.com/v1/forecast?forecast_days=2&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C22.00%2C22.00%2C22.00%2C22.00%2C22.00%2C23.50%2C23.50%2C23.50&longitude=67.00%2C68.50%2C70.00%2C71.50%2C88.00%2C89.50%2C91.00%2C92.50%2C64.00%2C65.50%2C67.00%2C68.50%2C91.00%2C64.00%2C65.50%2C67.00&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh": {
+  "file": "om_gfs_9b68419d241060c7357b2e5d.json",
+  "source_id": "om_gfs",
+  "url": "https://api.open-meteo.com/v1/forecast?forecast_days=2&hourly=wind_speed_10m%2Cwind_direction_10m%2Cwind_gusts_10m%2Cprecipitation%2Cpressure_msl%2Ccape%2Cvisibility%2Cweather_code&latitude=20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C22.00%2C22.00%2C22.00%2C22.00%2C22.00%2C23.50%2C23.50%2C23.50&longitude=67.00%2C68.50%2C70.00%2C71.50%2C88.00%2C89.50%2C91.00%2C92.50%2C64.00%2C65.50%2C67.00%2C68.50%2C91.00%2C64.00%2C65.50%2C67.00&models=gfs_global&past_days=0&timezone=GMT&wind_speed_unit=kmh",
+  "retrieved_at": "2026-09-26T15:54:13.119920+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00&models=meteofrance_currents&past_days=0&timezone=GMT": {
+  "file": "om_smoc_08ddde5c71656c62a6b881b5.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C4.00%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C5.50%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C7.00%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C8.50%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00%2C10.00&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C77.50%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C79.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C76.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00&models=meteofrance_currents&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:54:13.626558+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C20.50%2C20.50&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50&models=meteofrance_currents&past_days=0&timezone=GMT": {
+  "file": "om_smoc_5085cc008f79dfe3abe739f2.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C11.50%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C13.00%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C14.50%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C16.00%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C17.50%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C19.00%2C20.50%2C20.50&longitude=64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C74.50%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C80.50%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C82.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C83.50%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50%2C67.00%2C68.50%2C70.00%2C71.50%2C73.00%2C85.00%2C86.50%2C88.00%2C89.50%2C91.00%2C92.50%2C94.00%2C64.00%2C65.50&models=meteofrance_currents&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:54:13.828154+00:00"
+ },
+ "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C22.00%2C22.00%2C22.00%2C22.00%2C22.00%2C23.50%2C23.50%2C23.50&longitude=67.00%2C68.50%2C70.00%2C71.50%2C88.00%2C89.50%2C91.00%2C92.50%2C64.00%2C65.50%2C67.00%2C68.50%2C91.00%2C64.00%2C65.50%2C67.00&models=meteofrance_currents&past_days=0&timezone=GMT": {
+  "file": "om_smoc_f3bbadcc59d6e29cdb079b71.json",
+  "source_id": "om_smoc",
+  "url": "https://marine-api.open-meteo.com/v1/marine?forecast_days=2&hourly=ocean_current_velocity%2Cocean_current_direction%2Csea_surface_temperature&latitude=20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C20.50%2C22.00%2C22.00%2C22.00%2C22.00%2C22.00%2C23.50%2C23.50%2C23.50&longitude=67.00%2C68.50%2C70.00%2C71.50%2C88.00%2C89.50%2C91.00%2C92.50%2C64.00%2C65.50%2C67.00%2C68.50%2C91.00%2C64.00%2C65.50%2C67.00&models=meteofrance_currents&past_days=0&timezone=GMT",
+  "retrieved_at": "2026-09-26T15:54:13.995289+00:00"
+ }
+}

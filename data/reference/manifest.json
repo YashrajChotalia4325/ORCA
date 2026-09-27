@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-09-26T14:13:41.308676+00:00",
+  "aoi_bbox": [
+    60.0,
+    -5.0,
+    100.0,
+    30.0
+  ],
+  "layers": {
+    "land.geojson": {
+      "source": "Natural Earth",
+      "dataset": "ne_10m_land + ne_10m_minor_islands",
+      "license": "Public domain",
+      "url": "https://www.naturalearthdata.com/",
+      "processing": "clipped to AOI, unioned, simplified 0.004 deg",
+      "retrieved_at": "2026-09-26T14:13:41.308676+00:00",
+      "features": 1,
+      "bytes": 171813
+    },
+    "eez.geojson": {
+      "source": "Marine Regions (Flanders Marine Institute, VLIZ)",
+      "dataset": "MarineRegions:eez (EEZ v12)",
+      "license": "CC-BY 4.0",
+      "url": "https://www.marineregions.org/",
+      "processing": "clipped to AOI, simplified 0.01 deg",
+      "note": "Compiled dataset; not an official legal delimitation.",
+      "retrieved_at": "2026-09-26T14:13:41.308676+00:00",
+      "features": 10,
+      "bytes": 938596
+    },
+    "maritime_boundaries.geojson": {
+      "source": "Marine Regions (Flanders Marine Institute, VLIZ)",
+      "dataset": "MarineRegions:eez_boundaries",
+      "license": "CC-BY 4.0",
+      "url": "https://www.marineregions.org/",
+      "processing": "India-related lines, clipped to AOI, simplified 0.002 deg",
+      "note": "Compiled dataset; not an official legal delimitation.",
+      "retrieved_at": "2026-09-26T14:13:41.308676+00:00",
+      "features": 32,
+      "bytes": 26323
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "orca-api",
+      "runtimeExecutable": "C:/Users/niksa/ORCA/.venv/Scripts/python.exe",
+      "runtimeArgs": ["-m", "uvicorn", "orca.main:app", "--app-dir", "C:/Users/niksa/ORCA/apps/api", "--port", "8000"],
+      "port": 8000
+    },
+    {
+      "name": "orca-web",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["--prefix", "C:/Users/niksa/ORCA/apps/web", "run", "dev"],
+      "port": 3000
+    }
+  ]
+}

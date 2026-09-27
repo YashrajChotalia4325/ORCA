@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ORCA — A Beginner's Guide</title>
+<style>
+  @page {
+    size: A4;
+    margin: 20mm 19mm 18mm 19mm;
+    @top-left { content: "ORCA — A Beginner's Guide"; font: 8pt "Segoe UI", sans-serif; color: #8a8f98; vertical-align: bottom; padding-bottom: 3mm; border-bottom: 0.4pt solid #e3e5e8; }
+    @top-right { content: ""; border-bottom: 0.4pt solid #e3e5e8; }
+    @bottom-right { content: counter(page); font: 8pt "Segoe UI", sans-serif; color: #8a8f98; }
+  }
+  @page cover { margin: 0; @top-left { content: none; border: none; } @top-right { content: none; border: none; } @bottom-right { content: none; } }
+  @page part { @top-left { content: none; border: none; } @top-right { content: none; border: none; } }
+  :root {
+    --navy: #16223d; --blue: #2b78d6; --orange: #f0683a; --green: #2e8b57; --red: #d64545; --ink: #1d232c; --ink2: #4a515c; --ink3: #7c838e;
+    --line: #e2e4e8; --paper2: #f5f5f1;
+  }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-family: "Segoe UI", "Noto Sans", sans-serif; font-size: 10.2pt; line-height: 1.52; color: var(--ink); margin: 0; background: #fff; }
+  h1, h2, h3 { font-weight: 700; color: #111722; break-after: avoid; }
+  h1.part-title { font-size: 30pt; margin: 0 0 6mm; }
+  h2 { font-size: 19pt; margin: 9mm 0 3mm; line-height: 1.2; }
+  h2.first { margin-top: 0; }
+  h3 { font-size: 12pt; margin: 6mm 0 2mm; }
+  p { margin: 0 0 2.6mm; }
+  .lead { font-size: 12pt; color: var(--ink2); line-height: 1.55; }
+  ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+  li { margin-bottom: 1.2mm; }
+  code, .mono { font-family: Consolas, "Cascadia Mono", monospace; font-size: 8.8pt; }
+  p code, li code, td code { background: #f1f2f4; padding: 0 1mm; border-radius: 2px; }
+  pre { font-family: Consolas, "Cascadia Mono", monospace; font-size: 8.1pt; line-height: 1.45; background: var(--paper2); border: 0.5pt solid var(--line); border-radius: 3px; padding: 3mm 4mm; margin: 2mm 0 4mm; white-space: pre-wrap; break-inside: avoid; color: #222; }
+  pre .c { color: #7c838e; } pre .k { color: #2a5db0; } pre .s { color: #1e7a4a; }
+  .file { break-after: avoid; font-size: 8pt; color: var(--ink3); margin: 3mm 0 -1mm; font-family: Consolas, monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 2mm 0 4mm; font-size: 9pt; break-inside: avoid; }
+  table.long { break-inside: auto; }
+  th { text-align: left; font-weight: 700; border-bottom: 0.8pt solid #9aa0a8; padding: 1.6mm 2mm; background: #f6f6f3; }
+  td { border-bottom: 0.4pt solid var(--line); padding: 1.6mm 2mm; vertical-align: top; }
+  tr { break-inside: avoid; }
+  .box { border-left: 3pt solid; padding: 2.6mm 4mm 2.2mm; margin: 3mm 0 4mm; break-inside: avoid; border-radius: 0 3px 3px 0; }
+  .box b.t { display: block; margin-bottom: 0.8mm; }
+  .box p:last-child { margin-bottom: 0; }
+  .analogy { background: #e9f1fb; border-color: var(--blue); }
+  .why { background: #fdeee6; border-color: var(--orange); }
+  .inorca { background: #e7f3ec; border-color: var(--green); }
+  .watch { background: #fbe7e7; border-color: var(--red); }
+  .key { background: #f3f3ef; border-color: #333a45; }
+  figure { margin: 4mm 0 5mm; break-inside: avoid; text-align: center; }
+  figcaption { font-size: 8.6pt; color: var(--ink2); font-style: italic; margin-top: 2mm; }
+  svg { max-width: 100%; }
+  svg text { font-family: "Segoe UI", sans-serif; }
+  .pb { break-before: page; }
+  .legend .box { padding: 1.6mm 4mm 1.4mm; margin: 1.8mm 0; }
+  .avoid { break-inside: avoid; }
+  .small { font-size: 8.6pt; color: var(--ink2); }
+
+  /* cover */
+  .cover { page: cover; height: 297mm; width: 210mm; background: var(--navy); color: #fff; position: relative; overflow: hidden; }
+  .cover .band { height: 12mm; background: var(--blue); }
+  .cover h1 { font-size: 44pt; margin: 0; color: #fff; position: absolute; top: 62mm; left: 19mm; letter-spacing: -0.5pt; }
+  .cover .sub { position: absolute; top: 84mm; left: 19mm; font-size: 15pt; color: #d9e2f2; line-height: 1.45; font-weight: 300; }
+  .cover .art { position: absolute; top: 148mm; left: 19mm; }
+  .cover .foot { position: absolute; top: 246mm; left: 19mm; font-size: 9.5pt; color: #a9b5cc; line-height: 1.55; }
+  .cover .date { position: absolute; top: 268mm; left: 19mm; font-size: 9.5pt; color: #a9b5cc; }
+
+  /* part pages */
+  .part { page: part; break-before: page; padding-top: 55mm; }
+  .part .num { font-size: 11pt; color: var(--blue); font-weight: 700; letter-spacing: 1.5pt; text-transform: uppercase; }
+  .part ol { list-style: none; padding: 0; margin-top: 8mm; border-top: 0.5pt solid var(--line); }
+  .part ol li { padding: 2mm 0; border-bottom: 0.5pt solid var(--line); margin: 0; color: var(--ink2); }
+
+  /* contents */
+  .toc h2 { margin-top: 0; }
+  .toc .p { display: flex; font-weight: 700; margin: 3.4mm 0 1.2mm; font-size: 10.3pt; }
+  .toc .c { display: flex; font-size: 9pt; margin: 0 0 0.5mm 4mm; color: var(--ink2); }
+  .toc a { color: inherit; text-decoration: none; display: flex; width: 100%; }
+  .toc .dots { flex: 1; border-bottom: 1pt dotted #b9bdc4; margin: 0 2mm 1.2mm; }
+  .toc .pg { min-width: 6mm; text-align: right; }
+
+  .stat { display: inline-block; border: 0.5pt solid var(--line); border-radius: 3px; padding: 2mm 3mm; margin: 0 2mm 2mm 0; background: #fafaf8; min-width: 30mm; }
+  .stat b { display: block; font-size: 15pt; color: var(--blue); }
+  .stat span { font-size: 8pt; color: var(--ink2); }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ COVER -->
+<section class="cover">
+  <div class="band"></div>
+  <h1>ORCA</h1>
+  <div class="sub">A beginner's guide to agentic marine intelligence:<br>designing specialised agents and orchestrating<br>them with LangGraph</div>
+  <svg class="art" width="172mm" height="70mm" viewBox="0 0 650 265">
+    <g stroke="#2d3c5e" stroke-width="2" fill="none">
+      <path d="M40 132 L150 42 M40 132 L150 92 M40 132 L150 142 M40 132 L150 192 M40 132 L150 232"/>
+      <path d="M150 42 L300 132 M150 92 L300 132 M150 142 L300 132 M150 192 L300 132 M150 232 L300 132"/>
+      <path d="M300 132 L400 132 L490 132 M490 132 L590 92 M490 132 L590 172"/>
+      <path d="M490 172 C 470 250, 330 250, 300 172" stroke="#f0683a" stroke-dasharray="5 5"/>
+    </g>
+    <g fill="#2b78d6">
+      <circle cx="40" cy="132" r="11"/>
+      <circle cx="150" cy="42" r="9"/><circle cx="150" cy="92" r="9"/><circle cx="150" cy="142" r="9"/><circle cx="150" cy="192" r="9"/><circle cx="150" cy="232" r="9"/>
+      <circle cx="300" cy="132" r="11"/><circle cx="400" cy="132" r="9"/><circle cx="490" cy="132" r="9"/>
+      <circle cx="590" cy="92" r="9"/><circle cx="590" cy="172" r="9"/>
+    </g>
+    <circle cx="300" cy="132" r="17" fill="none" stroke="#f0683a" stroke-width="2"/>
+    <g fill="#223152"><rect x="0" y="258" width="650" height="6" rx="3"/></g>
+    <g fill="#2b78d6" opacity=".55"><rect x="0" y="258" width="210" height="6" rx="3"/></g>
+  </svg>
+  <div class="foot">What the project does, how its thirteen agents were designed,<br>how LangGraph runs them, and why each part exists —<br>explained from zero, no AI or ocean-science background needed.</div>
+  <div class="date">Smart India Hackathon · problem statement SIH26176 · September 2026</div>
+</section>
+
+<!-- ============================================================ CONTENTS -->
+<section class="toc pb">
+  <h2>Contents</h2>
+  <div class="p"><a href="#read">How to read this guide<span class="dots"></span><span class="pg" data-t="read"></span></a></div>
+
+  <div class="p"><a href="#part1">Part 1 — Foundations from zero<span class="dots"></span><span class="pg" data-t="part1"></span></a></div>
+  <div class="c"><a href="#s1">1. The problem ORCA solves<span class="dots"></span><span class="pg" data-t="s1"></span></a></div>
+  <div class="c"><a href="#s2">2. Ocean data in ten minutes<span class="dots"></span><span class="pg" data-t="s2"></span></a></div>
+  <div class="c"><a href="#s3">3. What an AI agent is<span class="dots"></span><span class="pg" data-t="s3"></span></a></div>
+  <div class="c"><a href="#s4">4. From one agent to many: the blackboard<span class="dots"></span><span class="pg" data-t="s4"></span></a></div>
+  <div class="c"><a href="#s5">5. LangGraph from zero<span class="dots"></span><span class="pg" data-t="s5"></span></a></div>
+
+  <div class="p"><a href="#part2">Part 2 — Designing the agents<span class="dots"></span><span class="pg" data-t="part2"></span></a></div>
+  <div class="c"><a href="#s6">6. Seven design principles<span class="dots"></span><span class="pg" data-t="s6"></span></a></div>
+  <div class="c"><a href="#s7">7. The agent contract<span class="dots"></span><span class="pg" data-t="s7"></span></a></div>
+  <div class="c"><a href="#s8">8. The thirteen agents<span class="dots"></span><span class="pg" data-t="s8"></span></a></div>
+  <div class="c"><a href="#s9">9. The planner: from a sentence to a task graph<span class="dots"></span><span class="pg" data-t="s9"></span></a></div>
+  <div class="c"><a href="#s10">10. Re-planning: agents that change their mind<span class="dots"></span><span class="pg" data-t="s10"></span></a></div>
+  <div class="c"><a href="#s11">11. Evidence, confidence and conflicts<span class="dots"></span><span class="pg" data-t="s11"></span></a></div>
+  <div class="c"><a href="#s12">12. Designing for failure<span class="dots"></span><span class="pg" data-t="s12"></span></a></div>
+
+  <div class="p"><a href="#part3">Part 3 — Orchestrating with LangGraph<span class="dots"></span><span class="pg" data-t="part3"></span></a></div>
+  <div class="c"><a href="#s13">13. Why LangGraph, and what it replaced<span class="dots"></span><span class="pg" data-t="s13"></span></a></div>
+  <div class="c"><a href="#s14">14. The graph state and the runtime context<span class="dots"></span><span class="pg" data-t="s14"></span></a></div>
+  <div class="c"><a href="#s15">15. The nodes<span class="dots"></span><span class="pg" data-t="s15"></span></a></div>
+  <div class="c"><a href="#s16">16. Dynamic fan-out with Send<span class="dots"></span><span class="pg" data-t="s16"></span></a></div>
+  <div class="c"><a href="#s17">17. Conditional edges and the re-plan loop<span class="dots"></span><span class="pg" data-t="s17"></span></a></div>
+  <div class="c"><a href="#s18">18. One real run, superstep by superstep<span class="dots"></span><span class="pg" data-t="s18"></span></a></div>
+  <div class="c"><a href="#s19">19. Streaming the graph to the screen<span class="dots"></span><span class="pg" data-t="s19"></span></a></div>
+  <div class="c"><a href="#s20">20. Testing the graph<span class="dots"></span><span class="pg" data-t="s20"></span></a></div>
+
+  <div class="p"><a href="#part4">Part 4 — The rest of the system<span class="dots"></span><span class="pg" data-t="part4"></span></a></div>
+  <div class="c"><a href="#s21">21. The big picture<span class="dots"></span><span class="pg" data-t="s21"></span></a></div>
+  <div class="c"><a href="#s22">22. Data connectors and the three modes<span class="dots"></span><span class="pg" data-t="s22"></span></a></div>
+  <div class="c"><a href="#s23">23. The deterministic core<span class="dots"></span><span class="pg" data-t="s23"></span></a></div>
+  <div class="c"><a href="#s24">24. Where the LLM is allowed, and its guard<span class="dots"></span><span class="pg" data-t="s24"></span></a></div>
+  <div class="c"><a href="#s25">25. The API and the mission-control console<span class="dots"></span><span class="pg" data-t="s25"></span></a></div>
+  <div class="c"><a href="#s26">26. Evaluation: how we know it works<span class="dots"></span><span class="pg" data-t="s26"></span></a></div>
+  <div class="c"><a href="#s27">27. How it was built<span class="dots"></span><span class="pg" data-t="s27"></span></a></div>
+
+  <div class="p"><a href="#part5">Part 5 — Using it, and reference<span class="dots"></span><span class="pg" data-t="part5"></span></a></div>
+  <div class="c"><a href="#s28">28. Setting it up<span class="dots"></span><span class="pg" data-t="s28"></span></a></div>
+  <div class="c"><a href="#s29">29. A guided demonstration<span class="dots"></span><span class="pg" data-t="s29"></span></a></div>
+  <div class="c"><a href="#s30">30. Limitations<span class="dots"></span><span class="pg" data-t="s30"></span></a></div>
+  <div class="c"><a href="#s31">31. Future improvements<span class="dots"></span><span class="pg" data-t="s31"></span></a></div>
+  <div class="c"><a href="#s32">32. Glossary<span class="dots"></span><span class="pg" data-t="s32"></span></a></div>
+  <div class="c"><a href="#s33">33. Code map and command cheat sheet<span class="dots"></span><span class="pg" data-t="s33"></span></a></div>
+  <div class="c"><a href="#s34">34. What you now understand<span class="dots"></span><span class="pg" data-t="s34"></span></a></div>
+</section>
+
+<!-- ============================================================ HOW TO READ -->
+<section class="pb legend">
+  <h2 id="read" class="first">How to read this guide</h2>
+  <p class="lead">This guide explains ORCA, a working prototype that answers questions about the sea around India. For example: "Is it safe for a fishing boat to leave Kochi tomorrow at 5 AM?" It answers by sending thirteen specialised software agents to gather official ocean and weather data, check each other's work, and agree on a decision whose evidence you can inspect. You don't need any background in artificial intelligence or oceanography to follow it.</p>
+  <p>Most of the guide is about the <b>agents</b>: how each one was designed, how they share information without talking to each other in free text, and how <b>LangGraph</b> (an open-source library for building agent workflows as graphs) schedules them, runs them in parallel and loops back when the evidence is not good enough.</p>
+  <p>The guide has five parts:</p>
+  <ul>
+    <li><b>Part 1 — Foundations from zero.</b> The problem, the minimum you need to know about ocean data, what an agent is, why many agents need a shared "blackboard", and the LangGraph vocabulary.</li>
+    <li><b>Part 2 — Designing the agents.</b> The design principles, the contract every agent obeys, all thirteen agents one by one, the planner, re-planning, evidence and failure handling.</li>
+    <li><b>Part 3 — Orchestrating with LangGraph.</b> The real graph in <code>apps/api/orca/graph.py</code>: state, nodes, <code>Send</code> fan-out, conditional edges, and one real run traced superstep by superstep.</li>
+    <li><b>Part 4 — The rest of the system.</b> Data connectors, the three data modes, the deterministic risk and confidence models, the optional LLM, the API, the map console, evaluation, and how the project was built.</li>
+    <li><b>Part 5 — Using it, and reference.</b> Setup, a guided demo, limitations, future work, a glossary and a code map.</li>
+  </ul>
+  <p>Throughout the guide you'll see coloured boxes:</p>
+  <div class="box analogy"><b class="t">Everyday analogy</b><p>Compares a technical idea to something from everyday life.</p></div>
+  <div class="box why"><b class="t">Why this matters</b><p>Explains what would go wrong without this idea.</p></div>
+  <div class="box inorca"><b class="t">In ORCA</b><p>Points to where the idea lives in the ORCA code.</p></div>
+  <div class="box watch"><b class="t">Watch out</b><p>A common mistake or a limitation to keep in mind.</p></div>
+  <div class="box key"><b class="t">Key idea</b><p>The one sentence to remember from a section.</p></div>
+  <p>Code snippets are short excerpts from the real project files; the file path is printed above each one. Numbers from example runs come from ORCA's deterministic DEMO mode, so you get the same decisions if you re-run them. Timings will differ slightly on your machine.</p>
+</section>
+
+<!-- ============================================================ PART 1 -->
+<section class="part" id="part1">
+  <div class="num">Part 1</div>
+  <h1 class="part-title">Foundations from zero</h1>
+  <p class="lead">Before looking at any code we need four ideas: what problem ORCA solves, what ocean data looks like, what an "agent" is, and how a group of agents can cooperate. The last section introduces LangGraph, the library that runs ORCA's agents.</p>
+  <ol><li>1. The problem ORCA solves</li><li>2. Ocean data in ten minutes</li><li>3. What an AI agent is</li><li>4. From one agent to many: the blackboard</li><li>5. LangGraph from zero</li></ol>
+</section>
+
+<section class="pb">
+  <h2 id="s1" class="first">1. The problem ORCA solves</h2>
+  <p>India has more than 11,000 km of coastline and several million people who depend on fishing. Every morning, a fisherman in Kochi or Visakhapatnam has to decide whether it is safe to go out. A coast-guard officer has to decide whether to warn a district. A researcher wants to know why chlorophyll fell off Kerala last fortnight.</p>
+  <p>The information to answer these questions exists, but it is scattered:</p>
+  <table>
+    <tr><th style="width:32%">Information</th><th>Who publishes it</th></tr>
+    <tr><td>Wave and swell forecasts</td><td>Several global ocean models (Météo-France MFWAM, ECMWF WAM, NOAA GFS-Wave, DWD GWAM), each slightly different</td></tr>
+    <tr><td>Wind, gusts, rain, thunderstorm potential</td><td>Weather models (ECMWF IFS, NOAA GFS, DWD ICON, UK Met Office)</td></tr>
+    <tr><td>Sea temperature, chlorophyll from space</td><td>Satellites, via NOAA CoastWatch and NASA</td></tr>
+    <tr><td>Cyclone tracks</td><td>GDACS (a UN / European Commission alert system)</td></tr>
+    <tr><td>Official Indian warnings</td><td>IMD (weather), INCOIS (ocean state, fishing zones). Not openly machine-readable today.</td></tr>
+    <tr><td>Where you may and may not go</td><td>Exclusive economic zones, marine protected areas, international boundaries</td></tr>
+  </table>
+  <p>Problem statement <b>SIH26176</b> asks for an "agentic" system: software that plans its own work, fetches real data, reasons over it and explains itself. ORCA is our answer. You ask a question in English or one of seven other Indian languages. ORCA gives a decision (<b>GO</b>, <b>CAUTION</b>, <b>DON'T GO</b> or <b>NO RELIABLE ASSESSMENT</b>) with the reasons, the sources, a confidence number, a map, and a full trace of what every agent did.</p>
+
+  <figure>
+    <svg width="640" height="120" viewBox="0 0 640 120">
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#7c838e"/></marker></defs>
+      <g font-size="11">
+        <rect x="4" y="30" width="120" height="58" rx="6" fill="#e9f1fb" stroke="#2b78d6"/><text x="64" y="55" text-anchor="middle" font-weight="700">Question</text><text x="64" y="72" text-anchor="middle" fill="#4a515c">any of 8 languages</text>
+        <rect x="160" y="30" width="140" height="58" rx="6" fill="#fff" stroke="#16223d"/><text x="230" y="55" text-anchor="middle" font-weight="700">13 agents</text><text x="230" y="72" text-anchor="middle" fill="#4a515c">plan · fetch · reason</text>
+        <rect x="336" y="30" width="140" height="58" rx="6" fill="#fff" stroke="#16223d"/><text x="406" y="55" text-anchor="middle" font-weight="700">Verification</text><text x="406" y="72" text-anchor="middle" fill="#4a515c">evidence · conflicts</text>
+        <rect x="512" y="30" width="124" height="58" rx="6" fill="#e7f3ec" stroke="#2e8b57"/><text x="574" y="55" text-anchor="middle" font-weight="700">Decision</text><text x="574" y="72" text-anchor="middle" fill="#4a515c">+ reasons, map, trace</text>
+        <path d="M124 59 H156 M300 59 H332 M476 59 H508" stroke="#7c838e" stroke-width="1.5" marker-end="url(#ar)"/>
+        <text x="230" y="110" text-anchor="middle" fill="#7c838e" font-size="10">live official data sources</text>
+        <path d="M230 102 V92" stroke="#7c838e" stroke-dasharray="3 3"/>
+      </g>
+    </svg>
+    <figcaption>Figure 1 — What ORCA does, in one line.</figcaption>
+  </figure>
+
+  <div class="box why"><b class="t">Why this matters</b><p>A wrong "it's safe" can cost a life. So ORCA must never invent a number, never present simulated data as real, and never say "conditions appear safe" when the data needed to judge is missing. Most design decisions in this guide follow from that one requirement.</p></div>
+
+  <h2 id="s2">2. Ocean data in ten minutes</h2>
+  <p>You need five ideas about ocean data to follow the rest of the guide.</p>
+  <p><b>1. Forecasts come from models.</b> A forecast model is a large physics simulation run by a national weather agency several times a day. Each run produces values on a grid (for example every 0.25°, about 28 km) for every hour of the next few days. Different agencies' models disagree, sometimes a lot.</p>
+  <p><b>2. Observations come from satellites and are late.</b> A satellite map of sea-surface temperature (SST) or chlorophyll describes the past, usually one or two days ago, and has gaps under clouds.</p>
+  <p><b>3. Every number has a place and a time.</b> "2.4 m waves" means nothing without <i>where</i> (which grid cell, how far from the boat) and <i>when</i> (which hour, from which model run). ORCA keeps both for every value.</p>
+  <p><b>4. Data goes stale.</b> A forecast from a model run 30 hours ago is worse than one from 3 hours ago. ORCA labels each datum as <b>LIVE</b>, <b>RECENT</b>, <b>STALE</b> or <b>UNAVAILABLE</b>, and labels recorded or synthetic data as <b>REPLAY</b> or <b>SIMULATED</b>, never as LIVE.</p>
+  <p><b>5. Safety thresholds depend on the boat.</b> 2 m waves are routine for a cargo ship and dangerous for a small fishing boat. ORCA's risk model has separate thresholds for small craft, mechanised boats and large vessels.</p>
+
+  <figure>
+    <svg width="620" height="120" viewBox="0 0 620 120">
+      <g font-size="10.5">
+        <rect x="40" y="40" width="165" height="22" fill="#e7f3ec"/><rect x="205" y="40" width="165" height="22" fill="#fdf1d9"/><rect x="370" y="40" width="210" height="22" fill="#fbe0e0"/>
+        <text x="122" y="55" text-anchor="middle" fill="#2e8b57">below caution</text><text x="287" y="55" text-anchor="middle" fill="#a86a00">CAUTION ≥ 1.5 m</text><text x="475" y="55" text-anchor="middle" fill="#c03535">DANGER ≥ 2.5 m</text>
+        <g stroke="#9aa0a8"><path d="M40 70 V76 M205 70 V76 M370 70 V76 M580 70 V76"/></g>
+        <text x="40" y="90" text-anchor="middle" fill="#7c838e">0.5 m</text><text x="205" y="90" text-anchor="middle" fill="#7c838e">1.5 m</text><text x="370" y="90" text-anchor="middle" fill="#7c838e">2.5 m</text><text x="580" y="90" text-anchor="middle" fill="#7c838e">3.8 m</text>
+        <circle cx="172" cy="51" r="6" fill="#2b78d6"/><text x="172" y="28" text-anchor="middle" fill="#2b78d6">lowest model 1.3 m</text>
+        <circle cx="360" cy="51" r="6" fill="#f0683a"/><text x="360" y="28" text-anchor="middle" fill="#f0683a">MFWAM 2.44 m</text>
+        <path d="M172 51 H360" stroke="#16223d" stroke-width="1.2" stroke-dasharray="3 3"/>
+        <text x="266" y="112" text-anchor="middle" fill="#4a515c">spread 1.14 m: models straddle two risk levels</text>
+      </g>
+    </svg>
+    <figcaption>Figure 2 — Wave models disagreeing 25 km off Chennai (DEMO scenario <code>conflicting_sources</code>, small-craft thresholds).</figcaption>
+  </figure>
+  <div class="box analogy"><b class="t">Everyday analogy</b><p>Asking four weather apps and getting four answers is normal. A careful person doesn't average them. They take the worst plausible one seriously and note that the apps disagreed. ORCA does exactly that: the worst-case value decides, and the disagreement lowers the confidence and triggers a tie-breaker.</p></div>
+
+  <h2 id="s3">3. What an AI agent is</h2>
+  <p>A <b>large language model</b> (LLM) such as Claude reads text and writes text. On its own it can't look anything up, and it sometimes states numbers that are fluent but wrong (a "hallucination"). An <b>agent</b> is a program that wraps a decision-maker in a loop with <b>tools</b>: it decides what to do next, calls a tool (an API, a calculation), looks at the result, and repeats until it can answer.</p>
+  <figure>
+    <svg width="600" height="150" viewBox="0 0 600 150">
+      <defs><marker id="ar2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#7c838e"/></marker></defs>
+      <g font-size="11">
+        <rect x="20" y="50" width="110" height="46" rx="6" fill="#e9f1fb" stroke="#2b78d6"/><text x="75" y="78" text-anchor="middle" font-weight="700">Goal / task</text>
+        <rect x="190" y="50" width="120" height="46" rx="6" fill="#fff" stroke="#16223d"/><text x="250" y="72" text-anchor="middle" font-weight="700">Decide</text><text x="250" y="87" text-anchor="middle" font-size="9.5" fill="#4a515c">what to do next</text>
+        <rect x="370" y="50" width="100" height="46" rx="6" fill="#fff" stroke="#16223d"/><text x="420" y="72" text-anchor="middle" font-weight="700">Act</text><text x="420" y="87" text-anchor="middle" font-size="9.5" fill="#4a515c">call a tool</text>
+        <rect x="490" y="50" width="100" height="46" rx="6" fill="#e7f3ec" stroke="#2e8b57"/><text x="540" y="78" text-anchor="middle" font-weight="700">Result</text>
+        <path d="M130 73 H186 M310 73 H366 M470 73 H486" stroke="#7c838e" stroke-width="1.5" marker-end="url(#ar2)"/>
+        <path d="M420 96 C 420 138, 250 138, 250 100" stroke="#f0683a" stroke-width="1.5" fill="none" marker-end="url(#ar2)"/>
+        <text x="335" y="143" text-anchor="middle" fill="#f0683a" font-size="10">observe the result, loop</text>
+      </g>
+    </svg>
+    <figcaption>Figure 3 — The agent loop: decide, act with a tool, observe, repeat.</figcaption>
+  </figure>
+  <p>Here is the most important design choice in ORCA: <b>the "decide" step does not have to be an LLM.</b> In ORCA, eleven of the thirteen agents decide with deterministic code (explicit rules, formulas and geometry), because a safety decision has to be reproducible and explainable. An LLM is allowed in exactly two places: understanding an unusual question (only when the rule-based parser is unsure), and rephrasing an answer that has already been computed. Even then a guard checks every number (section 24).</p>
+  <div class="box key"><b class="t">Key idea</b><p>"Agentic" describes the structure: planning, tool use, self-checking and re-planning. It doesn't require an LLM in every step. ORCA is agentic in structure and deterministic where safety is at stake.</p></div>
+
+  <h2 id="s4">4. From one agent to many: the blackboard</h2>
+  <p>One agent that does everything (parsing, geography, ocean data, weather, satellites, risk, routing, translation) would be a huge and fragile program. So ORCA uses <b>specialised agents</b>, each an expert in one thing. That raises a question: how do experts cooperate?</p>
+  <p>The simplest answer is to let them chat: the ocean agent writes a paragraph, the risk agent reads it. That breaks immediately. Numbers get rounded, units get lost, and nobody can check which paragraph a decision came from. ORCA uses the classic <b>blackboard</b> pattern instead:</p>
+  <figure>
+    <svg width="640" height="190" viewBox="0 0 640 190">
+      <g font-size="10.5">
+        <rect x="150" y="60" width="340" height="70" rx="6" fill="#16223d"/>
+        <text x="320" y="85" text-anchor="middle" fill="#fff" font-weight="700" font-size="12">BLACKBOARD (one per question, typed)</text>
+        <text x="320" y="104" text-anchor="middle" fill="#c8d3e8">understanding · plan · outputs{agent → typed data} · evidence</text>
+        <text x="320" y="119" text-anchor="middle" fill="#c8d3e8">claims · conflicts · failures · risk · route · alerts · events</text>
+        <g fill="#fff" stroke="#2b78d6">
+          <rect x="10" y="10" width="110" height="34" rx="5"/><rect x="10" y="78" width="110" height="34" rx="5"/><rect x="10" y="146" width="110" height="34" rx="5"/>
+          <rect x="520" y="10" width="110" height="34" rx="5"/><rect x="520" y="78" width="110" height="34" rx="5"/><rect x="520" y="146" width="110" height="34" rx="5"/>
+        </g>
+        <g text-anchor="middle"><text x="65" y="31">Geospatial</text><text x="65" y="99">Oceanography</text><text x="65" y="167">Weather</text>
+        <text x="575" y="31">Hazard &amp; Risk</text><text x="575" y="99">Evidence</text><text x="575" y="167">Communication</text></g>
+        <g stroke="#2b78d6" stroke-width="1.3"><path d="M120 27 L150 70 M120 95 H150 M120 163 L150 120"/><path d="M490 70 L520 27 M490 95 H520 M490 120 L520 163"/></g>
+        <text x="135" y="140" fill="#2b78d6" font-size="9" text-anchor="middle">write</text><text x="505" y="140" fill="#2b78d6" font-size="9" text-anchor="middle">read</text>
+      </g>
+    </svg>
+    <figcaption>Figure 4 — Agents never talk to each other. They read and write typed data on a shared blackboard.</figcaption>
+  </figure>
+  <div class="box analogy"><b class="t">Everyday analogy</b><p>Think of a hospital patient chart. The radiologist doesn't phone the surgeon with a story. They write the scan result in a fixed field of the chart, and the surgeon reads it there. Anyone can later audit who wrote what and when.</p></div>
+  <p>The blackboard is a Pydantic model (Pydantic is a Python library for typed, validated data). Every agent's output is also a Pydantic model with a published JSON schema, so "what the ocean agent said" is a structured object with units, sources and timestamps, not a paragraph.</p>
+  <div class="box inorca"><b class="t">In ORCA</b><p>The blackboard is <code>Blackboard</code> in <code>apps/api/orca/core/schemas/blackboard.py</code>. The per-query wrapper that agents receive is <code>RunState</code> in <code>apps/api/orca/agents/base.py</code>. The typed output schemas of all agents are served live at <code>GET /api/agents</code>.</p></div>
+  <p>The blackboard settles <i>how</i> agents share data. We still need something that decides <i>who runs when</i>: in which order, which in parallel, and what happens when one fails or the evidence is weak. That is the <b>orchestrator</b>, and in ORCA it is built with LangGraph.</p>
+
+  <h2 id="s5">5. LangGraph from zero</h2>
+  <p><b>LangGraph</b> is an open-source Python library for building agent workflows as <b>graphs</b>. ORCA uses version 1.2. You need eight words:</p>
+  <table>
+    <tr><th style="width:24%">Word</th><th>Meaning</th></tr>
+    <tr><td><b>State</b></td><td>A typed dictionary that flows through the graph. Every node receives it and returns an update to it.</td></tr>
+    <tr><td><b>Node</b></td><td>A function (usually async) that does one step of work. In ORCA each agent is a node.</td></tr>
+    <tr><td><b>Edge</b></td><td>"After node A, run node B."</td></tr>
+    <tr><td><b>Conditional edge</b></td><td>A small routing function that looks at the state and returns where to go next. This is how graphs make decisions and loop.</td></tr>
+    <tr><td><b>Reducer</b></td><td>A rule for merging updates to the same state key, e.g. <code>operator.add</code> concatenates lists. Needed when parallel nodes write the same key.</td></tr>
+    <tr><td><b>Send</b></td><td>A special return value of a routing function: "run node X with this payload". Returning several <code>Send</code>s fans out work in parallel, even to the same node several times.</td></tr>
+    <tr><td><b>Superstep</b></td><td>One tick of the graph. All nodes scheduled for the tick run concurrently, and the next tick starts only when all of them have finished.</td></tr>
+    <tr><td><b>Runtime context</b></td><td>Per-run objects (connections, clocks, big data) passed to every node alongside the state, but not part of it.</td></tr>
+  </table>
+  <figure>
+    <svg width="600" height="150" viewBox="0 0 600 150">
+      <defs><marker id="ar3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#7c838e"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <ellipse cx="40" cy="70" rx="32" ry="16" fill="#f3f3ef" stroke="#7c838e"/><text x="40" y="74">START</text>
+        <rect x="100" y="52" width="80" height="36" rx="6" fill="#fff" stroke="#16223d"/><text x="140" y="74">node A</text>
+        <path d="M72 70 H96 M180 70 H214" stroke="#7c838e" stroke-width="1.3" marker-end="url(#ar3)"/>
+        <polygon points="250,50 285,70 250,90 215,70" fill="#fdeee6" stroke="#f0683a"/><text x="250" y="74" font-size="9">route?</text>
+        <rect x="330" y="10" width="80" height="34" rx="6" fill="#fff" stroke="#2b78d6"/><text x="370" y="31">B (Send)</text>
+        <rect x="330" y="53" width="80" height="34" rx="6" fill="#fff" stroke="#2b78d6"/><text x="370" y="74">B (Send)</text>
+        <rect x="330" y="96" width="80" height="34" rx="6" fill="#fff" stroke="#2b78d6"/><text x="370" y="117">C (Send)</text>
+        <path d="M285 70 L326 27 M285 70 H326 M285 70 L326 113" stroke="#2b78d6" stroke-width="1.3" marker-end="url(#ar3)"/>
+        <rect x="450" y="52" width="70" height="36" rx="6" fill="#fff" stroke="#16223d"/><text x="485" y="74">join</text>
+        <path d="M410 27 L446 64 M410 70 H446 M410 113 L446 78" stroke="#7c838e" stroke-width="1.3" marker-end="url(#ar3)"/>
+        <ellipse cx="565" cy="70" rx="30" ry="16" fill="#f3f3ef" stroke="#7c838e"/><text x="565" y="74">END</text>
+        <path d="M520 70 H531" stroke="#7c838e" stroke-width="1.3" marker-end="url(#ar3)"/>
+        <path d="M485 88 C 485 146, 250 146, 250 94" stroke="#f0683a" stroke-width="1.3" fill="none" stroke-dasharray="4 3" marker-end="url(#ar3)"/>
+        <text x="370" y="146" fill="#f0683a" font-size="9.5">loop back while there is work</text>
+      </g>
+    </svg>
+    <figcaption>Figure 5 — The LangGraph vocabulary in one picture: a conditional edge fans out three Sends in one superstep; join waits for all of them.</figcaption>
+  </figure>
+  <p>You write the graph once (add nodes, add edges), call <code>compile()</code>, and then invoke the compiled graph as many times as you like. LangGraph handles the scheduling, parallelism, merging of state updates, and loop limits (the "recursion limit").</p>
+  <div class="box why"><b class="t">Why this matters</b><p>Without a graph library you write the scheduler yourself: find ready tasks, start them together, wait, merge results, check for loops, guard against infinite re-planning. ORCA's first version did exactly that by hand (section 13). A graph library turns that code into a declared structure that can be drawn, tested and reasoned about.</p></div>
+</section>
+
+<!-- ============================================================ PART 2 -->
+<section class="part" id="part2">
+  <div class="num">Part 2</div>
+  <h1 class="part-title">Designing the agents</h1>
+  <p class="lead">This is the heart of ORCA. Each agent was designed as a small expert with a fixed contract: what it reads, which tools it may use, what typed result it must return, and how it fails. This part explains those decisions agent by agent.</p>
+  <ol><li>6. Seven design principles</li><li>7. The agent contract</li><li>8. The thirteen agents</li><li>9. The planner: from a sentence to a task graph</li><li>10. Re-planning: agents that change their mind</li><li>11. Evidence, confidence and conflicts</li><li>12. Designing for failure</li></ol>
+</section>
+
+<section class="pb">
+  <h2 id="s6" class="first">6. Seven design principles</h2>
+  <p>Before writing any agent we fixed seven rules. Every agent in ORCA follows all of them, and most of the bugs found during development were violations of one of them.</p>
+  <table>
+    <tr><th style="width:4%">#</th><th style="width:30%">Principle</th><th>What it means in practice</th></tr>
+    <tr><td>1</td><td><b>One responsibility per agent</b></td><td>The weather agent fetches weather. It doesn't judge risk. The hazard agent judges risk. It doesn't fetch anything.</td></tr>
+    <tr><td>2</td><td><b>Typed outputs, never free text</b></td><td>Every agent returns a Pydantic model. Downstream agents read fields, not sentences.</td></tr>
+    <tr><td>3</td><td><b>Deterministic where it matters</b></td><td>Risk, confidence, geometry, routing and statistics are formulas with published parameters. Same input, same answer.</td></tr>
+    <tr><td>4</td><td><b>The LLM stays at the edges</b></td><td>Only interpretation fallback and final wording. Its output is validated against the gazetteer or checked number by number.</td></tr>
+    <tr><td>5</td><td><b>Every claim carries evidence</b></td><td>Every value keeps its source, product time, retrieval time, location and freshness, all the way to the screen.</td></tr>
+    <tr><td>6</td><td><b>Failure is a result, not a crash</b></td><td>A failed source or agent is recorded and reported. The pipeline continues and says what is missing.</td></tr>
+    <tr><td>7</td><td><b>Same agents in every mode</b></td><td>LIVE, REPLAY and DEMO differ only in where bytes come from. The agents can't tell and don't need to.</td></tr>
+  </table>
+  <div class="box key"><b class="t">Key idea</b><p>An agent is not "a prompt". In ORCA an agent is a Python class with a name, a declared list of tools, a declared list of inputs it consumes, a typed output model, a timeout, and one <code>run()</code> method.</p></div>
+
+  <h2 id="s7">7. The agent contract</h2>
+  <p>All agents inherit from one abstract base class. This is the whole contract:</p>
+  <div class="file">apps/api/orca/agents/base.py</div>
+<pre><span class="k">class</span> Agent(ABC):
+    name: ClassVar[str]
+    title: ClassVar[str]
+    responsibility: ClassVar[str]
+    tools: ClassVar[list[str]]
+    consumes: ClassVar[list[str]] = []
+    output_model: ClassVar[Optional[type[BaseModel]]] = None
+    deterministic: ClassVar[bool] = True       <span class="c"># False only where an LLM may participate</span>
+    timeout_s: ClassVar[float] = 90.0
+
+    @abstractmethod
+    <span class="k">async def</span> run(self, task: PlanTask, st: RunState) -&gt; AgentOutcome: ...</pre>
+  <p>And this is what every <code>run()</code> must return:</p>
+  <div class="file">apps/api/orca/agents/base.py</div>
+<pre>@dataclass
+<span class="k">class</span> AgentOutcome:
+    status: AgentStatus                         <span class="c"># SUCCEEDED | PARTIAL | FAILED</span>
+    summary: str
+    output: Optional[BaseModel] = None          <span class="c"># serialisable typed output (goes on the blackboard)</span>
+    typed: Any = None                           <span class="c"># in-memory rich objects for downstream agents</span>
+    confidence: Optional[float] = None
+    sources: list[str] = field(default_factory=list)
+    tools: list[str] = field(default_factory=list)
+    failures: list[SourceFailure] = field(default_factory=list)
+    warnings: list[str] = field(default_factory=list)</pre>
+  <p>Three details in this contract are deliberate:</p>
+  <ol>
+    <li><b>Two kinds of output.</b> <code>output</code> is a small, JSON-serialisable summary that is stored and shown in the UI. <code>typed</code> is for large in-memory objects (full hourly series for every model at every sample point, forecast grids) that downstream agents need but that would bloat the stored trace.</li>
+    <li><b>PARTIAL is a real status.</b> If two of three wave models answer, the ocean agent succeeds <i>partially</i>. The distinction feeds the confidence model and the "excluded sources" list.</li>
+    <li><b>Failures are data.</b> A <code>SourceFailure</code> records which source failed, how (timeout, HTTP 404, not configured, IP not whitelisted) and when. They are merged into <code>blackboard.failures</code> and shown to the user.</li>
+  </ol>
+  <p>Here is how a concrete agent fills in the declarations:</p>
+  <div class="file">apps/api/orca/agents/ocean.py</div>
+<pre><span class="k">class</span> OceanAgent(Agent):
+    name = <span class="s">"ocean"</span>
+    title = <span class="s">"Oceanography Agent"</span>
+    responsibility = <span class="s">"Waves, swell, currents and model SST from multiple independent ocean models, ..."</span>
+    tools = [<span class="s">"om_mfwam.points"</span>, <span class="s">"om_ecmwf_wam.points"</span>, <span class="s">"om_gfs_wave.points"</span>, <span class="s">"om_smoc.points"</span>,
+             <span class="s">"om_dwd_gwam.points (tie-breaker)"</span>, <span class="s">"openmeteo.run_info"</span>]
+    consumes = [<span class="s">"geospatial"</span>]
+    output_model = RetrievalOutput
+
+    <span class="k">async def</span> run(self, task, st):
+        geo = st.typed.get(<span class="s">"geospatial"</span>)                 <span class="c"># read upstream typed output</span>
+        tiebreak = task.params.get(<span class="s">"tiebreaker"</span>, False)   <span class="c"># set by re-planning rule RP1/RP2</span>
+        wave_models = reg.tiebreaker(<span class="s">"marine"</span>) <span class="k">if</span> tiebreak <span class="k">else</span> reg.wave_models()
+        ...</pre>
+  <div class="box inorca"><b class="t">In ORCA</b><p><code>consumes</code> is not just documentation. The planner uses the same dependency names to build the task graph, the Agents page draws them as edges, and a test checks that agents only run after what they consume.</p></div>
+  <div class="box watch"><b class="t">Watch out</b><p>An early version of the geospatial agent returned its typed output but forgot to put it in <code>st.typed</code>, so every downstream agent silently saw "no sample points". The fix was one line (<code>st.typed[self.name] = out</code>). The lesson: the contract must be checked by tests, not by memory.</p></div>
+
+  <h2 id="s8">8. The thirteen agents</h2>
+  <p>The agents fall into four layers: understanding and planning, retrieval, reasoning, and output.</p>
+  <figure>
+    <svg width="660" height="230" viewBox="0 0 660 230">
+      <g font-size="10.5" text-anchor="middle">
+        <text x="10" y="30" text-anchor="start" font-weight="700" fill="#2b78d6" font-size="10">UNDERSTAND &amp; PLAN</text>
+        <rect x="160" y="12" width="330" height="30" rx="5" fill="#e9f1fb" stroke="#2b78d6"/><text x="325" y="32">1 · Planner / Orchestrator (understand · plan · review)</text>
+        <text x="10" y="80" text-anchor="start" font-weight="700" fill="#2b78d6" font-size="10">CONTEXT</text>
+        <rect x="160" y="62" width="330" height="30" rx="5" fill="#fff" stroke="#16223d"/><text x="325" y="82">6 · Geospatial &amp; Boundary</text>
+        <text x="10" y="130" text-anchor="start" font-weight="700" fill="#2b78d6" font-size="10">RETRIEVAL</text>
+        <g fill="#fff" stroke="#16223d"><rect x="100" y="112" width="100" height="30" rx="5"/><rect x="210" y="112" width="100" height="30" rx="5"/><rect x="320" y="112" width="100" height="30" rx="5"/><rect x="430" y="112" width="100" height="30" rx="5"/><rect x="540" y="112" width="110" height="30" rx="5"/></g>
+        <text x="150" y="132">3 · Ocean</text><text x="260" y="132">4 · Weather</text><text x="370" y="132">2 · Satellite</text><text x="480" y="132">11 · Advisory</text><text x="595" y="132">5 · Fisheries</text>
+        <text x="10" y="180" text-anchor="start" font-weight="700" fill="#2b78d6" font-size="10">REASONING</text>
+        <g fill="#fff" stroke="#16223d"><rect x="100" y="162" width="120" height="30" rx="5"/><rect x="230" y="162" width="100" height="30" rx="5"/><rect x="340" y="162" width="120" height="30" rx="5"/><rect x="470" y="162" width="180" height="30" rx="5"/></g>
+        <text x="160" y="182">7 · Hazard &amp; Risk</text><text x="280" y="182">8 · Route</text><text x="400" y="182">12 · Research</text><text x="560" y="182">9 · Evidence &amp; Verification</text>
+        <text x="10" y="222" text-anchor="start" font-weight="700" fill="#2b78d6" font-size="10">OUTPUT</text>
+        <g fill="#e7f3ec" stroke="#2e8b57"><rect x="160" y="202" width="200" height="26" rx="5"/><rect x="370" y="202" width="120" height="26" rx="5"/></g>
+        <text x="260" y="219">10 · Communication &amp; Localisation</text><text x="430" y="219">13 · Alert</text>
+      </g>
+    </svg>
+    <figcaption>Figure 6 — The thirteen agents in four layers. The numbers are ORCA's official agent numbers.</figcaption>
+  </figure>
+
+  <h3>Understanding and planning</h3>
+  <p><b>1 · Planner / Orchestrator.</b> Turns the question into an <code>Understanding</code> (intent, places, exact time window in IST and UTC, vessel class, language, role) and an <code>ExecutionPlan</code>, a list of tasks with dependencies. After each round it reviews the results and may add tasks (section 10). It is the only agent that appears as three graph nodes (<code>understand</code>, <code>plan</code>, <code>review</code>) because it acts at three moments.</p>
+
+  <h3>Context</h3>
+  <p><b>6 · Geospatial &amp; Boundary.</b> Converts "25 km off Chennai" into real coordinates at sea. It projects seaward along the bearing that gets away from the coast fastest (among 72 candidates) and designs the <i>sampling</i>: an assessment point, transit points from the harbour, and a small ring, so that the answer covers the whole trip, not one dot. It also finds the exclusive economic zone, distance to coast, depth, distance to the international boundary, and any marine protected area, restricted zone, seasonal fishing ban or user geofence. Everything is computed with shapely and pyproj in a local metric projection, so distances are true kilometres.</p>
+
+  <h3>Retrieval</h3>
+  <p><b>3 · Oceanography.</b> Waves, swell, wave period and currents from three independent wave models (MFWAM, ECMWF WAM, GFS-Wave) plus the SMOC current model, at every sample point for every hour. It works in point mode (safety questions) or grid mode (routing). With the <code>tiebreaker</code> flag it queries DWD GWAM instead.</p>
+  <p><b>4 · Weather.</b> Wind, gusts, rain, pressure, CAPE (an index of thunderstorm energy) and visibility from ECMWF IFS, GFS and ICON. Its tie-breaker is the UK Met Office model. It also has a history mode that returns past weeks of wind for research questions.</p>
+  <p><b>2 · Satellite / Earth Observation.</b> Satellite SST, SST anomaly and chlorophyll from NOAA CoastWatch ERDDAP, with product dates, latency and resolution. It serves two purposes: context and a cross-check of the models' SST. For research it builds daily area-mean time series.</p>
+  <p><b>11 · Advisory.</b> Tropical cyclones from GDACS (track, wind radii, forecast cone), and the IMD and INCOIS warning adapters. It computes the distance from every sample point to every active storm and whether a point lies inside a wind radius.</p>
+  <p><b>5 · Fisheries.</b> ORCA's productivity indicator: where sharp SST fronts and elevated chlorophyll coincide, clustered into candidate zones with depth. It is always labelled probabilistic ("presence of fish is not implied") and kept separate from official INCOIS Potential Fishing Zone advisories.</p>
+
+  <h3>Reasoning</h3>
+  <p><b>7 · Hazard &amp; Risk.</b> Collects every source's samples for every factor (waves, wind, gusts, current, rain, thunderstorm potential, visibility, cyclone distance, boundary distance, official warnings) and applies the deterministic risk model <code>orca-risk-1.0</code>. It produces an hourly timeline, the onset time of caution, and per-station results for regional questions. It never fetches data itself.</p>
+  <p><b>8 · Route.</b> Builds an hourly risk "cube" (the worst of all models at each grid cell and hour) and runs a time-dependent A* search. The cost of a step depends on the risk <i>at the time you would be there</i>. It returns three options (shortest, recommended, safest), smooths them without increasing risk, and evaluates every kilometre at ETA, including exactly where a route would enter a protected area.</p>
+  <p><b>12 · Research.</b> Compares periods (Welch t-test), fits trends, finds lagged correlations and evaluates four rule-based hypotheses, each with supporting and contradicting evidence. It labels every statement as OBSERVATION, CORRELATION, HYPOTHESIS or CONCLUSION, and refuses to claim causation.</p>
+  <p><b>9 · Evidence &amp; Verification.</b> The agents' referee. It turns results into <b>claims</b>, attaches <b>evidence items</b> with weights, detects <b>conflicts</b> between sources, computes <b>confidence</b>, names the weakest link and assembles the final decision package with recommendations and caveats (section 11).</p>
+
+  <h3>Output</h3>
+  <p><b>10 · Communication &amp; Localisation.</b> Renders the same verified result for four roles (fisherman, authority, researcher, operator) in English and seven Indian languages (Hindi, Marathi, Tamil, Telugu, Malayalam, Kannada, Bengali). It uses templates. Optional LLM narration is accepted only if every number in it can be found in the computed facts.</p>
+  <p><b>13 · Alert.</b> Turns hazards into alerts using a four-step pipeline: EVENT → VERIFY → GENERATE → DELIVER. An alert is marked <i>verified</i> only if an official advisory supports it, or at least two independent sources agree with confidence ≥ 0.5. Alerts are de-duplicated and pushed live to the console. A background monitor runs the same agents on a schedule.</p>
+
+  <table class="avoid">
+    <tr><th>Agent</th><th>Consumes</th><th>Typed output</th><th>LLM?</th></tr>
+    <tr><td>Planner</td><td>request, conversation</td><td><code>Understanding</code>, <code>ExecutionPlan</code></td><td>fallback only</td></tr>
+    <tr><td>Geospatial</td><td>understanding</td><td><code>GeoOutput</code></td><td>no</td></tr>
+    <tr><td>Ocean · Weather</td><td>geospatial</td><td><code>RetrievalOutput</code></td><td>no</td></tr>
+    <tr><td>Satellite</td><td>geospatial</td><td><code>SatelliteOutput</code></td><td>no</td></tr>
+    <tr><td>Advisory</td><td>geospatial</td><td><code>AdvisoryOutput</code></td><td>no</td></tr>
+    <tr><td>Fisheries</td><td>geospatial</td><td><code>FisheriesOutput</code></td><td>no</td></tr>
+    <tr><td>Hazard</td><td>ocean, weather, advisory, geospatial, route</td><td><code>HazardOutput</code></td><td>no</td></tr>
+    <tr><td>Route</td><td>geospatial, ocean, weather</td><td><code>RouteOutput</code></td><td>no</td></tr>
+    <tr><td>Research</td><td>satellite, weather</td><td><code>ResearchOutput</code></td><td>no</td></tr>
+    <tr><td>Evidence</td><td>all reasoning + retrieval outputs</td><td><code>FinalAssessment</code>, claims, evidence</td><td>no</td></tr>
+    <tr><td>Communication</td><td>evidence, hazard, route, fisheries, research</td><td><code>LocalizedResponse</code></td><td>optional, guarded</td></tr>
+    <tr><td>Alert</td><td>evidence, hazard, route</td><td><code>Alert</code>s</td><td>no</td></tr>
+  </table>
+
+  <h2 id="s9">9. The planner: from a sentence to a task graph</h2>
+  <p>The planner works in two steps.</p>
+  <p><b>Step 1: understand.</b> A deterministic parser does the work. It detects the language from the Unicode script (with marker words to tell Hindi from Marathi) and matches the intent against a multilingual cue lexicon in a fixed priority order. It finds places in a 64-place gazetteer that includes local-language names and Indic case endings, so "ராமேஸ்வரத்தில்" resolves to Rameswaram. It also turns time phrases into an explicit window. "Tomorrow morning" becomes <i>tomorrow 05:00–11:00 IST</i>, and the assumption is written down. Only if the parser's confidence is below 0.5 is the optional LLM asked. Even then it must answer with gazetteer identifiers, which are validated.</p>
+  <p><b>Step 2: plan.</b> Each intent has a plan template: a small dependency graph of tasks. Here is the safety-check template, straight from the code:</p>
+  <div class="file">apps/api/orca/agents/planner.py</div>
+<pre>T(<span class="s">"geospatial"</span>, <span class="s">"geospatial"</span>, reason=<span class="s">"assessment point, trip transect, zone &amp; boundary context"</span>, critical=True, ...)
+T(<span class="s">"ocean"</span>,      <span class="s">"ocean"</span>,     [<span class="s">"geospatial"</span>], <span class="s">"waves, swell, currents from 3 wave models + SMOC"</span>, True)
+T(<span class="s">"weather"</span>,    <span class="s">"weather"</span>,   [<span class="s">"geospatial"</span>], <span class="s">"wind, gusts, rain, lightning potential from 3 NWP models"</span>, True)
+T(<span class="s">"satellite"</span>,  <span class="s">"satellite"</span>, [<span class="s">"geospatial"</span>], <span class="s">"satellite SST / anomaly / chlorophyll (context &amp; cross-check)"</span>)
+T(<span class="s">"advisory"</span>,   <span class="s">"advisory"</span>,  [<span class="s">"geospatial"</span>], <span class="s">"cyclones (GDACS), IMD &amp; INCOIS warnings"</span>)
+T(<span class="s">"hazard"</span>,     <span class="s">"hazard"</span>,    [<span class="s">"ocean"</span>, <span class="s">"weather"</span>, <span class="s">"advisory"</span>, <span class="s">"geospatial"</span>], <span class="s">"deterministic risk decision"</span>, True)
+T(<span class="s">"evidence"</span>,   <span class="s">"evidence"</span>,  [<span class="s">"hazard"</span>, *deps], <span class="s">"verify claims, detect conflicts, compute confidence"</span>)
+T(<span class="s">"alert"</span>,      <span class="s">"alert"</span>,     [<span class="s">"evidence"</span>], <span class="s">"situational alerts"</span>)
+T(<span class="s">"communication"</span>, <span class="s">"communication"</span>, [<span class="s">"evidence"</span>], <span class="s">"render answer"</span>)</pre>
+  <figure>
+    <svg width="640" height="165" viewBox="0 0 640 165">
+      <defs><marker id="ar4" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0 L7 3.5 L0 7 z" fill="#9aa0a8"/></marker></defs>
+      <g font-size="10" text-anchor="middle">
+        <rect x="5" y="66" width="80" height="28" rx="5" fill="#fff" stroke="#16223d"/><text x="45" y="84">geospatial</text>
+        <g fill="#fff" stroke="#2b78d6"><rect x="130" y="6" width="80" height="26" rx="5"/><rect x="130" y="40" width="80" height="26" rx="5"/><rect x="130" y="74" width="80" height="26" rx="5"/><rect x="130" y="108" width="80" height="26" rx="5"/><rect x="130" y="138" width="80" height="24" rx="5" stroke-dasharray="3 2"/></g>
+        <text x="170" y="23">ocean</text><text x="170" y="57">weather</text><text x="170" y="91">advisory</text><text x="170" y="125">satellite</text><text x="170" y="154">fisheries*</text>
+        <rect x="260" y="40" width="80" height="28" rx="5" fill="#fff" stroke="#16223d"/><text x="300" y="58">hazard</text>
+        <rect x="380" y="66" width="80" height="28" rx="5" fill="#fff" stroke="#16223d"/><text x="420" y="84">evidence</text>
+        <rect x="510" y="40" width="110" height="26" rx="5" fill="#e7f3ec" stroke="#2e8b57"/><text x="565" y="57">alert</text>
+        <rect x="510" y="96" width="110" height="26" rx="5" fill="#e7f3ec" stroke="#2e8b57"/><text x="565" y="113">communication</text>
+        <g stroke="#9aa0a8" stroke-width="1.1" fill="none" marker-end="url(#ar4)">
+          <path d="M85 80 L128 19"/><path d="M85 80 L128 53"/><path d="M85 80 L128 87"/><path d="M85 80 L128 121"/><path d="M85 80 L128 150"/>
+          <path d="M210 19 L258 50"/><path d="M210 53 L258 54"/><path d="M210 87 L258 60"/>
+          <path d="M340 54 L378 76"/><path d="M210 121 L378 84"/><path d="M210 150 L378 88"/>
+          <path d="M460 80 L508 53"/><path d="M460 80 L508 109"/>
+        </g>
+        <text x="320" y="160" font-size="9" fill="#7c838e">* only when the user is fishing</text>
+      </g>
+    </svg>
+    <figcaption>Figure 7 — The safety-check plan as a dependency graph. Five retrieval agents can run at the same time because they all depend only on geospatial.</figcaption>
+  </figure>
+  <p>There are templates for every intent: safety check, conditions, hazard scan, regional risk, route plan, fishing zones, research trend, period comparison, geofence check and follow-ups ("which sources disagree?"). A follow-up needs no new data, so its plan is just <code>evidence (reuse previous blackboard) → communication</code>.</p>
+  <div class="box why"><b class="t">Why this matters</b><p>The plan is data, not code paths. It is stored with the answer and shown in the UI, and it is what LangGraph executes. When a judge asks "why did the research agent not run for a route question?", the answer is visible in the plan, and the evaluation checks it automatically ("agent routing accuracy").</p></div>
+  <div class="box inorca"><b class="t">In ORCA</b><p>A plan template is deliberately <i>not</i> hard-wired into the LangGraph graph. The graph is generic. It runs whatever dependency graph the planner produced (section 16). That is what lets one compiled graph serve ten different intents.</p></div>
+
+  <h2 id="s10">10. Re-planning: agents that change their mind</h2>
+  <p>A fixed plan is not enough. Sometimes the evidence that comes back says "you asked the wrong question" or "you don't have enough to decide". After each round of work, the planner's <code>review()</code> step applies four explicit re-planning rules:</p>
+  <table>
+    <tr><th style="width:9%">Rule</th><th style="width:38%">Trigger</th><th>What the planner adds</th></tr>
+    <tr><td><b>RP1</b></td><td>A critical retrieval (waves or wind) returned no data</td><td>A task for an alternative model (DWD GWAM for waves, UK Met Office for wind), then re-runs hazard → evidence → alert → communication</td></tr>
+    <tr><td><b>RP2</b></td><td>Sources disagree on wave height or wind <i>in a decision-relevant way</i> (they fall in different risk levels)</td><td>An independent tie-breaker model, then re-verification</td></tr>
+    <tr><td><b>RP3</b></td><td>An active tropical cyclone is within 1,500 km</td><td>An extended-horizon hazard assessment (+24 h), then refreshed evidence and answer</td></tr>
+    <tr><td><b>RP4</b></td><td>The recommended route enters a marine protected area</td><td>A re-route with protected areas as a hard constraint. If no such route exists, ORCA says so.</td></tr>
+  </table>
+  <div class="file">apps/api/orca/agents/planner.py — RP1</div>
+<pre><span class="k">if</span> oc <span class="k">and</span> oc.status == AgentStatus.FAILED <span class="k">and</span> <span class="s">"RP1-ocean"</span> <span class="k">not in</span> done_flags:
+    new.append(PlanTask(id=f<span class="s">"ocean_alt#{round_no + 1}"</span>, agent=<span class="s">"ocean"</span>, round=round_no + 1, critical=True,
+                        reason=<span class="s">"primary wave models returned no data — querying alternative model (DWD GWAM)"</span>,
+                        params={**base_params, <span class="s">"tiebreaker"</span>: True}))
+    record(<span class="s">"RP1-ocean"</span>, <span class="s">"No wave data from primary models → re-planning with an alternative wave model"</span>)</pre>
+  <p>Two safety rails keep re-planning under control. Each rule fires <b>at most once</b> per question (<code>done_flags</code>), and there are <b>at most three rounds</b> in total (<code>MAX_ROUNDS = 3</code>). Each re-plan is recorded with its rule, round and reason, and shown as an orange "RE-PLAN" line in the live trace.</p>
+  <div class="box analogy"><b class="t">Everyday analogy</b><p>A doctor orders blood tests. If one lab result is missing, they order it again from another lab (RP1). If two results contradict each other, they order a third test (RP2). They don't order tests forever. After a couple of rounds they decide with what they have and say what remains uncertain.</p></div>
+
+  <h2 id="s11">11. Evidence, confidence and conflicts</h2>
+  <p>The Evidence agent is where the agents' results become something a person can trust. It works with three objects:</p>
+  <ul>
+    <li><b>Claim</b>: a statement such as "Significant wave height reaches CAUTION level (worst 2.44 m, onset 08:30 IST)".</li>
+    <li><b>Evidence item</b>: one source's support for a claim, with source, product time, retrieval time, location, freshness and a <b>lineage</b>. Two products from the same upstream model share a lineage and are not counted as independent.</li>
+    <li><b>Conflict</b>: two sources that differ by more than a tolerance (e.g. waves 0.5 m or 25 %). A conflict is <i>decision-relevant</i> when the sources fall in different risk levels.</li>
+  </ul>
+  <p>Confidence is <b>computed, never generated</b>, in three layers:</p>
+  <figure>
+    <svg width="640" height="120" viewBox="0 0 640 120">
+      <defs><marker id="ar5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#7c838e"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <rect x="5" y="20" width="190" height="76" rx="6" fill="#e9f1fb" stroke="#2b78d6"/>
+        <text x="100" y="40" font-weight="700">per evidence item</text><text x="100" y="62" font-family="Consolas" font-size="12">w = A × F × S × T</text><text x="100" y="82" font-size="9" fill="#4a515c">authority · freshness · space · time</text>
+        <rect x="225" y="20" width="190" height="76" rx="6" fill="#fff" stroke="#16223d"/>
+        <text x="320" y="40" font-weight="700">per claim</text><text x="320" y="62" font-family="Consolas" font-size="12">Q × (0.5 + 0.5·G) × K</text><text x="320" y="82" font-size="9" fill="#4a515c">quality · agreement · independence</text>
+        <rect x="445" y="20" width="190" height="76" rx="6" fill="#e7f3ec" stroke="#2e8b57"/>
+        <text x="540" y="40" font-weight="700">whole answer</text><text x="540" y="62" font-family="Consolas" font-size="11">mean × C × (0.7 + 0.3·D)</text><text x="540" y="82" font-size="9" fill="#4a515c">completeness · data coverage</text>
+        <path d="M195 58 H221 M415 58 H441" stroke="#7c838e" stroke-width="1.5" marker-end="url(#ar5)"/>
+      </g>
+    </svg>
+    <figcaption>Figure 8 — The confidence chain. Every factor is shown in the UI, with the weakest link named.</figcaption>
+  </figure>
+  <p><b>A</b> is the authority of the source (national official 0.95 … ORCA-curated 0.50), <b>F</b> its freshness, <b>S</b> how close the product's cell is to the point asked about, and <b>T</b> how far ahead the forecast is. <b>G</b> is how many independent items agree, and <b>K</b> rewards having at least two independent lineages. <b>C</b> is how many of the expected factors were available, and <b>D</b> the share of queried critical sources that answered.</p>
+  <div class="box key"><b class="t">Key idea</b><p>Conflicting sources are never averaged. The worst-case value decides, the disagreement lowers confidence through G, and re-planning rule RP2 fetches a tie-breaker. The user sees all three effects.</p></div>
+
+  <h2 id="s12">12. Designing for failure</h2>
+  <p>In LIVE mode, real APIs fail every day: timeouts, rate limits, a model run that is late, an Indian government API that only answers whitelisted IP addresses. We designed each failure to have a defined, visible outcome:</p>
+  <table>
+    <tr><th style="width:32%">What fails</th><th>What ORCA does</th></tr>
+    <tr><td>One source of several</td><td>The agent returns PARTIAL. The source appears under "excluded sources" with its reason. The coverage term D lowers confidence.</td></tr>
+    <tr><td>A source keeps failing</td><td>The transport's circuit breaker opens after 3 failures and stops calling it for 60 s. A cached value up to 24 h old may be used and is labelled "stale-if-error".</td></tr>
+    <tr><td>An agent crashes or hangs</td><td>Its graph node catches the exception or the timeout and records FAILED. Dependent agents still run and handle the missing input.</td></tr>
+    <tr><td>All wave models fail</td><td>RP1 tries an alternative model. If that also fails, risk rule R1 returns <b>NO RELIABLE ASSESSMENT</b> with confidence 0, never "appears safe".</td></tr>
+    <tr><td>The question is ambiguous</td><td>The graph routes to a <code>clarify</code> node and asks, instead of guessing a location.</td></tr>
+  </table>
+  <div class="box watch"><b class="t">Watch out</b><p>During development, degraded mode (three sources down) still showed the same confidence as the full-data answer, because each remaining claim looked fine on its own. The fix was the coverage term D in the final formula. Failures must show up in the confidence number, not just in a list.</p></div>
+</section>
+
+<!-- ============================================================ PART 3 -->
+<section class="part" id="part3">
+  <div class="num">Part 3</div>
+  <h1 class="part-title">Orchestrating with LangGraph</h1>
+  <p class="lead">Part 2 described the agents. This part shows how they are wired together into one LangGraph <code>StateGraph</code>: how the state is split, how a dynamic plan becomes parallel supersteps, how re-planning loops back, and what a real run looks like.</p>
+  <ol><li>13. Why LangGraph, and what it replaced</li><li>14. The graph state and the runtime context</li><li>15. The nodes</li><li>16. Dynamic fan-out with Send</li><li>17. Conditional edges and the re-plan loop</li><li>18. One real run, superstep by superstep</li><li>19. Streaming the graph to the screen</li><li>20. Testing the graph</li></ol>
+</section>
+
+<section class="pb">
+  <h2 id="s13" class="first">13. Why LangGraph, and what it replaced</h2>
+  <p>ORCA's first orchestrator was a few dozen lines of hand-written asyncio: a loop that found the tasks whose dependencies were done, started them together with <code>asyncio.gather</code>, waited, and repeated. A second loop called the planner's review up to two more times. It worked, but everything was implicit: the order of phases, the loop, the stop condition, the join.</p>
+  <p>We moved the orchestration to LangGraph for four concrete reasons:</p>
+  <ol>
+    <li><b>The structure becomes declared.</b> "understand, then plan or clarify; fan out; join; review; loop or finish" is written as nodes and edges and compiled. It can be printed as a diagram (<code>GET /api/agents/graph</code> returns it) and checked by tests.</li>
+    <li><b>Parallelism and joins are built in.</b> LangGraph's superstep model gives exactly the semantics we need: everything that is ready runs concurrently, and the next step waits for all of it.</li>
+    <li><b>Dynamic fan-out is a first-class feature.</b> ORCA's plan differs for every intent. LangGraph's <code>Send</code> API lets a routing function start any number of agent nodes with their own payload, which a static graph cannot do.</li>
+    <li><b>Loops have guard rails.</b> Conditional edges express the re-plan loop directly, and the recursion limit guarantees it terminates even if a rule misbehaves.</li>
+  </ol>
+  <p>Just as important is what we did <b>not</b> hand to LangGraph. It schedules, but it never decides. The plan, the re-planning rules, the risk model and the confidence model stay in plain, deterministic Python that can be unit-tested without a graph at all.</p>
+  <div class="box why"><b class="t">Why this matters</b><p>The migration was checked against behaviour, not taste. The same 83 existing tests passed unchanged, two new graph tests were added, and the full evaluation suite gave identical accuracy, groundedness and hallucination scores before and after (section 26).</p></div>
+
+  <h2 id="s14">14. The graph state and the runtime context</h2>
+  <p>The most important LangGraph design decision was <b>what goes into the graph state</b>. We split ORCA's per-question data in two:</p>
+  <div class="file">apps/api/orca/graph.py</div>
+<pre><span class="k">class</span> OrcaState(TypedDict, total=False):
+    completed: Annotated[list[str], operator.add]   <span class="c"># task ids, merged across parallel branches</span>
+    round: int                                      <span class="c"># re-plan reviews performed</span>
+    superstep: int                                  <span class="c"># waves dispatched so far</span>
+    clarify: bool
+
+
+<span class="k">class</span> TaskInput(TypedDict):
+    <span class="s">"""Payload of a `Send` to an agent node."""</span>
+    task_id: str
+    wave: int
+
+
+@dataclass
+<span class="k">class</span> OrcaContext:
+    run: RunState</pre>
+  <ul>
+    <li><b>Graph state (<code>OrcaState</code>)</b> holds only <i>scheduling</i> facts: which tasks are completed, which re-plan round we are in, how many supersteps ran, and whether clarification is needed. It is small, serialisable, and exactly what the routing functions need to decide the next step.</li>
+    <li><b>The reducer on <code>completed</code></b> is <code>operator.add</code>. Five agents finishing in the same superstep each return <code>{"completed": ["ocean"]}</code>, <code>{"completed": ["weather"]}</code> …, and LangGraph concatenates them instead of letting the last one overwrite the others.</li>
+    <li><b>Runtime context (<code>OrcaContext</code>)</b> carries the heavy, live objects: the typed Blackboard, the execution context for the current data mode (LIVE, REPLAY or DEMO transport and clock), large in-memory arrays, and the event bus that streams to the browser. LangGraph passes it to every node via <code>runtime.context</code> but never copies or serialises it.</li>
+  </ul>
+  <div class="box analogy"><b class="t">Everyday analogy</b><p>The graph state is the airport departure board: short, shared, and it tells everyone what happens next. The runtime context is the baggage hall. It is huge and full of real things, and it would be absurd to print it on the board.</p></div>
+  <div class="box watch"><b class="t">Watch out</b><p>It's tempting to put the whole Blackboard into the LangGraph state. We didn't. It contains forecast grids and hourly series for many models, and agents append to it concurrently. Keeping it in the runtime context means no copying, and the agents keep the exact contract from Part 2.</p></div>
+
+  <h2 id="s15">15. The nodes</h2>
+  <p>The compiled ORCA graph has <b>18 nodes</b> (plus LangGraph's START and END):</p>
+  <table>
+    <tr><th style="width:22%">Node</th><th style="width:16%">Kind</th><th>What it does</th></tr>
+    <tr><td><code>understand</code></td><td>planner phase</td><td>Language, intent, places, time window. Sets <code>clarify</code> if something essential is missing.</td></tr>
+    <tr><td><code>clarify</code></td><td>planner phase</td><td>Builds a "clarification needed" answer instead of guessing.</td></tr>
+    <tr><td><code>plan</code></td><td>planner phase</td><td>Builds the <code>ExecutionPlan</code> for the intent and registers every task on the blackboard.</td></tr>
+    <tr><td><code>geospatial</code> … <code>alert</code> (12)</td><td>agent</td><td>One node per specialised agent. Receives a <code>TaskInput</code>, runs that agent's task with timeout and failure isolation, and returns <code>{"completed": [task_id]}</code>.</td></tr>
+    <tr><td><code>join</code></td><td>barrier</td><td>Runs once after every parallel superstep and counts the wave.</td></tr>
+    <tr><td><code>review</code></td><td>planner phase</td><td>Applies re-planning rules RP1–RP4 and appends new tasks to the plan.</td></tr>
+    <tr><td><code>visualize</code></td><td>output</td><td>Builds the map directive: layers, markers, route and zone geometry, camera position.</td></tr>
+  </table>
+  <p>All twelve agent nodes are created by one small factory, so each agent is a real, separately named node in the graph while sharing the same failure handling:</p>
+  <div class="file">apps/api/orca/graph.py</div>
+<pre><span class="k">def</span> make_agent_node(name: str):
+    <span class="k">async def</span> node(payload: TaskInput, runtime: Runtime[OrcaContext]) -&gt; OrcaState:
+        st = runtime.context.run
+        task = next(t <span class="k">for</span> t <span class="k">in</span> st.bb.plan.tasks <span class="k">if</span> t.id == payload[<span class="s">"task_id"</span>])
+        <span class="k">await</span> execute_task(task, st, payload.get(<span class="s">"wave"</span>, 0))
+        <span class="k">return</span> {<span class="s">"completed"</span>: [task.id]}
+    node.__name__ = f<span class="s">"{name}_node"</span>
+    <span class="k">return</span> node</pre>
+  <p><code>execute_task</code> is where the agent contract from section 7 meets the graph. It marks the record RUNNING, emits an <code>agent_start</code> event, calls <code>agent.run()</code> under <code>asyncio.wait_for(..., timeout=agent.timeout_s)</code>, converts any exception or timeout into a FAILED outcome, copies status, tools, sources, failures and the typed output onto the blackboard, and emits <code>agent_end</code>. Because it never raises, one broken agent can never stop the graph.</p>
+
+  <h2 id="s16">16. Dynamic fan-out with Send</h2>
+  <p>This is the central trick. The graph doesn't contain edges like "ocean → hazard", because those edges differ between intents. Instead, a routing function reads the <b>plan's</b> dependency graph at run time and returns one <code>Send</code> per task that is ready:</p>
+  <div class="file">apps/api/orca/graph.py</div>
+<pre><span class="k">def</span> _ready(st: RunState, completed: set[str]) -&gt; list[PlanTask]:
+    <span class="s">"""Tasks of the plan whose dependencies are all satisfied."""</span>
+    ids = {t.id <span class="k">for</span> t <span class="k">in</span> st.bb.plan.tasks}
+    pending = [t <span class="k">for</span> t <span class="k">in</span> st.bb.plan.tasks <span class="k">if</span> t.id <span class="k">not in</span> completed]
+    ready = [t <span class="k">for</span> t <span class="k">in</span> pending <span class="k">if</span> all(d <span class="k">in</span> completed <span class="k">or</span> d <span class="k">not in</span> ids <span class="k">for</span> d <span class="k">in</span> t.depends_on)]
+    <span class="k">if</span> pending <span class="k">and not</span> ready:  <span class="c"># dependency cycle / unknown dependency — run everything left</span>
+        ready = pending
+    <span class="k">return</span> ready
+
+
+<span class="k">def</span> dispatch(state: OrcaState, runtime: Runtime[OrcaContext]):
+    <span class="s">"""Fan out every ready task in parallel, or hand over to the planner's review when the plan is done."""</span>
+    st = runtime.context.run
+    <span class="k">if not</span> _ready(st, set(state.get(<span class="s">"completed"</span>, []))):
+        <span class="k">return</span> <span class="s">"review"</span>
+    <span class="k">return</span> _sends(st, state)          <span class="c"># [Send(t.agent, {"task_id": t.id, "wave": n}) for t in ready]</span></pre>
+  <p>Put this together with LangGraph's superstep rule and you get a full parallel DAG executor in a few lines:</p>
+  <ol>
+    <li><code>dispatch</code> returns, say, five <code>Send</code>s: ocean, weather, satellite, advisory, fisheries.</li>
+    <li>LangGraph runs those five agent nodes <b>concurrently</b> in one superstep. The network calls overlap.</li>
+    <li>Every agent node has a static edge to <code>join</code>. LangGraph runs <code>join</code> <b>once</b>, after all five finished, and the reducer has merged their five <code>completed</code> updates.</li>
+    <li><code>join</code>'s conditional edge calls <code>dispatch</code> again, which now finds hazard ready. Repeat.</li>
+  </ol>
+  <div class="box key"><b class="t">Key idea</b><p>One LangGraph superstep = one "wave" of the plan: every task whose dependencies are satisfied. The planner decides <i>what</i> depends on what. LangGraph decides <i>when</i> things run, and runs independent things together.</p></div>
+  <div class="box inorca"><b class="t">In ORCA</b><p>The same agent can receive two <code>Send</code>s in one run, e.g. the normal <code>ocean</code> task and later <code>ocean_tiebreak#1</code>. Each <code>Send</code> carries its own <code>task_id</code>, so the node knows which parameters (such as <code>tiebreaker: True</code>) to use.</p></div>
+
+  <h2 id="s17">17. Conditional edges and the re-plan loop</h2>
+  <p>Here is the complete graph builder. It is the most important 25 lines in the project:</p>
+  <div class="file">apps/api/orca/graph.py</div>
+<pre><span class="k">def</span> build_graph():
+    g = StateGraph(OrcaState, context_schema=OrcaContext)
+    g.add_node(<span class="s">"understand"</span>, understand)
+    g.add_node(<span class="s">"clarify"</span>, clarify)
+    g.add_node(<span class="s">"plan"</span>, plan)
+    <span class="k">for</span> name <span class="k">in</span> AGENTS:
+        g.add_node(name, make_agent_node(name), input_schema=TaskInput)
+        g.add_edge(name, <span class="s">"join"</span>)
+    g.add_node(<span class="s">"join"</span>, join)
+    g.add_node(<span class="s">"review"</span>, review)
+    g.add_node(<span class="s">"visualize"</span>, visualize)
+
+    g.add_edge(START, <span class="s">"understand"</span>)
+    g.add_conditional_edges(<span class="s">"understand"</span>, after_understand, [<span class="s">"clarify"</span>, <span class="s">"plan"</span>])
+    g.add_edge(<span class="s">"clarify"</span>, <span class="s">"visualize"</span>)
+    agents = list(AGENTS)
+    g.add_conditional_edges(<span class="s">"plan"</span>, dispatch, agents + [<span class="s">"review"</span>])
+    g.add_conditional_edges(<span class="s">"join"</span>, dispatch, agents + [<span class="s">"review"</span>])
+    g.add_conditional_edges(<span class="s">"review"</span>, after_review, agents + [<span class="s">"visualize"</span>])
+    g.add_edge(<span class="s">"visualize"</span>, END)
+    <span class="k">return</span> g.compile(name=<span class="s">"orca"</span>)</pre>
+  <figure>
+    <svg width="660" height="312" viewBox="0 0 660 312">
+      <defs><marker id="ar6" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#6b727d"/></marker>
+      <marker id="ar6o" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 z" fill="#f0683a"/></marker></defs>
+      <g font-size="10.5" text-anchor="middle">
+        <ellipse cx="50" cy="40" rx="36" ry="15" fill="#f3f3ef" stroke="#7c838e"/><text x="50" y="44">START</text>
+        <rect x="120" y="24" width="96" height="32" rx="6" fill="#e9f1fb" stroke="#2b78d6"/><text x="168" y="44">understand</text>
+        <rect x="270" y="4" width="84" height="28" rx="6" fill="#e9f1fb" stroke="#2b78d6"/><text x="312" y="22">clarify</text>
+        <rect x="270" y="56" width="84" height="30" rx="6" fill="#e9f1fb" stroke="#2b78d6"/><text x="312" y="75">plan</text>
+        <rect x="160" y="120" width="340" height="80" rx="8" fill="#fbfbf9" stroke="#16223d" stroke-dasharray="5 3"/>
+        <text x="330" y="136" font-size="9.5" fill="#4a515c">12 agent nodes — reached only through Send(agent, task)</text>
+        <g font-size="9" fill="#fff" stroke="#16223d">
+          <rect x="172" y="144" width="72" height="20" rx="4"/><rect x="252" y="144" width="52" height="20" rx="4"/><rect x="312" y="144" width="58" height="20" rx="4"/><rect x="378" y="144" width="60" height="20" rx="4"/><rect x="446" y="144" width="46" height="20" rx="4"/>
+          <rect x="172" y="170" width="60" height="20" rx="4"/><rect x="240" y="170" width="52" height="20" rx="4"/><rect x="300" y="170" width="44" height="20" rx="4"/><rect x="352" y="170" width="56" height="20" rx="4"/><rect x="416" y="170" width="76" height="20" rx="4"/>
+        </g>
+        <g font-size="9"><text x="208" y="158">geospatial</text><text x="278" y="158">ocean</text><text x="341" y="158">weather</text><text x="408" y="158">satellite</text><text x="469" y="158">…</text>
+        <text x="202" y="184">hazard</text><text x="266" y="184">route</text><text x="322" y="184">alert</text><text x="380" y="184">evidence</text><text x="454" y="184">communication</text></g>
+        <rect x="560" y="145" width="80" height="30" rx="6" fill="#fff" stroke="#16223d"/><text x="600" y="164">join</text>
+        <rect x="232" y="270" width="106" height="30" rx="6" fill="#fdeee6" stroke="#f0683a"/><text x="285" y="289">review (RP1–4)</text>
+        <rect x="470" y="270" width="90" height="30" rx="6" fill="#e7f3ec" stroke="#2e8b57"/><text x="515" y="289">visualize</text>
+        <ellipse cx="615" cy="285" rx="32" ry="15" fill="#f3f3ef" stroke="#7c838e"/><text x="615" y="289">END</text>
+        <g stroke="#6b727d" stroke-width="1.3" fill="none" marker-end="url(#ar6)">
+          <path d="M86 40 H116"/>
+          <path d="M500 160 H556"/>
+          <path d="M560 285 H579"/>
+          <path d="M354 18 H652 V258 H515 V266"/>
+        </g>
+        <g stroke="#f0683a" stroke-width="1.3" fill="none" marker-end="url(#ar6o)">
+          <path d="M216 34 L266 20"/><path d="M216 46 L266 68"/>
+          <path d="M312 86 V116"/>
+          <path d="M600 145 V102 H460 V116"/>
+          <path d="M600 175 V246 H285 V266"/>
+          <path d="M232 285 H130 V160 H156"/>
+          <path d="M338 285 H466"/>
+        </g>
+        <g font-size="9" fill="#f0683a"><text x="530" y="96">dispatch: tasks ready → Send ×N</text><text x="345" y="106">dispatch</text>
+          <text x="440" y="241">dispatch: plan exhausted</text><text x="124" y="226" text-anchor="end">review added</text><text x="124" y="237" text-anchor="end">tasks → Send ×N</text>
+          <text x="402" y="304">nothing new / round 3</text><text x="232" y="12">clarify?</text></g>
+        <g font-size="9" fill="#6b727d"><text x="600" y="12">clarify → visualize</text></g>
+      </g>
+    </svg>
+    <figcaption>Figure 9 — The compiled ORCA graph. Grey: fixed edges. Orange: conditional edges whose destination is decided at run time.</figcaption>
+  </figure>
+  <p>The three routing functions are tiny, and that is the point:</p>
+  <ul>
+    <li><code>after_understand</code> returns <code>"clarify"</code> or <code>"plan"</code>.</li>
+    <li><code>dispatch</code> (after <code>plan</code> and after every <code>join</code>) returns Sends for ready tasks, or <code>"review"</code> when the plan is exhausted.</li>
+    <li><code>after_review</code> returns Sends if review added tasks and the round cap (3) is not reached, otherwise <code>"visualize"</code>.</li>
+  </ul>
+  <p>Re-planning therefore needs no special machinery. <code>review</code> appends tasks to the plan, and the <i>same</i> <code>Send</code> fan-out runs them. A tie-breaker task depends on nothing new, so it starts immediately. The re-run of hazard depends on the tie-breaker, so it waits for it. LangGraph's recursion limit (set to 200 supersteps, while a heavy route question uses about 25) is a final guarantee that no bug can loop forever.</p>
+  <div class="file">apps/api/orca/orchestrator.py</div>
+<pre><span class="k">await</span> GRAPH.ainvoke({}, config={<span class="s">"recursion_limit"</span>: RECURSION_LIMIT, <span class="s">"run_name"</span>: bb.trace_id},
+                    context=OrcaContext(run=st))</pre>
+
+  <h2 id="s18">18. One real run, superstep by superstep</h2>
+  <p>Let's follow one question through the graph, using DEMO scenario <code>conflicting_sources</code>, where the wave and wind models disagree on purpose:</p>
+  <p style="text-align:center; font-size:11.5pt; margin:3mm 0 4mm"><i>"Is it safe to fish 25 km off Chennai tomorrow morning?"</i></p>
+  <p><code>understand</code> resolves: intent SAFETY_CHECK (rule-based, confidence 0.95), place Chennai, 25 km offshore, vessel small craft, window "Tomorrow 05:00–11:00 IST" with the recorded assumption <i>'morning' interpreted as 05:00–11:00 IST</i>. <code>plan</code> builds 10 tasks for 10 agents. Then:</p>
+  <table>
+    <tr><th style="width:12%">Superstep</th><th style="width:8%">Round</th><th style="width:34%">Tasks (in parallel)</th><th>What happened</th></tr>
+    <tr><td>1</td><td>0</td><td>geospatial</td><td>7 sample points, 24.1 km from the coast, depth 49 m, 262 km to the Sri Lanka boundary (453 ms)</td></tr>
+    <tr><td>2</td><td>0</td><td>ocean, weather, satellite, advisory, fisheries</td><td>Waves worst 2.44 m across 3 models, spread 1.14 m. Wind worst 31 km/h. Satellite SST 29.87 °C. 1 official warning (simulated INCOIS). All five overlap in time (≈ 95–367 ms each).</td></tr>
+    <tr><td>3</td><td>0</td><td>hazard</td><td>CAUTION, risk index 91. Drivers: wind, gusts, wave height, official advisory.</td></tr>
+    <tr><td>4</td><td>0</td><td>evidence</td><td>15 claims, 25 evidence items, <b>4 conflicts</b>, confidence 57 %</td></tr>
+    <tr><td>5</td><td>0</td><td>alert, communication</td><td>4 alerts generated, 2 verified. Answer rendered.</td></tr>
+    <tr><td colspan="4" style="background:#fdeee6"><b>review</b>: RP2 fires twice. Wind conflict (GFS vs ECMWF) and wave conflict (MFWAM vs others) are decision-relevant, so tie-breakers are requested.</td></tr>
+    <tr><td>6</td><td>1</td><td>weather_tiebreak#1, ocean_tiebreak#1</td><td>UK Met Office and DWD GWAM added. Now 4 models each (≈ 145 ms, in parallel).</td></tr>
+    <tr><td>7–10</td><td>1</td><td>hazard#1 → evidence#1 → alert#1 → communication#1</td><td>Still CAUTION. 29 evidence items, confidence 56 %. The tie-breakers did not settle the disagreement, so confidence stays moderate.</td></tr>
+  </table>
+  <figure>
+    <svg width="660" height="262" viewBox="0 -12 660 262">
+      <g font-size="9.5">
+        <g fill="#4a515c" text-anchor="end">
+          <text x="128" y="22">planner (understand+plan)</text><text x="128" y="40">geospatial</text><text x="128" y="58">ocean</text><text x="128" y="76">weather</text><text x="128" y="94">satellite</text><text x="128" y="112">advisory</text><text x="128" y="130">fisheries</text><text x="128" y="148">hazard · evidence</text><text x="128" y="166">alert · communication</text><text x="128" y="184">weather_tiebreak#1</text><text x="128" y="202">ocean_tiebreak#1</text><text x="128" y="220">round-1 re-evaluation</text>
+        </g>
+        <g fill="#f1f2f4"><rect x="138" y="12" width="500" height="12"/><rect x="138" y="30" width="500" height="12"/><rect x="138" y="48" width="500" height="12"/><rect x="138" y="66" width="500" height="12"/><rect x="138" y="84" width="500" height="12"/><rect x="138" y="102" width="500" height="12"/><rect x="138" y="120" width="500" height="12"/><rect x="138" y="138" width="500" height="12"/><rect x="138" y="156" width="500" height="12"/><rect x="138" y="174" width="500" height="12"/><rect x="138" y="192" width="500" height="12"/><rect x="138" y="210" width="500" height="12"/></g>
+        <!-- scale: 500px = 1030 ms  => 0.4854 px/ms -->
+        <g fill="#2b78d6">
+          <rect x="138" y="12" width="16" height="12" rx="2"/>
+          <rect x="154" y="30" width="220" height="12" rx="2"/>
+          <rect x="371" y="48" width="178" height="12" rx="2"/>
+          <rect x="371" y="66" width="111" height="12" rx="2"/>
+          <rect x="371" y="84" width="111" height="12" rx="2"/>
+          <rect x="371" y="102" width="46" height="12" rx="2"/>
+          <rect x="371" y="120" width="46" height="12" rx="2"/>
+          <rect x="555" y="138" width="4" height="12" rx="1"/>
+          <rect x="558" y="156" width="3" height="12" rx="1"/>
+        </g>
+        <g fill="#f0683a"><rect x="558" y="174" width="70" height="12" rx="2"/><rect x="558" y="192" width="71" height="12" rx="2"/><rect x="630" y="210" width="5" height="12" rx="1"/></g>
+        <g stroke="#9aa0a8" stroke-width="0.6" stroke-dasharray="2 2"><path d="M371 8 V226"/><path d="M555 8 V226"/></g>
+        <g fill="#7c838e" text-anchor="middle"><text x="138" y="240">0 ms</text><text x="259" y="240">250</text><text x="381" y="240">500</text><text x="502" y="240">750</text><text x="624" y="240">1000</text></g>
+        <text x="373" y="2" fill="#2b78d6" font-size="8.5" text-anchor="start">superstep 2: five agents in parallel</text><text x="557" y="2" fill="#f0683a" font-size="8.5" text-anchor="start">round 1</text>
+      </g>
+    </svg>
+    <figcaption>Figure 10 — Real timings from this run (DEMO mode, 1.02 s total). Blue: round 0. Orange: tie-breakers from re-planning round 1. Sub-millisecond agents are drawn as ticks.</figcaption>
+  </figure>
+  <p>The final answer: <b>CAUTION — hazardous conditions possible</b>, confidence 56 %. The four top reasons each name the worst value, the source that produced it, the thresholds and the spread, e.g. "Significant wave height: worst value 2.4 m (Météo-France MFWAM); caution ≥ 1.5, danger ≥ 2.5 m; 4 sources, spread 1.14 m — conservative (worst-case) value used".</p>
+  <div class="box key"><b class="t">Key idea</b><p>Superstep 2 is where the multi-agent design pays off. Five independent experts fetch from about a dozen sources at the same time, so the slowest of them sets the wall-clock time, not the sum. In this run the five retrievals used 1,013 ms of agent time but only 367 ms of wall-clock time. In LIVE mode, where each upstream call takes hundreds of milliseconds, the saving grows accordingly.</p></div>
+
+  <h2 id="s19">19. Streaming the graph to the screen</h2>
+  <p>A judge or a fisherman should be able to <i>watch</i> the agents work. Every node emits typed <b>trace events</b> on the run's event bus, which the API streams to the browser as Server-Sent Events (SSE, a simple one-way stream over HTTP):</p>
+  <table>
+    <tr><th style="width:18%">Event</th><th>Emitted by</th></tr>
+    <tr><td><code>start</code></td><td>the orchestrator, with the mode and <code>engine: "langgraph"</code></td></tr>
+    <tr><td><code>stage</code></td><td>agents, as they reach the 16 reasoning stages (INTENT … RESPONSE)</td></tr>
+    <tr><td><code>plan</code></td><td><code>plan</code> and <code>review</code>, with the full task list</td></tr>
+    <tr><td><code>dispatch</code></td><td>the <code>dispatch</code> router, once per superstep: which tasks start in parallel</td></tr>
+    <tr><td><code>agent_start</code> / <code>agent_end</code></td><td>every agent node: reason, status, duration, sources, failures</td></tr>
+    <tr><td><code>tool</code></td><td>connectors: each source call with its freshness</td></tr>
+    <tr><td><code>replan</code>, <code>conflict</code>, <code>alert</code></td><td>review, evidence, alert</td></tr>
+    <tr><td><code>done</code></td><td>the orchestrator, with the decision and total time</td></tr>
+  </table>
+  <p>The waves are also stored permanently on the blackboard as <code>supersteps</code>, a list of <code>{wave, round, tasks, agents}</code>. The console's <b>Agents</b> page shows them under the live agent network, and the <b>Evidence</b> page replays the whole event log for any past trace ID (e.g. <code>ORCA-2026-09-27-7F3A1</code>).</p>
+  <div class="box inorca"><b class="t">In ORCA</b><p>The compiled topology itself is available at <code>GET /api/agents/graph</code>: nodes, edges with a <code>conditional</code> flag, and LangGraph's own Mermaid drawing of the graph, generated by <code>GRAPH.get_graph().draw_mermaid()</code>.</p></div>
+
+  <h2 id="s20">20. Testing the graph</h2>
+  <p>ORCA's agents and core models were already covered by tests before the LangGraph migration. We added two tests for the graph itself:</p>
+  <div class="file">apps/api/tests/test_pipeline.py</div>
+<pre><span class="k">def</span> test_langgraph_topology():
+    d = graph_description()
+    <span class="k">assert</span> d[<span class="s">"engine"</span>] == <span class="s">"langgraph"</span>
+    ids = {n[<span class="s">"id"</span>] <span class="k">for</span> n <span class="k">in</span> d[<span class="s">"nodes"</span>]}
+    <span class="k">assert</span> set(AGENTS) &lt;= ids <span class="k">and</span> {<span class="s">"understand"</span>, <span class="s">"plan"</span>, <span class="s">"join"</span>, <span class="s">"review"</span>, <span class="s">"visualize"</span>, <span class="s">"clarify"</span>} &lt;= ids
+    edges = {(e[<span class="s">"source"</span>], e[<span class="s">"target"</span>]) <span class="k">for</span> e <span class="k">in</span> d[<span class="s">"edges"</span>]}
+    <span class="k">assert</span> all((a, <span class="s">"join"</span>) <span class="k">in</span> edges <span class="k">for</span> a <span class="k">in</span> AGENTS)          <span class="c"># every agent fans back into the barrier</span>
+
+
+<span class="k">async def</span> test_supersteps_are_parallel_waves():
+    bb = <span class="k">await</span> run(<span class="s">"conflicting_sources"</span>)
+    waves = bb.supersteps
+    <span class="k">assert</span> waves[0][<span class="s">"tasks"</span>] == [<span class="s">"geospatial"</span>]
+    <span class="k">assert</span> {<span class="s">"ocean"</span>, <span class="s">"weather"</span>, <span class="s">"advisory"</span>} &lt;= set(waves[1][<span class="s">"tasks"</span>])   <span class="c"># independent agents share a superstep</span>
+    done = set()
+    <span class="k">for</span> w <span class="k">in</span> waves:                                                    <span class="c"># a task only runs after its dependencies</span>
+        <span class="k">for</span> tid <span class="k">in</span> w[<span class="s">"tasks"</span>]:
+            t = next(t <span class="k">for</span> t <span class="k">in</span> bb.plan.tasks <span class="k">if</span> t.id == tid)
+            <span class="k">assert</span> all(d <span class="k">in</span> done <span class="k">for</span> d <span class="k">in</span> t.depends_on)
+        done |= set(w[<span class="s">"tasks"</span>])
+    <span class="k">assert</span> any(w[<span class="s">"round"</span>] == 1 <span class="k">for</span> w <span class="k">in</span> waves)                         <span class="c"># RP2 re-plan executed as further supersteps</span></pre>
+  <p>The end-to-end tests run every DEMO scenario through the compiled graph. They check, for example, that the cyclone scenario fires RP3 and returns DON'T GO, and that a total outage returns NO RELIABLE ASSESSMENT with confidence 0. All run without any network or API key.</p>
+  <div class="box why"><b class="t">Why this matters</b><p>Testing without an AI and without the internet makes the tests fast (the full suite takes about 22 seconds), free, and deterministic. A test that sometimes fails because an API was slow teaches you nothing.</p></div>
+</section>
+
+<!-- ============================================================ PART 4 -->
+<section class="part" id="part4">
+  <div class="num">Part 4</div>
+  <h1 class="part-title">The rest of the system</h1>
+  <p class="lead">Agents need data to fetch, models to reason with, an API to be called through, and a screen to be seen on. This part tours everything around the agent graph, then tells how the project was built.</p>
+  <ol><li>21. The big picture</li><li>22. Data connectors and the three modes</li><li>23. The deterministic core</li><li>24. Where the LLM is allowed, and its guard</li><li>25. The API and the mission-control console</li><li>26. Evaluation: how we know it works</li><li>27. How it was built</li></ol>
+</section>
+
+<section class="pb">
+  <h2 id="s21" class="first">21. The big picture</h2>
+  <figure>
+    <svg width="660" height="400" viewBox="0 0 660 400">
+      <g font-size="10">
+        <rect x="10" y="8" width="640" height="56" rx="6" fill="#e9f1fb" stroke="#2b78d6"/>
+        <text x="22" y="26" font-weight="700" font-size="11">apps/web — Next.js 16 · TypeScript · Tailwind v4 · MapLibre GL v6</text>
+        <text x="22" y="44" fill="#4a515c">Landing · Judge mode · Command · Live Ocean · Ask ORCA · Fishing · Safety · Route · Research</text>
+        <text x="22" y="58" fill="#4a515c">Sources · Agents · Evidence · Health · Eval       (SSE: live agent trace + alert stream)</text>
+        <text x="330" y="80" text-anchor="middle" fill="#7c838e">REST + Server-Sent Events</text>
+        <path d="M330 64 V70 M330 84 V92" stroke="#7c838e"/>
+        <rect x="10" y="92" width="640" height="300" rx="6" fill="#fff" stroke="#16223d"/>
+        <text x="22" y="110" font-weight="700" font-size="11">apps/api — FastAPI (Python 3.11)</text>
+        <rect x="22" y="118" width="200" height="30" rx="4" fill="#f3f3ef" stroke="#9aa0a8"/><text x="122" y="137" text-anchor="middle">api/routes.py · security · rate limit</text>
+        <rect x="232" y="118" width="200" height="30" rx="4" fill="#f3f3ef" stroke="#9aa0a8"/><text x="332" y="137" text-anchor="middle">orchestrator.py · monitor.py</text>
+        <rect x="442" y="118" width="196" height="30" rx="4" fill="#f3f3ef" stroke="#9aa0a8"/><text x="540" y="137" text-anchor="middle">store/db.py (SQLite; PostGIS schema)</text>
+        <rect x="22" y="156" width="616" height="50" rx="4" fill="#16223d"/>
+        <text x="330" y="176" text-anchor="middle" fill="#fff" font-weight="700" font-size="11">graph.py — LangGraph StateGraph</text>
+        <text x="330" y="194" text-anchor="middle" fill="#c8d3e8">understand → plan → Send fan-out → 12 agent nodes → join → review (RP1–RP4) → visualize</text>
+        <rect x="22" y="214" width="616" height="30" rx="4" fill="#fdf6e8" stroke="#d9a441"/>
+        <text x="330" y="233" text-anchor="middle">Blackboard (typed, per question) — understanding · plan · outputs · evidence · claims · conflicts · risk · route · events</text>
+        <rect x="22" y="252" width="300" height="62" rx="4" fill="#e7f3ec" stroke="#2e8b57"/>
+        <text x="172" y="270" text-anchor="middle" font-weight="700">Deterministic core (no LLM)</text>
+        <text x="172" y="286" text-anchor="middle" fill="#4a515c">risk · confidence · freshness · conflicts · spatial</text>
+        <text x="172" y="300" text-anchor="middle" fill="#4a515c">routing (A*) · temporal · units · fisheries · research</text>
+        <rect x="338" y="252" width="300" height="62" rx="4" fill="#fdeee6" stroke="#f0683a"/>
+        <text x="488" y="270" text-anchor="middle" font-weight="700">Optional LLM (Claude)</text>
+        <text x="488" y="286" text-anchor="middle" fill="#4a515c">interpretation fallback · narration</text>
+        <text x="488" y="300" text-anchor="middle" fill="#4a515c">behind a numeric grounding guard</text>
+        <rect x="22" y="322" width="616" height="62" rx="4" fill="#f3f3ef" stroke="#9aa0a8"/>
+        <text x="330" y="340" text-anchor="middle" font-weight="700">connectors/ — Transport seam: LIVE · REPLAY · DEMO</text>
+        <text x="330" y="356" text-anchor="middle" fill="#4a515c">Open-Meteo (9 models) · NOAA CoastWatch ERDDAP · GDACS · GEBCO · NASA GIBS · Marine Regions · Natural Earth</text>
+        <text x="330" y="372" text-anchor="middle" fill="#4a515c">adapters: IMD · INCOIS · MOSDAC · Copernicus · WDPA · Earthdata · Bhuvan · CMFRI (report status honestly)</text>
+      </g>
+    </svg>
+    <figcaption>Figure 11 — ORCA's architecture. The LangGraph agent graph sits in the middle, with the typed blackboard directly below it.</figcaption>
+  </figure>
+  <p>A request goes: browser → <code>POST /api/query</code> → the orchestrator creates a blackboard and an execution context for the chosen mode → the compiled graph runs → events stream back live → the finished blackboard is stored in SQLite under a trace ID → the browser renders the decision, the evidence and the map.</p>
+
+  <h2 id="s22">22. Data connectors and the three modes</h2>
+  <p>A <b>connector</b> knows how to ask one data provider a question and how to parse its answer into ORCA's typed series with provenance. Underneath every connector sits a <b>transport</b> that decides where the bytes actually come from. This one seam is what makes ORCA's three modes possible:</p>
+  <table>
+    <tr><th style="width:14%">Mode</th><th style="width:30%">Transport</th><th>Behaviour</th></tr>
+    <tr><td><b>LIVE</b></td><td>LiveTransport (httpx)</td><td>Real APIs only. Per-source TTL cache, request coalescing, 2 retries with back-off, circuit breaker (opens after 3 failures, retries after 60 s), stale-if-error up to 24 h (labelled), optional recorder.</td></tr>
+    <tr><td><b>REPLAY</b></td><td>ReplayTransport</td><td>Serves responses recorded from real APIs (the bundled snapshot has 85). The clock is frozen at recording time. An unknown request fails with <code>NOT_IN_RECORDING</code> and is never invented.</td></tr>
+    <tr><td><b>DEMO</b></td><td>DemoTransport</td><td>A synthetic but physically motivated ocean produces responses <i>in the exact upstream formats</i> (Open-Meteo JSON, ERDDAP tables, GDACS GeoJSON), including scripted outages. Everything is labelled SIMULATED, and a striped banner is shown.</td></tr>
+  </table>
+  <div class="box key"><b class="t">Key idea</b><p>The agents are identical in all three modes. They don't know whether bytes came from the internet, a recording or a simulator. That is why DEMO is a true test of the real agents and not a mock-up, and why the evaluation can run offline.</p></div>
+  <p>The restricted Indian sources (IMD, INCOIS, MOSDAC and others) have adapters that activate on configuration. Today they report their real status, for example IMD's <i>"IP needs to be whitelisted"</i>, and every safety answer tells the user to check official IMD/INCOIS bulletins.</p>
+
+  <h2 id="s23">23. The deterministic core</h2>
+  <p>The reasoning agents are thin. They gather inputs and call pure functions in <code>apps/api/orca/core/</code> and <code>reasoning/</code> that have no network access and are unit-tested directly.</p>
+  <h3>The risk model <code>orca-risk-1.0</code></h3>
+  <p>For each factor it takes each source's worst value across all sample points and hours, compares it with vessel-specific thresholds (e.g. small craft: waves caution 1.5 m / danger 2.5 m, wind 28 / 45 km/h), and applies ordered rules:</p>
+  <table>
+    <tr><th style="width:9%">Rule</th><th>Effect</th></tr>
+    <tr><td>R1</td><td>A critical factor (wind or waves) is unavailable → NO RELIABLE ASSESSMENT</td></tr>
+    <tr><td>R2</td><td>Any factor at DANGER → DON'T GO. <b>R2b</b>: thunderstorm potential is model-inferred, so it can raise the decision to CAUTION but never alone to DON'T GO.</td></tr>
+    <tr><td>R3</td><td>All sources of a critical factor are STALE → at least CAUTION</td></tr>
+    <tr><td>R4</td><td>Any factor at CAUTION → CAUTION</td></tr>
+    <tr><td>R5</td><td>Sources straddle the caution threshold on a critical factor → at least CAUTION</td></tr>
+    <tr><td>R6</td><td>Otherwise GO: "within configured limits, not a guarantee of safety"</td></tr>
+  </table>
+  <p>Thunderstorm energy (CAPE) only counts where the same model also predicts at least 0.5 mm/h of rain at the same place and hour. Without that gate, ORCA returned DON'T GO on calm, dry days when tested on live data. That is how the rule came about.</p>
+  <h3>Routing</h3>
+  <p>A time-dependent A* search over a land-masked grid. The cost of each step is <code>distance × (1 + α·risk(place, ETA))</code>, with α = 0 for the shortest route, 3 for the recommended route and 8 for the safest. Restricted zones (and foreign EEZs for fishing craft) are impassable, and protected areas cost six times more unless RP4 blocks them outright.</p>
+  <h3>Freshness, conflicts, geometry, statistics</h3>
+  <p>Freshness uses two clocks per datum (product age and retrieval age). Conflicts use per-variable tolerances. Geometry uses shapely with local azimuthal-equidistant projections for exact kilometres. Research uses Welch's t-test, least-squares trends and lagged Pearson correlation. All parameters are published in <code>docs/REASONING.md</code>.</p>
+
+  <h2 id="s24">24. Where the LLM is allowed, and its guard</h2>
+  <p>ORCA works fully without any LLM. If an Anthropic API key is configured, Claude (<code>claude-opus-5</code>, with server-side fallback models enabled) is used in two narrow places:</p>
+  <ol>
+    <li><b>Interpretation fallback.</b> When the rule-based parser's confidence is below 0.5, Claude returns a JSON object that must match a schema and must name places by <i>gazetteer identifiers</i>. Anything that fails validation is discarded.</li>
+    <li><b>Narration.</b> Claude may rephrase the verified result more naturally. The <b>grounding guard</b> then extracts every number from the text and checks that each one appears, exactly or as a rounding, in the facts it was given. One unsupported number and the narration is thrown away and templates are used.</li>
+  </ol>
+  <div class="box watch"><b class="t">Watch out</b><p>The guard once rejected perfectly good narrations, because the facts were serialised as JSON with escaped characters (<code>–</code> instead of "–"), so the model's numbers didn't match the text they were compared with. The fix was <code>json.dumps(..., ensure_ascii=False)</code>. Guards need tests for false alarms too, not only for catching lies.</p></div>
+
+  <h2 id="s25">25. The API and the mission-control console</h2>
+  <p>The backend is <b>FastAPI</b>. The main endpoints:</p>
+  <table>
+    <tr><th style="width:40%">Endpoint</th><th>Purpose</th></tr>
+    <tr><td><code>POST /api/query</code></td><td>Ask a question. Returns a query ID, or waits for the answer with <code>wait=true</code>.</td></tr>
+    <tr><td><code>GET /api/query/{id}/events</code></td><td>Live SSE stream of that run's trace events</td></tr>
+    <tr><td><code>GET /api/query/{id}</code></td><td>The full stored blackboard (by query or trace ID)</td></tr>
+    <tr><td><code>GET /api/agents</code> · <code>/api/agents/graph</code></td><td>Agent catalogue with output schemas · compiled LangGraph topology</td></tr>
+    <tr><td><code>POST /api/route/analyze</code></td><td>Route optimisation and segment risk</td></tr>
+    <tr><td><code>GET /api/sources</code> · <code>/api/system/health</code></td><td>Source status and freshness · agents, queries, cache, monitor, LLM usage</td></tr>
+    <tr><td><code>GET /api/alerts/stream</code></td><td>Live SSE stream of new alerts</td></tr>
+    <tr><td><code>POST /api/eval/run</code></td><td>Run the evaluation suite (admin)</td></tr>
+  </table>
+  <p>Security is prototype-grade but deliberate: bearer-token roles, admin-only evaluation, token-bucket rate limits, validated inputs, secrets only from environment variables (and stripped from recordings), and stored locations rounded to 0.1°.</p>
+  <p>The frontend is a <b>Next.js 16</b> "mission control" console with a full-screen <b>MapLibre</b> map. The basemap is built from bundled Natural Earth land data, so no API keys or tile licences are needed, and real NASA GIBS satellite imagery can be overlaid. The agent activity dock at the bottom streams the live trace. The pages that matter most for agent design are:</p>
+  <ul>
+    <li><b>Agents</b>: the live agent network lighting up node by node, each agent's tools, inputs and typed output schema, the LangGraph supersteps, and the re-planning log.</li>
+    <li><b>Evidence</b>: every claim with its evidence items, conflicts, excluded sources, the full confidence computation and the complete event log for any trace ID.</li>
+    <li><b>Judge mode</b>: a guided tour through the DEMO scenarios.</li>
+  </ul>
+
+  <h2 id="s26">26. Evaluation: how we know it works</h2>
+  <p>The evaluation suite (<code>orca-eval-v1</code>) has <b>100 understanding cases</b> (English safety questions for ten harbours, questions in seven Indian languages, and fishing, route, regional, research, comparison, hazard, geofence and follow-up questions) and <b>14 end-to-end cases</b> run through the full graph in DEMO mode. Results after the move to LangGraph, 27 September 2026:</p>
+  <div>
+    <div class="stat"><b>1.00</b><span>intent accuracy (100)</span></div>
+    <div class="stat"><b>1.00</b><span>language detection</span></div>
+    <div class="stat"><b>1.00</b><span>decision accuracy (14)</span></div>
+    <div class="stat"><b>1.00</b><span>groundedness</span></div>
+    <div class="stat"><b>0.00</b><span>hallucination rate</span></div>
+    <div class="stat"><b>1.00</b><span>agent routing accuracy</span></div>
+    <div class="stat"><b>1.00</b><span>tool selection accuracy</span></div>
+    <div class="stat"><b>1.00</b><span>risk consistency</span></div>
+    <div class="stat"><b>0.96</b><span>evidence completeness</span></div>
+    <div class="stat"><b>0.79 / 5.0 s</b><span>latency p50 / p95 (DEMO)</span></div>
+  </div>
+  <p><b>Agent routing accuracy</b> checks that the required agents ran and irrelevant ones didn't. <b>Tool selection</b> checks that the required tools appear in the trace. <b>Risk consistency</b> checks that paraphrases and translations of the same question (e.g. Kochi in English, Malayalam and Hindi) get the same decision, and that a re-run is identical. <b>Groundedness</b> checks that every number in an answer exists in the computed facts.</p>
+  <div class="box watch"><b class="t">Watch out</b><p>The dataset was written by the same team that wrote the rules, so perfect scores show <b>regression safety, not generalisation</b>. The honest next step is an independent test set in fishermen's and officials' own words, and checking past decisions against what the sea actually did.</p></div>
+
+  <h2 id="s27">27. How it was built</h2>
+  <p>ORCA was built in layers, from the contract outwards, so each layer could be tested before the next one depended on it:</p>
+  <ol>
+    <li><b>Schemas first.</b> Provenance, freshness, evidence, claims, assessment, blackboard: the shared vocabulary every agent speaks, written as Pydantic models before any agent existed.</li>
+    <li><b>The deterministic core.</b> Freshness rules, units, geodesy, the risk model, confidence and A* routing, each with unit tests and no network.</li>
+    <li><b>Connectors and the transport seam.</b> Real APIs first (Open-Meteo, ERDDAP, GDACS, GEBCO, GIBS), then the recorder, REPLAY and the DEMO simulator speaking the same formats.</li>
+    <li><b>The agents</b>, one at a time, each against its contract: retrieval agents, then geospatial, hazard, evidence, communication, route, fisheries, research and alert.</li>
+    <li><b>The planner and re-planning rules</b>, with plan templates per intent and RP1–RP4.</li>
+    <li><b>Orchestration.</b> First a hand-written asyncio DAG scheduler, then migrated to a LangGraph <code>StateGraph</code> with one node per agent, <code>Send</code> fan-out and conditional re-planning edges, verified with the unchanged test suite and evaluation.</li>
+    <li><b>The console</b>, evaluation suite, documentation and Docker packaging.</li>
+  </ol>
+  <h3>Bugs that shaped the design</h3>
+  <table>
+    <tr><th style="width:38%">What went wrong</th><th>What we changed</th></tr>
+    <tr><td>Coarse models (0.25–0.5° grids) were penalised as if they were far away</td><td>The spatial factor S now allows for native resolution: <code>exp(−max(0, d − 0.71r)/50)</code></td></tr>
+    <tr><td>Model CAPE produced DON'T GO on dry days in LIVE data</td><td>CAPE gated by same-model rain, and R2b caps it at CAUTION</td></tr>
+    <tr><td>The ERDDAP time-series request returned HTTP 404</td><td>Region series request the last N days with a server-side stride</td></tr>
+    <tr><td>Research evaluated hypotheses even with no data</td><td>Hypotheses without data are skipped, and a premise check flags questions whose assumption contradicts the data</td></tr>
+    <tr><td>A route whose end-point lies inside a protected zone cannot avoid it, so the RP4 re-route had nothing to offer</td><td>RP4 now reports explicitly when no compliant route exists</td></tr>
+    <tr><td>The fishing-zone demo took 14.8 s</td><td>Vectorised distance-to-coast in the simulator: 1.2 s</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================ PART 5 -->
+<section class="part" id="part5">
+  <div class="num">Part 5</div>
+  <h1 class="part-title">Using it, and reference</h1>
+  <p class="lead">How to run ORCA, a script for demonstrating it, what it can't do yet, and a glossary and code map to keep next to you while reading the code.</p>
+  <ol><li>28. Setting it up</li><li>29. A guided demonstration</li><li>30. Limitations</li><li>31. Future improvements</li><li>32. Glossary</li><li>33. Code map and command cheat sheet</li><li>34. What you now understand</li></ol>
+</section>
+
+<section class="pb">
+  <h2 id="s28" class="first">28. Setting it up</h2>
+  <p>You need Python 3.11+ and Node.js 20.9+. No API keys are required: all LIVE sources used by default are public, and DEMO and REPLAY work offline.</p>
+<pre>python -m venv .venv
+.venv/Scripts/pip install -r apps/api/requirements-dev.txt        <span class="c"># Linux/macOS: .venv/bin/pip</span>
+.venv/Scripts/python -m uvicorn orca.main:app --app-dir apps/api --port 8000
+cd apps/web &amp;&amp; npm install &amp;&amp; npm run dev</pre>
+  <p>Open <code>http://localhost:3000</code> and choose <b>Judge mode</b> or <b>Ask ORCA</b>. The API documentation is at <code>http://localhost:8000/docs</code>. With Docker: <code>docker compose up --build</code>.</p>
+  <table>
+    <tr><th style="width:36%">Optional setting</th><th>Effect</th></tr>
+    <tr><td><code>ANTHROPIC_API_KEY</code></td><td>Enables the LLM interpretation fallback and guarded narration</td></tr>
+    <tr><td><code>ORCA_API_TOKENS</code>, <code>ORCA_AUTH_REQUIRED</code></td><td>Bearer-token roles, mandatory authentication</td></tr>
+    <tr><td><code>ORCA_MONITOR_INTERVAL_S</code></td><td>How often the background monitor re-checks watched places</td></tr>
+    <tr><td>IMD / MOSDAC / Copernicus credentials</td><td>Activate the restricted-source adapters (see <code>docs/DATA_SOURCES.md</code>)</td></tr>
+  </table>
+
+  <h2 id="s29">29. A guided demonstration</h2>
+  <p>The nine DEMO scenarios are designed so that each one exercises a different part of the agent design:</p>
+  <table>
+    <tr><th style="width:22%">Scenario</th><th style="width:38%">Question</th><th>What it shows about the agents</th></tr>
+    <tr><td><code>kochi_fishing</code></td><td>Is it safe for a fishing boat to leave Kochi tomorrow at 5 AM?</td><td>CAUTION with onset ≈ 08:30 IST → "be back before then". Five retrieval agents in one superstep. The Malayalam version gives the same decision.</td></tr>
+    <tr><td><code>approaching_cyclone</code></td><td>Is it safe to fish off Visakhapatnam tomorrow morning?</td><td>DON'T GO inside a wind radius. <b>RP3</b> extends the horizon by 24 h. Verified alerts.</td></tr>
+    <tr><td><code>mumbai_goa_route</code></td><td>Find a lower-risk route from Mumbai to Goa for a trawler</td><td>Shortest vs recommended route. Segment risk at ETA. <b>RP2</b> tie-breaker for waves.</td></tr>
+    <tr><td><code>pfz_mangaluru</code></td><td>Show potential fishing zones near Mangaluru</td><td>SST fronts × chlorophyll. ORCA-derived indicator kept separate from INCOIS PFZ.</td></tr>
+    <tr><td><code>protected_geofence</code></td><td>Plan a route from Thoothukudi to Rameswaram …</td><td>Enters Gulf of Mannar park after 7.5 km. <b>RP4</b> hard-constraint re-route proves no compliant route exists.</td></tr>
+    <tr><td><code>conflicting_sources</code></td><td>Is it safe to fish 25 km off Chennai tomorrow morning?</td><td>4 conflicts. <b>RP2</b> ×2 tie-breakers in parallel (section 18).</td></tr>
+    <tr><td><code>degraded_sources</code></td><td>Is it safe to fish 20 km off Kochi tomorrow morning?</td><td>Three sources down: PARTIAL agents, exclusions listed, lower confidence</td></tr>
+    <tr><td><code>total_outage</code></td><td>(same question)</td><td>All wave models down. <b>RP1</b> alternative also down → NO RELIABLE ASSESSMENT</td></tr>
+    <tr><td><code>research_chl</code></td><td>Why did chlorophyll decline off Kochi over the past 14 days?</td><td>Observation / correlation / hypothesis / conclusion. No causal claims.</td></tr>
+  </table>
+  <p>A good five-minute demonstration: run <code>conflicting_sources</code> with the <b>Agents</b> page open, so the audience sees the supersteps and the RP2 re-plan happen, then open <b>Evidence</b> for the same trace to show the conflicts and the confidence computation. Finish with <code>total_outage</code> to show that ORCA refuses rather than guessing.</p>
+
+  <h2 id="s30">30. Limitations</h2>
+  <ul>
+    <li><b>No live Indian official data yet.</b> IMD needs IP whitelisting. INCOIS has no public machine API. MOSDAC and Copernicus need accounts. Safety answers rely on international models and GDACS, and say so.</li>
+    <li><b>No in-situ observations</b> (buoys, AIS, ship reports), so there is no real-time ground truth. Lightning is inferred, not observed. Storm surge, tides and tsunamis are not modelled.</li>
+    <li><b>Thresholds are ORCA defaults</b>, informed by IMD practice but not validated by any authority. The worst-case policy over-warns when one model is an outlier.</li>
+    <li><b>Confidence is a transparent heuristic</b>, not a calibrated probability.</li>
+    <li><b>Zone outlines are approximations</b> and seasonal ban dates must be checked each year. The gazetteer has 64 places.</li>
+    <li><b>Indian-language templates were machine-authored</b> and need review by native speakers.</li>
+    <li><b>Single process</b>: in-memory caches and circuit breakers, SQLite, and the LangGraph graph runs without a persistent checkpointer, so an interrupted run is not resumed.</li>
+  </ul>
+
+  <h2 id="s31">31. Future improvements</h2>
+  <table>
+    <tr><th style="width:34%">Idea</th><th>Why</th></tr>
+    <tr><td>LangGraph checkpointer (e.g. Postgres)</td><td>Resume interrupted runs, and "time-travel" through a past run's supersteps for debugging</td></tr>
+    <tr><td>Human-in-the-loop interrupts</td><td>LangGraph's <code>interrupt()</code> could pause before an alert is broadcast so a duty officer can approve it</td></tr>
+    <tr><td>Per-node retry and cache policies</td><td>Declarative retries per agent node instead of only in the transport</td></tr>
+    <tr><td>Subgraphs per intent</td><td>Route planning and research could become their own compiled subgraphs with private state</td></tr>
+    <tr><td>IMD / INCOIS / MOSDAC integration</td><td>Official Indian warnings as first-class evidence</td></tr>
+    <tr><td>Independent evaluation set, retrospective validation</td><td>Measure generalisation, not only regression</td></tr>
+    <tr><td>PostGIS, Redis, a job queue</td><td>Multi-process deployment and shared caches</td></tr>
+  </table>
+
+  <h2 id="s32">32. Glossary</h2>
+  <table class="long">
+    <tr><th style="width:26%">Term</th><th>Meaning</th></tr>
+    <tr><td>Agent</td><td>A program that plans or performs one kind of work with tools and returns a typed result. In ORCA: a class with name, tools, consumes, output model, timeout and <code>run()</code>.</td></tr>
+    <tr><td>Blackboard</td><td>Shared, typed per-question data structure that agents read from and write to instead of messaging each other</td></tr>
+    <tr><td>CAPE</td><td>Convective available potential energy: an index of thunderstorm potential</td></tr>
+    <tr><td>Claim / evidence item</td><td>A statement ORCA makes / one source's support for it, with provenance and weight</td></tr>
+    <tr><td>Conditional edge</td><td>LangGraph edge whose destination is chosen at run time by a routing function</td></tr>
+    <tr><td>Confidence</td><td>ORCA's computed trust score: A·F·S·T per item, Q·(0.5+0.5G)·K per claim, × C·(0.7+0.3D)</td></tr>
+    <tr><td>DAG</td><td>Directed acyclic graph: tasks with "depends on" arrows and no cycles</td></tr>
+    <tr><td>EEZ</td><td>Exclusive economic zone, a country's sea area out to 200 nautical miles</td></tr>
+    <tr><td>Freshness</td><td>LIVE / RECENT / STALE / UNAVAILABLE, plus REPLAY / SIMULATED / STATIC labels</td></tr>
+    <tr><td>Gazetteer</td><td>ORCA's list of known places with coordinates and local-language names</td></tr>
+    <tr><td>Grounding guard</td><td>Check that every number in LLM text exists in computed facts</td></tr>
+    <tr><td>LangGraph</td><td>Open-source library for building stateful agent workflows as graphs</td></tr>
+    <tr><td>Lineage</td><td>The upstream origin of a datum. Two items with the same lineage are not independent.</td></tr>
+    <tr><td>MPA</td><td>Marine protected area</td></tr>
+    <tr><td>PFZ</td><td>Potential Fishing Zone, INCOIS's official advisory</td></tr>
+    <tr><td>Reducer</td><td>Function that merges state updates to the same key (ORCA: <code>operator.add</code>)</td></tr>
+    <tr><td>Re-planning (RP1–RP4)</td><td>Rules that add tasks after reviewing results</td></tr>
+    <tr><td>Runtime context</td><td>Per-run objects LangGraph passes to nodes outside the state (ORCA: <code>OrcaContext.run</code>)</td></tr>
+    <tr><td>Send</td><td>LangGraph instruction to run a node with a specific payload, used for parallel fan-out</td></tr>
+    <tr><td>SSE</td><td>Server-Sent Events: a one-way live stream from server to browser</td></tr>
+    <tr><td>SST</td><td>Sea-surface temperature</td></tr>
+    <tr><td>Superstep</td><td>One LangGraph tick in which all scheduled nodes run concurrently. In ORCA, one wave of the plan.</td></tr>
+    <tr><td>Trace ID</td><td>ID of one answered question, e.g. <code>ORCA-2026-09-27-7F3A1</code></td></tr>
+    <tr><td>Transport</td><td>Layer under the connectors that fetches bytes: live, replayed or simulated</td></tr>
+  </table>
+
+  <h2 id="s33">33. Code map and command cheat sheet</h2>
+  <table>
+    <tr><th style="width:40%">Path</th><th>What lives there</th></tr>
+    <tr><td><code>apps/api/orca/graph.py</code></td><td><b>The LangGraph StateGraph</b>: state, nodes, <code>Send</code> dispatch, re-plan loop, map directive</td></tr>
+    <tr><td><code>apps/api/orca/orchestrator.py</code></td><td>Creates a run, invokes the graph, persists the trace, agent catalogue</td></tr>
+    <tr><td><code>apps/api/orca/agents/base.py</code></td><td>The agent contract: <code>Agent</code>, <code>AgentOutcome</code>, <code>RunState</code></td></tr>
+    <tr><td><code>apps/api/orca/agents/planner.py</code></td><td>Understanding, plan templates, re-planning rules RP1–RP4</td></tr>
+    <tr><td><code>apps/api/orca/agents/*.py</code></td><td>The twelve specialised agents</td></tr>
+    <tr><td><code>apps/api/orca/core/</code></td><td>Schemas, risk, confidence, freshness, routing, spatial, temporal, units, clock</td></tr>
+    <tr><td><code>apps/api/orca/reasoning/</code></td><td>NLU and lexicon, conflicts, fisheries, research statistics, i18n, LLM layer</td></tr>
+    <tr><td><code>apps/api/orca/connectors/</code></td><td>Transports and data-source connectors</td></tr>
+    <tr><td><code>apps/api/orca/demo/</code>, <code>evaluation/</code></td><td>DEMO simulator and scenarios · evaluation dataset and runner</td></tr>
+    <tr><td><code>apps/api/tests/</code></td><td>85 pytest tests</td></tr>
+    <tr><td><code>apps/web/src/app/(console)/</code></td><td>Console pages: agents, evidence, route, research, judge …</td></tr>
+    <tr><td><code>docs/</code></td><td>ARCHITECTURE, AGENTS, REASONING, DATA_SOURCES, SAFETY, API, DEMO, EVALUATION, LIMITATIONS</td></tr>
+  </table>
+  <table>
+    <tr><th style="width:52%">Command</th><th>Does</th></tr>
+    <tr><td><code>cd apps/api &amp;&amp; ../../.venv/Scripts/python -m pytest -q</code></td><td>Run all tests (≈ 22 s, offline)</td></tr>
+    <tr><td><code>curl localhost:8000/api/agents/graph</code></td><td>Print the compiled LangGraph topology</td></tr>
+    <tr><td><code>curl -X POST "localhost:8000/api/query?mode=DEMO&amp;scenario=conflicting_sources&amp;wait=true" -H "content-type: application/json" -d "{\"text\":\"Is it safe to fish 25 km off Chennai tomorrow morning?\"}"</code></td><td>Ask a question and wait for the full blackboard</td></tr>
+    <tr><td><code>python scripts/record_replay.py</code></td><td>Record a new REPLAY snapshot from live sources</td></tr>
+    <tr><td><code>python scripts/fetch_reference_data.py</code></td><td>Refresh bundled reference geodata</td></tr>
+    <tr><td><code>docker compose up --build</code></td><td>Run API and web in containers</td></tr>
+  </table>
+
+  <h2 id="s34">34. What you now understand</h2>
+  <ul>
+    <li>Why a marine safety answer needs many sources, and why they must never be averaged or invented.</li>
+    <li>What an agent is, and why "agentic" does not have to mean "an LLM decides everything".</li>
+    <li>How thirteen specialised agents cooperate through a typed blackboard instead of free-text messages.</li>
+    <li>The agent contract (tools, consumes, typed output, timeout, <code>run()</code>) and why each part of it exists.</li>
+    <li>How the planner turns a sentence in eight languages into a dependency graph of tasks, and how rules RP1–RP4 change the plan when the evidence demands it.</li>
+    <li>How evidence, conflicts and a computed confidence make an answer auditable.</li>
+    <li>How LangGraph runs it all: a small scheduling state with a reducer, a runtime context for the heavy data, one node per agent, <code>Send</code> fan-out into parallel supersteps, a join barrier, and conditional edges that loop back for re-planning.</li>
+    <li>How LIVE, REPLAY and DEMO run the same agents, and how the evaluation checks routing, grounding and consistency.</li>
+  </ul>
+  <div class="box key"><b class="t">Key idea</b><p>In ORCA the agents are experts with contracts, the planner is the strategist, LangGraph is the conductor, and the evidence agent is the referee. None of them is allowed to make up a number.</p></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,360 @@
+{
+ "_meta": {
+  "source": "ORCA-curated approximate zones",
+  "warning": "APPROXIMATE geometries hand-digitised for the prototype from publicly described extents. They are NOT legal boundaries and must be replaced with authoritative polygons (WDPA via Protected Planet API, state fisheries notifications) before any operational use. Land is subtracted at load time.",
+  "license": "ORCA prototype data"
+ },
+ "protected_areas": [
+  {
+   "id": "gulf_of_mannar_mnp",
+   "name": "Gulf of Mannar Marine National Park",
+   "designation": "Marine National Park",
+   "authority": "Tamil Nadu Forest Department",
+   "established": 1986,
+   "ring": [
+    [
+     78.22,
+     8.8
+    ],
+    [
+     78.32,
+     9.02
+    ],
+    [
+     78.55,
+     9.14
+    ],
+    [
+     78.8,
+     9.21
+    ],
+    [
+     79.05,
+     9.25
+    ],
+    [
+     79.19,
+     9.26
+    ],
+    [
+     79.2,
+     9.19
+    ],
+    [
+     79.05,
+     9.13
+    ],
+    [
+     78.8,
+     9.08
+    ],
+    [
+     78.55,
+     9.0
+    ],
+    [
+     78.36,
+     8.87
+    ],
+    [
+     78.25,
+     8.76
+    ],
+    [
+     78.22,
+     8.8
+    ]
+   ],
+   "note": "Approximate outline of the 21-island chain between Thoothukudi and Mandapam; harbour approaches excluded."
+  },
+  {
+   "id": "gulf_of_kutch_mnp",
+   "name": "Marine National Park, Gulf of Kutch",
+   "designation": "Marine National Park",
+   "authority": "Gujarat Forest Department",
+   "established": 1982,
+   "ring": [
+    [
+     69.05,
+     22.45
+    ],
+    [
+     69.3,
+     22.52
+    ],
+    [
+     69.6,
+     22.55
+    ],
+    [
+     69.9,
+     22.62
+    ],
+    [
+     70.2,
+     22.72
+    ],
+    [
+     70.4,
+     22.75
+    ],
+    [
+     70.4,
+     22.62
+    ],
+    [
+     70.1,
+     22.5
+    ],
+    [
+     69.8,
+     22.42
+    ],
+    [
+     69.45,
+     22.36
+    ],
+    [
+     69.1,
+     22.32
+    ],
+    [
+     69.05,
+     22.45
+    ]
+   ]
+  },
+  {
+   "id": "malvan_ms",
+   "name": "Malvan Marine Sanctuary",
+   "designation": "Marine Sanctuary",
+   "authority": "Maharashtra Forest Department",
+   "established": 1987,
+   "ring": [
+    [
+     73.4,
+     16.0
+    ],
+    [
+     73.48,
+     16.0
+    ],
+    [
+     73.5,
+     16.08
+    ],
+    [
+     73.45,
+     16.1
+    ],
+    [
+     73.4,
+     16.06
+    ],
+    [
+     73.4,
+     16.0
+    ]
+   ]
+  },
+  {
+   "id": "gahirmatha_ms",
+   "name": "Gahirmatha Marine Wildlife Sanctuary",
+   "designation": "Marine Sanctuary",
+   "authority": "Odisha Forest Department",
+   "established": 1997,
+   "ring": [
+    [
+     86.93,
+     20.4
+    ],
+    [
+     87.05,
+     20.35
+    ],
+    [
+     87.25,
+     20.55
+    ],
+    [
+     87.2,
+     20.8
+    ],
+    [
+     87.02,
+     20.8
+    ],
+    [
+     86.97,
+     20.6
+    ],
+    [
+     86.93,
+     20.4
+    ]
+   ]
+  },
+  {
+   "id": "mgmnp_wandoor",
+   "name": "Mahatma Gandhi Marine National Park (Wandoor)",
+   "designation": "Marine National Park",
+   "authority": "Andaman & Nicobar Forest Department",
+   "established": 1983,
+   "ring": [
+    [
+     92.55,
+     11.5
+    ],
+    [
+     92.66,
+     11.5
+    ],
+    [
+     92.68,
+     11.62
+    ],
+    [
+     92.58,
+     11.66
+    ],
+    [
+     92.53,
+     11.58
+    ],
+    [
+     92.55,
+     11.5
+    ]
+   ]
+  }
+ ],
+ "restricted_areas": [
+  {
+   "id": "bombay_high",
+   "name": "Bombay High offshore installations area",
+   "designation": "Offshore safety zones",
+   "authority": "Directorate General of Hydrocarbons / Indian Navy (NAVAREA VIII notices)",
+   "rule": "Vessels not permitted within 500 m of offshore installations; area approximated as a single polygon for prototype geofencing.",
+   "ring": [
+    [
+     71.1,
+     19.2
+    ],
+    [
+     71.65,
+     19.2
+    ],
+    [
+     71.65,
+     19.75
+    ],
+    [
+     71.1,
+     19.75
+    ],
+    [
+     71.1,
+     19.2
+    ]
+   ]
+  }
+ ],
+ "seasonal_regulations": [
+  {
+   "id": "west_coast_monsoon_ban",
+   "name": "West coast uniform fishing ban (monsoon)",
+   "authority": "Dept. of Fisheries, GoI (EEZ) and coastal States (territorial waters)",
+   "applies_to": [
+    "mechanized",
+    "large_vessel"
+   ],
+   "start_mmdd": "06-01",
+   "end_mmdd": "07-31",
+   "note": "61-day ban for mechanised / motorised vessels; exact dates vary by year and State notification — verify current notification.",
+   "area": {
+    "type": "india_eez_lon_range",
+    "lon_min": 60.0,
+    "lon_max": 77.55
+   }
+  },
+  {
+   "id": "east_coast_ban",
+   "name": "East coast uniform fishing ban",
+   "authority": "Dept. of Fisheries, GoI (EEZ) and coastal States (territorial waters)",
+   "applies_to": [
+    "mechanized",
+    "large_vessel"
+   ],
+   "start_mmdd": "04-15",
+   "end_mmdd": "06-14",
+   "note": "61-day ban for mechanised / motorised vessels; verify current notification.",
+   "area": {
+    "type": "india_eez_lon_range",
+    "lon_min": 77.55,
+    "lon_max": 90.0
+   }
+  },
+  {
+   "id": "odisha_turtle_restriction",
+   "name": "Odisha olive ridley fishing restriction",
+   "authority": "Odisha Fisheries Department",
+   "applies_to": [
+    "mechanized",
+    "large_vessel",
+    "small_craft"
+   ],
+   "start_mmdd": "11-01",
+   "end_mmdd": "05-31",
+   "note": "Trawling / gill-netting restricted within ~20 km of the coast at Gahirmatha, Devi and Rushikulya river mouths during nesting season (approximate area).",
+   "area": {
+    "type": "ring",
+    "ring": [
+     [
+      84.95,
+      19.3
+     ],
+     [
+      85.25,
+      19.25
+     ],
+     [
+      85.9,
+      19.6
+     ],
+     [
+      86.6,
+      20.05
+     ],
+     [
+      87.25,
+      20.5
+     ],
+     [
+      87.2,
+      20.9
+     ],
+     [
+      86.95,
+      20.85
+     ],
+     [
+      86.5,
+      20.3
+     ],
+     [
+      85.8,
+      19.85
+     ],
+     [
+      85.1,
+      19.5
+     ],
+     [
+      84.95,
+      19.3
+     ]
+    ]
+   }
+  }
+ ]
+}

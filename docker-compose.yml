@@ -1,0 +1,25 @@
+# ORCA — local stack. SQLite is the default store; the optional PostGIS service
+# loads infra/postgis/schema.sql for the production data model (see docs/ARCHITECTURE.md).
+services:
+  api:
+    build: { context: ., dockerfile: apps/api/Dockerfile }
+    env_file: [.env]
+    ports: ["8000:8000"]
+    volumes: ["orca-state:/srv/state"]
+    restart: unless-stopped
+  web:
+    build:
+      context: apps/web
+      args: { NEXT_PUBLIC_ORCA_API: "http://localhost:8000" }
+    ports: ["3000:3000"]
+    depends_on: [api]
+    restart: unless-stopped
+  postgis:
+    profiles: ["postgis"]
+    image: postgis/postgis:16-3.4
+    environment: { POSTGRES_DB: orca, POSTGRES_USER: orca, POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-change-me}" }
+    volumes: ["pg-data:/var/lib/postgresql/data", "./infra/postgis/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro"]
+    ports: ["5432:5432"]
+volumes:
+  orca-state: {}
+  pg-data: {}

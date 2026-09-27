@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+/* ORCA visual identity — "abyssal ops": deep-water surfaces, hairline instrumentation,
+   one bioluminescent accent, reserved status colours (always paired with shape + label). */
+:root {
+  --abyss: #03070c;
+  --panel: #07101a;
+  --panel-2: #0b1520;
+  --panel-3: #0f1c2a;
+  --line: #142436;
+  --line-2: #1d3349;
+  --ink: #dbe6f0;
+  --ink-2: #93a7bb;
+  --ink-3: #5f7489;
+  --accent: #43d3c6;
+  --accent-2: #3987e5;
+  --go: #0ca30c;
+  --caution: #fab219;
+  --serious: #ec835a;
+  --danger: #d03b3b;
+  --na: #8491a3;
+  --live: #43d3c6;
+  --replay: #f0a636;
+  --demo: #b39cff;
+  --s1: #3987e5;   /* categorical series (validated on --panel-2) */
+  --s2: #d95926;
+  --s3: #199e70;
+  --s4: #c98500;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-abyss: var(--abyss);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-panel-3: var(--panel-3);
+  --color-line: var(--line);
+  --color-line-2: var(--line-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-go: var(--go);
+  --color-caution: var(--caution);
+  --color-serious: var(--serious);
+  --color-danger: var(--danger);
+  --color-na: var(--na);
+  --color-live: var(--live);
+  --color-replay: var(--replay);
+  --color-demo: var(--demo);
+  --font-sans: var(--font-plex-sans);
+  --font-mono: var(--font-plex-mono);
+  --font-cond: var(--font-plex-cond);
+}
+
+html, body { height: 100%; }
+body { overflow-x: hidden; }
+body {
+  background: var(--abyss);
+  color: var(--ink);
+  font-family: var(--font-plex-sans), system-ui, sans-serif;
+  font-feature-settings: "tnum" 1;
+}
+
+/* instrumentation label */
+.lbl {
+  font-family: var(--font-plex-cond), var(--font-plex-sans), sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.num { font-family: var(--font-plex-mono), monospace; font-variant-numeric: tabular-nums; }
+.hair { border-color: var(--line); }
+
+.scroll-thin { scrollbar-width: thin; scrollbar-color: var(--line-2) transparent; }
+.scroll-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-thin::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 3px; }
+
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(67, 211, 198, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(67, 211, 198, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
+.pulse { animation: pulse-dot 1.6s ease-in-out infinite; }
+@keyframes flow { to { stroke-dashoffset: -24; } }
+.flow { stroke-dasharray: 6 6; animation: flow 0.9s linear infinite; }
+@keyframes rise { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.28s ease-out both; }
+@keyframes scan { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+.scanline { position: relative; overflow: hidden; }
+.scanline::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(67,211,198,.12), transparent); animation: scan 1.4s linear infinite; }
+
+.demo-tape {
+  background: repeating-linear-gradient(135deg, rgba(179, 156, 255, 0.16) 0 10px, rgba(179, 156, 255, 0.05) 10px 20px);
+}
+.replay-tape {
+  background: repeating-linear-gradient(135deg, rgba(240, 166, 54, 0.16) 0 10px, rgba(240, 166, 54, 0.05) 10px 20px);
+}
+
+/* MapLibre chrome in ORCA colours */
+.maplibregl-ctrl-group { background: var(--panel-2) !important; border: 1px solid var(--line-2); box-shadow: none !important; }
+.maplibregl-ctrl-group button { filter: invert(0.85); }
+.maplibregl-ctrl-attrib { background: rgba(3, 7, 12, 0.72) !important; color: var(--ink-3) !important; font-size: 10px; }
+.maplibregl-ctrl-attrib a { color: var(--ink-2) !important; }
+.maplibregl-ctrl-scale { background: rgba(3,7,12,.6); color: var(--ink-2); border-color: var(--ink-3); font-size: 10px; }
+.maplibregl-popup-content { background: var(--panel-2); color: var(--ink); border: 1px solid var(--line-2); border-radius: 6px; padding: 10px 12px; font-size: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.5); }
+.maplibregl-popup-tip { border-top-color: var(--line-2) !important; border-bottom-color: var(--line-2) !important; }
+.maplibregl-popup-close-button { color: var(--ink-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse, .flow, .rise, .scanline::after { animation: none; }
+}

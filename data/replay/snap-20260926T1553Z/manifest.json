@@ -1,0 +1,39 @@
+{
+  "recorded_at": "2026-09-26T15:53:29.911398+00:00",
+  "description": "Real public-endpoint responses recorded for REPLAY mode",
+  "note": "Real responses from public endpoints recorded by ORCA LIVE transport.",
+  "queries": [
+    {
+      "text": "Is it safe for a fishing boat to leave Kochi tomorrow at 5 AM?",
+      "trace_id": "ORCA-2026-09-26-2D9E6",
+      "decision": "GO"
+    },
+    {
+      "text": "Is it safe to fish 25 km off Chennai tomorrow morning?",
+      "trace_id": "ORCA-2026-09-26-20557",
+      "decision": "GO"
+    },
+    {
+      "text": "Calculate a lower-risk route from Mumbai to Goa tomorrow morning",
+      "trace_id": "ORCA-2026-09-26-6A62B",
+      "decision": "GO"
+    },
+    {
+      "text": "Show potential fishing zones near Mangaluru",
+      "trace_id": "ORCA-2026-09-26-BD115",
+      "decision": "GO"
+    },
+    {
+      "text": "Show cyclone risk across the Odisha coast for the next 24 hours",
+      "trace_id": "ORCA-2026-09-26-35A79",
+      "decision": "CAUTION"
+    },
+    {
+      "text": "Why did chlorophyll concentration decline off Kochi over the past 14 days?",
+      "trace_id": "ORCA-2026-09-26-8746A",
+      "decision": "NOT_APPLICABLE"
+    }
+  ],
+  "finished_at": "2026-09-26T15:54:14.009109+00:00",
+  "requests": 85
+}
