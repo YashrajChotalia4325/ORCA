@@ -1,0 +1,410 @@
+{
+"_source": "generated from data/reference/curated/gazetteer.json (ports + fishing harbours)",
+"harbours": [
+{
+"id": "kochi",
+"name": "Kochi",
+"state": "Kerala",
+"names": {
+"hi": "कोच्चि",
+"ml": "കൊച്ചി",
+"ta": "கொச்சி",
+"te": "కొచ్చి",
+"kn": "ಕೊಚ್ಚಿ",
+"mr": "कोची",
+"bn": "কোচি"
+}
+},
+{
+"id": "munambam",
+"name": "Munambam",
+"state": "Kerala",
+"names": {
+"ml": "മുനമ്പം"
+}
+},
+{
+"id": "kollam",
+"name": "Kollam",
+"state": "Kerala",
+"names": {
+"ml": "കൊല്ലം",
+"hi": "कोल्लम"
+}
+},
+{
+"id": "neendakara",
+"name": "Neendakara",
+"state": "Kerala",
+"names": {
+"ml": "നീണ്ടകര"
+}
+},
+{
+"id": "vizhinjam",
+"name": "Vizhinjam",
+"state": "Kerala",
+"names": {
+"ml": "വിഴിഞ്ഞം",
+"hi": "विझिंजम"
+}
+},
+{
+"id": "ponnani",
+"name": "Ponnani",
+"state": "Kerala",
+"names": {
+"ml": "പൊന്നാനി"
+}
+},
+{
+"id": "mangaluru",
+"name": "Mangaluru",
+"state": "Karnataka",
+"names": {
+"kn": "ಮಂಗಳೂರು",
+"hi": "मंगलुरु",
+"ml": "മംഗളൂരു",
+"mr": "मंगळूर"
+}
+},
+{
+"id": "malpe",
+"name": "Malpe",
+"state": "Karnataka",
+"names": {
+"kn": "ಮಲ್ಪೆ"
+}
+},
+{
+"id": "bhatkal",
+"name": "Bhatkal",
+"state": "Karnataka",
+"names": {
+"kn": "ಭಟ್ಕಳ"
+}
+},
+{
+"id": "honnavar",
+"name": "Honnavar",
+"state": "Karnataka",
+"names": {
+"kn": "ಹೊನ್ನಾವರ"
+}
+},
+{
+"id": "karwar",
+"name": "Karwar",
+"state": "Karnataka",
+"names": {
+"kn": "ಕಾರವಾರ",
+"mr": "कारवार",
+"hi": "कारवार"
+}
+},
+{
+"id": "goa",
+"name": "Goa (Mormugao)",
+"state": "Goa",
+"names": {
+"hi": "गोवा",
+"mr": "गोवा",
+"kn": "ಗೋವಾ",
+"ml": "ഗോവ",
+"ta": "கோவா",
+"te": "గోవా",
+"bn": "গোয়া"
+}
+},
+{
+"id": "vengurla",
+"name": "Vengurla",
+"state": "Maharashtra",
+"names": {
+"mr": "वेंगुर्ला"
+}
+},
+{
+"id": "malvan",
+"name": "Malvan",
+"state": "Maharashtra",
+"names": {
+"mr": "मालवण",
+"hi": "मालवन"
+}
+},
+{
+"id": "devgad",
+"name": "Devgad",
+"state": "Maharashtra",
+"names": {
+"mr": "देवगड"
+}
+},
+{
+"id": "ratnagiri",
+"name": "Ratnagiri",
+"state": "Maharashtra",
+"names": {
+"mr": "रत्नागिरी",
+"hi": "रत्नागिरी"
+}
+},
+{
+"id": "harnai",
+"name": "Harnai",
+"state": "Maharashtra",
+"names": {
+"mr": "हर्णै"
+}
+},
+{
+"id": "murud",
+"name": "Murud",
+"state": "Maharashtra",
+"names": {
+"mr": "मुरुड"
+}
+},
+{
+"id": "mumbai",
+"name": "Mumbai",
+"state": "Maharashtra",
+"names": {
+"hi": "मुंबई",
+"mr": "मुंबई",
+"ml": "മുംബൈ",
+"ta": "மும்பை",
+"te": "ముంబై",
+"kn": "ಮುಂಬೈ",
+"bn": "মুম্বাই"
+}
+},
+{
+"id": "dahanu",
+"name": "Dahanu",
+"state": "Maharashtra",
+"names": {
+"mr": "डहाणू"
+}
+},
+{
+"id": "hazira",
+"name": "Hazira (Surat)",
+"state": "Gujarat",
+"names": {
+"hi": "सूरत",
+"gu": "સુરત"
+}
+},
+{
+"id": "veraval",
+"name": "Veraval",
+"state": "Gujarat",
+"names": {
+"hi": "वेरावल",
+"gu": "વેરાવળ"
+}
+},
+{
+"id": "porbandar",
+"name": "Porbandar",
+"state": "Gujarat",
+"names": {
+"hi": "पोरबंदर",
+"gu": "પોરબંદર"
+}
+},
+{
+"id": "okha",
+"name": "Okha",
+"state": "Gujarat",
+"names": {
+"hi": "ओखा",
+"gu": "ઓખા"
+}
+},
+{
+"id": "kandla",
+"name": "Kandla (Deendayal Port)",
+"state": "Gujarat",
+"names": {
+"hi": "कांडला",
+"gu": "કંડલા"
+}
+},
+{
+"id": "mundra",
+"name": "Mundra",
+"state": "Gujarat",
+"names": {
+"hi": "मुंद्रा",
+"gu": "મુંદ્રા"
+}
+},
+{
+"id": "colachel",
+"name": "Colachel",
+"state": "Tamil Nadu",
+"names": {
+"ta": "குளச்சல்"
+}
+},
+{
+"id": "thoothukudi",
+"name": "Thoothukudi",
+"state": "Tamil Nadu",
+"names": {
+"ta": "தூத்துக்குடி",
+"hi": "तूतीकोरिन"
+}
+},
+{
+"id": "rameswaram",
+"name": "Rameswaram",
+"state": "Tamil Nadu",
+"names": {
+"ta": "ராமேஸ்வரம்",
+"hi": "रामेश्वरम",
+"te": "రామేశ్వరం"
+}
+},
+{
+"id": "nagapattinam",
+"name": "Nagapattinam",
+"state": "Tamil Nadu",
+"names": {
+"ta": "நாகப்பட்டினம்"
+}
+},
+{
+"id": "karaikal",
+"name": "Karaikal",
+"state": "Puducherry",
+"names": {
+"ta": "காரைக்கால்"
+}
+},
+{
+"id": "cuddalore",
+"name": "Cuddalore",
+"state": "Tamil Nadu",
+"names": {
+"ta": "கடலூர்"
+}
+},
+{
+"id": "chennai",
+"name": "Chennai",
+"state": "Tamil Nadu",
+"names": {
+"ta": "சென்னை",
+"hi": "चेन्नई",
+"te": "చెన్నై",
+"kn": "ಚೆನ್ನೈ",
+"ml": "ചെന്നൈ",
+"mr": "चेन्नई",
+"bn": "চেন্নাই"
+}
+},
+{
+"id": "krishnapatnam",
+"name": "Krishnapatnam",
+"state": "Andhra Pradesh",
+"names": {
+"te": "కృష్ణపట్నం"
+}
+},
+{
+"id": "machilipatnam",
+"name": "Machilipatnam",
+"state": "Andhra Pradesh",
+"names": {
+"te": "మచిలీపట్నం"
+}
+},
+{
+"id": "kakinada",
+"name": "Kakinada",
+"state": "Andhra Pradesh",
+"names": {
+"te": "కాకినాడ",
+"hi": "काकीनाडा"
+}
+},
+{
+"id": "visakhapatnam",
+"name": "Visakhapatnam",
+"state": "Andhra Pradesh",
+"names": {
+"te": "విశాఖపట్నం",
+"hi": "विशाखापत्तनम",
+"ta": "விசாகப்பட்டினம்",
+"bn": "বিশাখাপত্তনম"
+}
+},
+{
+"id": "kalingapatnam",
+"name": "Kalingapatnam",
+"state": "Andhra Pradesh",
+"names": {
+"te": "కళింగపట్నం"
+}
+},
+{
+"id": "gopalpur",
+"name": "Gopalpur",
+"state": "Odisha",
+"names": {
+"or": "ଗୋପାଳପୁର",
+"hi": "गोपालपुर"
+}
+},
+{
+"id": "paradip",
+"name": "Paradip",
+"state": "Odisha",
+"names": {
+"or": "ପାରାଦୀପ",
+"hi": "पारादीप",
+"bn": "পারাদীপ"
+}
+},
+{
+"id": "dhamra",
+"name": "Dhamra",
+"state": "Odisha",
+"names": {
+"or": "ଧାମରା"
+}
+},
+{
+"id": "digha",
+"name": "Digha",
+"state": "West Bengal",
+"names": {
+"bn": "দীঘা",
+"hi": "दीघा"
+}
+},
+{
+"id": "haldia",
+"name": "Haldia",
+"state": "West Bengal",
+"names": {
+"bn": "হলদিয়া",
+"hi": "हल्दिया"
+}
+},
+{
+"id": "port_blair",
+"name": "Port Blair (Sri Vijaya Puram)",
+"state": "Andaman and Nicobar Islands",
+"names": {
+"hi": "पोर्ट ब्लेयर",
+"bn": "পোর্ট ব্লেয়ার",
+"ta": "போர்ட் பிளேர்"
+}
+}
+]
+}
